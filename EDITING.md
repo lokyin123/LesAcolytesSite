@@ -31,7 +31,7 @@ Your concert listings. Click **+ Event** to add one, or click an existing event 
 - **Description** — optional. Programme notes, repertoire, whatever's worth saying.
 - **Internal setting (leave alone)** — ignore this one, it just tells the site how to lay the page out.
 
-**Past concerts disappear on their own.** Once an event's date has gone by, it stops showing on the site the next time anything is saved. You never need to delete old concerts — though you can, with **Delete entry**, if you want them gone entirely.
+**Past concerts are retained automatically.** Once an event's date has passed, it moves from Upcoming Performances into the Past Performances carousel the next time the site builds. You do not need to edit or delete it. Use **Past performance** only when an event needs to appear there before its stored date has passed; use **Delete entry** only when it should be removed from the site entirely.
 
 ### News
 
