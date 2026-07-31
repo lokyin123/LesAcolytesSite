@@ -34,4 +34,5 @@ Netlify announced Identity's deprecation and then [reversed that in February 202
 - `src/content/events/*.md` — one file per concert/event
 - `src/_data/media.yaml` — YouTube videos + photo gallery
 - `src/images/uploads/` — where photos uploaded via the CMS land
+- Image filenames should use hyphens instead of spaces, so their URLs remain straightforward.
 - `src/images/stock/` — **free stock photos (Pexels) standing in for real ensemble photos.** Free to use, but not photos of Les Acolytes — replace with real performance/portrait photos as soon as you have them, via the CMS.
