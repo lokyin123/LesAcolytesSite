@@ -47,6 +47,9 @@ collections:
               - { label: "Role / Instrument", name: "role", widget: "string" }
           - { label: "Contact Email", name: "contact_email", widget: "string" }
           - { label: "Instagram URL", name: "instagram_url", widget: "string" }
+          - { label: "Facebook URL", name: "facebook_url", widget: "string" }
+          - { label: "Continuo Connect URL", name: "continuo_url", widget: "string" }
+          - { label: "YouTube URL", name: "youtube_url", widget: "string" }
           - { label: "Booking Note", name: "booking_note", widget: "text" }
 
   - name: "events"
@@ -64,6 +67,7 @@ collections:
       # the one scrolling homepage. Not something the editor should change.
       - { label: "Internal setting (leave alone)", name: "permalink", widget: "hidden", default: false }
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Festival / Concert Series", name: "series", widget: "string", required: false, hint: "Optional. Leave blank for independent performances." }
       # "datetime", not "date" — Decap 3 removed the standalone date widget,
       # which is why this field previously rendered as "No control for widget".
       - label: "Date"
@@ -74,10 +78,36 @@ collections:
         time_format: false
         picker_utc: true
         hint: "The site shows this as e.g. 12 September 2026, and hides the event automatically once the date has passed."
+      - { label: "Time", name: "event_time", widget: "string", required: false, hint: "Use 24-hour time, for example 15:00 or 20:30." }
+      - { label: "Past performance", name: "past_performance", widget: "boolean", default: false, required: false, hint: "Turn this on to place the event under Past Performances even if its date has not passed." }
       - { label: "Venue", name: "venue", widget: "string" }
       - { label: "Ticket / Info Link", name: "ticket_url", widget: "string", required: false, hint: "Paste the full web address for tickets or details. Leave blank if there isn't one yet." }
       - { label: "Event Image", name: "image", widget: "image", required: false, hint: "Optional. Shown beside the event on the site." }
       - { label: "Description", name: "body", widget: "markdown", required: false, hint: "Programme notes, repertoire, anything worth saying about the concert." }
+
+  - name: "news"
+    label: "News"
+    label_singular: "News article"
+    folder: "src/content/news"
+    create: true
+    slug: "{{fields.news_date}}-{{slug}}"
+    summary: "{{fields.news_date}} - {{title}}"
+    sortable_fields: ["news_date", "title"]
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Publication Date"
+        name: "news_date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "DD MMMM YYYY"
+        time_format: false
+        picker_utc: true
+      - { label: "Summary", name: "excerpt", widget: "text", hint: "A short introduction shown on the News page and in search descriptions." }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Image Description", name: "image_alt", widget: "string", required: false, hint: "Describe the image for visitors using screen readers." }
+      - { label: "Article", name: "body", widget: "markdown" }
 
   - name: "media"
     label: "Media"
@@ -90,9 +120,10 @@ collections:
             name: "videos"
             label_singular: "video"
             widget: "list"
-            summary: "{{fields.title}}"
+            summary: "{{fields.composer}} — {{fields.piece}}"
             fields:
-              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Composer", name: "composer", widget: "string", hint: "For example: François Couperin" }
+              - { label: "Piece", name: "piece", widget: "string", hint: "The title of the work or movement." }
               - { label: "YouTube Video ID", name: "youtube_id", widget: "string", hint: "Just the code after 'watch?v=' in the YouTube address — e.g. for youtube.com/watch?v=KMH-7NeWgVA enter KMH-7NeWgVA", required: false }
           - label: "Photos"
             name: "photos"

@@ -1,8 +1,9 @@
 ---
 permalink: false
 title: "Les Acolytes presents: French Baroque Cantatas"
-event_date: "2026-09-12"
-venue: "Centre for Music Performance, University of Cambridge"
+event_date: "2025-06-15"
+past_performance: true
+venue: "Girton College Chapel, Cambridge"
 ticket_url: "https://www.cmp.cam.ac.uk/events/event/item/les-acolytes-presents-french-baroque-cantatas/"
 image: "/images/stock/event-cambridge.jpg"
 ---

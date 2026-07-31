@@ -1,0 +1,23 @@
+---
+layout: base.njk
+section:
+  slug: news
+---
+<article>
+  <div class="article-layout{% if not image %} article-layout--no-image{% endif %}">
+    <header class="article-header tone-sand">
+      <p class="eyebrow">{{ news_date | eventDate }}</p>
+      <h1>{{ title }}</h1>
+      <p class="article-header__excerpt">{{ excerpt }}</p>
+    </header>
+    {% if image %}
+    <div class="article-visual">
+      <img class="article-image" src="{{ image }}" alt="{{ image_alt or '' }}">
+    </div>
+    {% endif %}
+    <div class="article-panel{% if not image %} article-panel--full{% endif %}">
+      <div class="article-body__prose">{{ content | safe }}</div>
+      <a class="text-link article-back" href="/news/"><span aria-hidden="true">&larr;</span> Back to all news</a>
+    </div>
+  </div>
+</article>

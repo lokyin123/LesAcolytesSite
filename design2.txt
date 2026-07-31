@@ -1,0 +1,21 @@
+Here are our goals for this session. Tackle these in manageable batches instead of all at once. Repoort at the end of each task to choose which to tackle next.
+1. Media page, remove the embedded youtube videoi Marin Marais — Suite en Mi Mineur (Passacaille) as that is not ours. Add the following videos:
+https://youtu.be/E3unHrIWtPE?si=HxV7DBGVvf9OX6b5 Jean-Féry Rebel - Les Caractères de la Danse
+https://www.youtube.com/watch?v=1fkmiLUUnKk François Couperin - Le Paix du Parnasse: Sonade en Trio
+
+2. Still Media page, can youtube embeds be on a horizontally sliding row, so that more videos can be displayed in future? Sliding row to be controlled by visitor.
+3. Below the youtube embedding slider on the media page, should be a full width gallery component, with a variety of group shots to be curated later. Use available group shots as placeholders for now.
+
+4. Events Page, remove the placeholder concert title. Also, move the Les Acolytes presents: French Baroque Cantatas to a separate 'Past Performances' section to be placed below upcoming performances.
+5. In the upcoming performances section, use a vertical chronological structure instead of a horizontal table. Event link to be displayed as a button, which opens the external link as a new tab. New tab behaviour should only apply to external sites. Past concerts can keep the table structure to reduce emphasis. 
+Add the following upcoming performances:
+a. Saturday 10 October 2026, 15:00 at St Paul's Church, Brighton, BREMF Emerging Artists Showcase, as part of Brighton Early Music Festival (event link https://www.bremf.org.uk/event/emerging-artists-showcase-2026/)
+b. Saturday 10 October, 20:30 at The Rose Hill, Brighton, BREMF Clubnight, A relaxed evening of early music performance in a welcoming pub atmosphere (https://www.bremf.org.uk/event/clubnight-2026/)
+
+6. On the landing page, replace the Explore Music, people, and performances text with a 'Find us on' section, linking to social media accounts. Links to be displayed using icons of their respective services.
+a. Instagram @lesacolytes.uk (https://www.instagram.com/lesacolytes.uk/)
+b. Facebook (use placeholder facebook icon and point to facebook homepage for now)
+c. Continuo Connect (use continuo connect icon and point to https://www.continuoconnect.com/artists for now until a profile is set up)
+d. Youtube (use youtube icon and point to Andrew's channel for now https://www.youtube.com/watch?v=E3unHrIWtPE)
+
+7. On the landing page, Remove the small 'French Baroque Ensemble' Text above the Les acolytes title text. The 'discover the ensemble' button should scroll down the page to the next section instead of directly to the about the ensemble page.

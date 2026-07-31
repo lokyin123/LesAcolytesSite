@@ -31,6 +31,10 @@ export default function (eleventyConfig) {
     return eventDateFormat.format(new Date(iso + "T00:00:00Z"));
   });
 
+  eleventyConfig.addFilter("isExternalUrl", (value) =>
+    /^https?:\/\//i.test(String(value || ""))
+  );
+
   // Past events drop off the site on the next build. Any CMS save triggers a
   // rebuild, so in practice this keeps itself tidy without anyone deleting
   // anything by hand.
@@ -38,11 +42,46 @@ export default function (eleventyConfig) {
     const today = new Date().toISOString().slice(0, 10);
     return collectionApi
       .getFilteredByGlob("src/content/events/*.md")
-      .filter((item) => isoDate(item.data.event_date) >= today)
+      .filter((item) => !item.data.past_performance && isoDate(item.data.event_date) >= today)
       .sort((a, b) =>
-        isoDate(a.data.event_date).localeCompare(isoDate(b.data.event_date))
+        `${isoDate(a.data.event_date)} ${a.data.event_time || ""}`.localeCompare(
+          `${isoDate(b.data.event_date)} ${b.data.event_time || ""}`
+        )
       );
   });
+
+  eleventyConfig.addCollection("pastEvents", (collectionApi) => {
+    const today = new Date().toISOString().slice(0, 10);
+    return collectionApi
+      .getFilteredByGlob("src/content/events/*.md")
+      .filter((item) => item.data.past_performance || isoDate(item.data.event_date) < today)
+      .sort((a, b) => isoDate(b.data.event_date).localeCompare(isoDate(a.data.event_date)));
+  });
+
+  eleventyConfig.addFilter("photoSlides", (photos) => {
+    const slides = [];
+    for (let index = 0; index < (photos || []).length; index += 3) {
+      slides.push(photos.slice(index, index + 3));
+    }
+    return slides;
+  });
+
+  eleventyConfig.addFilter("eventSlides", (events) => {
+    const slides = [];
+    for (let index = 0; index < (events || []).length; index += 2) {
+      slides.push(events.slice(index, index + 2));
+    }
+    return slides;
+  });
+
+  // News posts remain as portable Markdown files and are shown newest first.
+  eleventyConfig.addCollection("news", (collectionApi) =>
+    collectionApi
+      .getFilteredByGlob("src/content/news/*.md")
+      .sort((a, b) =>
+        isoDate(b.data.news_date).localeCompare(isoDate(a.data.news_date))
+      )
+  );
 
   return {
     dir: {

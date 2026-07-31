@@ -40,6 +40,8 @@ Netlify announced Identity's deprecation and then [reversed that in February 202
 
 ## Content structure (for reference)
 
+News articles live in `src/content/news/*.md`; each file generates its own article page.
+
 - `src/_data/settings.yaml` — global site content (about, contact, members)
 - `src/content/events/*.md` — one file per concert/event
 - `src/_data/media.yaml` — YouTube videos + photo gallery

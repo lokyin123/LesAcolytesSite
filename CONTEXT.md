@@ -8,6 +8,26 @@ Reference links:
 
 ## Current real build (2026-07-31)
 
+The News section is now a blog-style Markdown collection. `/news/` lists articles newest-first, each file in `src/content/news/` generates an individual page, and Decap has fields for creating and editing posts. Three clearly labelled placeholder articles demonstrate the layout.
+
+The Media video list currently contains the genuine Marin Marais recording (`KMH-7NeWgVA`), Jean-Féry Rebel's *Les Caractères de la Danse* (`E3unHrIWtPE`), and François Couperin's *La Paix du Parnasse: Sonade en Trio* (`1fkmiLUUnKk`). The unrelated Marin Marais E minor Passacaille was removed.
+
+What's On now separates upcoming and past performances. Upcoming events use a vertical chronological layout with time, description, venue, and button-style details links; external URLs open in a new tab, while future internal URLs remain in the same tab. Past performances retain the quieter card grid. Events move to Past automatically after their date, or can be placed there early with the CMS `past_performance` switch. The placeholder concert was removed, the Cambridge cantatas event is explicitly classified as past, and two BREMF performances on 10 October 2026 are the current upcoming entries.
+
+Events have an optional `series` field displayed above the title. Both upcoming BREMF events use “Brighton Early Music Festival”; the 5 December 2025 Savile Club performance uses “Aperitif Concert”. Date and time have equal visual weight, and upcoming titles are intentionally restrained. Past Performances uses a horizontal carousel with two cards per slide, matching arrow controls and dot/elongated-dot navigation. Current past entries are *The Peace of Parnassus* at Girton College (1 March 2026), the Savile Club (5 December 2025), and the Cambridge cantatas performance at Girton College Chapel (15 June 2025).
+
+Media recordings are displayed in a visitor-controlled horizontal slider. Previous/Next buttons move one recording at a time, the row uses scroll snapping, and touchpad, touchscreen, and keyboard scrolling remain available. Controls disable at the beginning and end of the row.
+
+The recording slider is a full-width dark-ink section with uniform 16:9 embeds. Video data and Decap fields store `composer` and `piece` separately: composer names use a small sand-coloured uppercase label, while piece names use a larger display heading.
+
+Only the active recording is visible and centred. The scrollbar is hidden and replaced by accessible clickable position indicators: the current video's dot lengthens while the remaining videos retain small dots. Arrow controls and swipe/touchpad scrolling update the indicator automatically.
+
+A full-width light photo carousel follows the recording slider. It uses the CMS-managed `media.photos` list, currently seeded with seven available Les Acolytes group photographs, and automatically groups images into mosaic slides of up to three. Each mosaic fits a consistent-height band and has matching arrows, swipe support, and dot/elongated-dot indicators. Mobile uses a compact two-level mosaic. Gallery images may be cropped within the layout and retain their CMS descriptions as alternative text.
+
+Gallery thumbnails are buttons with a subtle enlargement on hover and keyboard focus. Activating one opens an accessible full-screen lightbox with a scale/fade entrance, natural-ratio image, visible close button, backdrop dismissal, Escape support, and focus restoration. Motion is suppressed for visitors who prefer reduced motion.
+
+Individual news articles use two columns on computers and tablets. The featured photograph fills a sticky, viewport-height frame on the left with conservative centre cropping, avoiding blank space beneath shorter images. The right column has a compact sand-coloured heading containing the date, title, and summary, followed by the article body on a beige panel. Mobile orders these as heading, complete natural-ratio image, then body text for easier scrolling. This sticky/cropped desktop treatment is a trial and should be easy to revert if another approach is preferred.
+
 The original single scrolling site described later in this file is now a prototype only. The real build remains on Eleventy and uses these routes:
 
 - `/` — split photograph/colour hero, an introductory Explore block, and large clickable section panels
@@ -22,6 +42,18 @@ The original single scrolling site described later in this file is now a prototy
 `src/_data/sections.yaml` contains the routes, navigation labels, provisional summaries, panel colours, and photographs. Eleventy pagination in `src/index.njk` generates the homepage and all seven internal routes. `src/_includes/base.njk` provides the shared sticky navigation and footer.
 
 The current design uses Playfair Display and Source Serif 4 with calm clay, sage, sand, blue, and rose panels. Photo and colour panels meet at **straight edges**. Two curve experiments were rejected: an oversized capsule-like treatment and a smaller rounded overlap with the photographs continuing behind the colour panels. Keep edges straight unless the user explicitly asks to revisit curves.
+
+The large homepage section tiles are each a single full-tile link. Redundant “Explore…” arrow labels were removed; clickability is communicated by the existing image zoom plus a restrained title movement and underline animation on hover and keyboard focus. A short static underline remains visible for touch users.
+
+The homepage introduction between the hero and section tiles is now a “Find us on” panel with labelled icon links for Instagram (`@lesacolytes.uk`), placeholder Facebook, placeholder Continuo Connect, and YouTube. All URLs live in `settings.yaml` and Decap Site Settings. External links open in new tabs. Continuo retains a neutral CC monogram because the supplied AVIF logo could not be reliably made transparent with the available tools. The social layout has no outer top/bottom box edges: larger screens use subtle vertical separators, while icon scaling, label movement, and expanding underlines communicate interaction; mobile uses open spacing without separators.
+
+The homepage hero does not show the small “French Baroque ensemble” eyebrow. Its “Discover the ensemble” link points to `#find-us`, scrolling to the social panel directly below the hero rather than navigating to the About page. The About tile and navigation route remain unchanged.
+
+The shared footer repeats the four social destinations as compact accessible circular icons immediately before the copyright notice. It reuses the same CMS-managed URLs, safe external-link behaviour, CC monogram, and restrained hover/focus feedback as the homepage social panel.
+
+The footer currently uses the dark ink tone (`#292824`) with light brand/icons and sand-coloured copyright text. This is an intentionally isolated darker-footer treatment and can be reverted independently if needed.
+
+Below 650px, the desktop navigation bar is replaced by a labelled Menu button. It opens an ink-coloured full-screen navigation panel that slides horizontally from right to left using a lightweight transform, accompanied by a softer opacity fade. The mobile header disables its backdrop filter so the fixed panel stays aligned to the viewport. The transition lasts 550ms with gentle deceleration. Native blue mobile tap highlights are suppressed on these controls and replaced with the site's sand/ink hover, active, and keyboard-focus feedback. The overlay locks page scrolling, traps keyboard focus, closes through its Close button, a selected link, or Escape, and restores focus to Menu. Reduced-motion users receive no slide transition. Tablet and desktop navigation remain unchanged.
 
 The internal pages are structural first versions. About, Musicians, What's On, Media, and Contact reuse existing data. Programmes and News still contain holding copy. The Decap CMS fields have not yet been expanded for the new sections.
 

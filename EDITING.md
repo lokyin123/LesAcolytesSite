@@ -14,7 +14,7 @@ The editor has three sections down the left-hand side.
 
 ### Site Settings
 
-Everything that appears once on the site: the ensemble name and tagline, the big photo at the top, the About text and its photo, the list of members, the contact email, and the Instagram link.
+Everything that appears once on the site: the ensemble name and tagline, the big photo at the top, the About text and its photo, the list of members, contact details, and the Instagram, Facebook, Continuo Connect, and YouTube links.
 
 The **Members** list has an **Add member** button, an **×** on each row to remove someone, and a handle (**=**) to drag people into a different order.
 
@@ -23,6 +23,9 @@ The **Members** list has an **Add member** button, an **×** on each row to remo
 Your concert listings. Click **+ Event** to add one, or click an existing event to change it.
 
 - **Date** — pick it from the calendar. You only enter it once; the site works out how to display it ("12 September 2026").
+- **Festival / Concert Series** — optional. Enter the presenting festival or series when there is one; otherwise leave it blank.
+- **Time** — enter the performance time in 24-hour format, such as `15:00` or `20:30`.
+- **Past performance** — normally leave this off. Turn it on only when an event should appear under Past Performances before its stored date has passed.
 - **Ticket / Info Link** — optional. Paste the full web address. If you leave it blank, no "Details" button appears.
 - **Event Image** — optional. Shown beside the event.
 - **Description** — optional. Programme notes, repertoire, whatever's worth saying.
@@ -30,9 +33,18 @@ Your concert listings. Click **+ Event** to add one, or click an existing event 
 
 **Past concerts disappear on their own.** Once an event's date has gone by, it stops showing on the site the next time anything is saved. You never need to delete old concerts — though you can, with **Delete entry**, if you want them gone entirely.
 
+### News
+
+News articles appear newest-first on the News page, and every article gets its own page. Click **+ News article** to add one.
+
+- **Publication Date** controls the order on the News page.
+- **Summary** is the short introduction shown on the News page.
+- **Featured Image** and **Image Description** are optional, but the description should briefly say what the image shows for visually impaired visitors.
+- **Article** is the full story. You can add headings, links, and paragraphs with the editing toolbar.
+
 ### Media
 
-- **Videos** — click **Add video**. You need the YouTube video's ID, which is the code in its web address after `watch?v=`. For `youtube.com/watch?v=KMH-7NeWgVA` the ID is `KMH-7NeWgVA`.
+- **Videos** — click **Add video**, then enter the composer and piece separately so the site can style them clearly. You also need the YouTube video's ID, which is the code in its web address after `watch?v=`. For `youtube.com/watch?v=KMH-7NeWgVA` the ID is `KMH-7NeWgVA`.
 - **Photos** — click **Add photo**, then upload from your computer. The **Description** is read aloud to visually impaired visitors, so a short "the quartet performing in a stone chapel" is better than "photo 3".
 
 Both lists let you remove items with the **×** and reorder them by dragging the **=** handle.
