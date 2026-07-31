@@ -2,10 +2,26 @@ backend:
   name: git-gateway
   branch: main
 
+# Lets the CMS run against local files during development:
+#   terminal 1: npm start      terminal 2: npm run cms
+# then open http://localhost:8080/admin/ — no login needed locally.
+# Ignored entirely on the deployed site, which uses git-gateway above.
+# Port 8082 (not decap-server's default 8081) because Eleventy's dev server
+# already holds 8081 — see PORT in the .env file at the repo root.
+local_backend:
+  url: http://localhost:8082/api/v1
+
 media_folder: "src/images/uploads"
 public_folder: "/images/uploads"
 
 site_url: https://lesacolytesmusic.netlify.app
+# No logo_url: Decap renders it at full size, so the hero photo swamped the
+# login screen. Add one here only when there's a proper small logo/wordmark.
+
+# Decap's preview pane renders the content unstyled, which looks broken and
+# misleads the editor about how the site will actually appear.
+editor:
+  preview: false
 
 collections:
   - name: "settings"
@@ -16,14 +32,16 @@ collections:
         file: "src/_data/settings.yaml"
         fields:
           - { label: "Ensemble Name", name: "ensemble_name", widget: "string" }
-          - { label: "Tagline", name: "tagline", widget: "string" }
-          - { label: "Hero Photo", name: "hero_image", widget: "image" }
+          - { label: "Tagline", name: "tagline", widget: "string", hint: "One short line — shown under the name on the opening screen and the main photo." }
+          - { label: "Hero Photo", name: "hero_image", widget: "image", hint: "The big photo at the top of the site. A wide (landscape) photo works best." }
           - { label: "About Heading (small label)", name: "about_heading", widget: "string" }
           - { label: "About Text", name: "about_text", widget: "text" }
           - { label: "About Photo", name: "about_image", widget: "image" }
           - label: "Members"
             name: "members"
+            label_singular: "member"
             widget: "list"
+            summary: "{{fields.name}} — {{fields.role}}"
             fields:
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Role / Instrument", name: "role", widget: "string" }
@@ -33,18 +51,33 @@ collections:
 
   - name: "events"
     label: "Events"
+    label_singular: "Event"
     folder: "src/content/events"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{fields.event_date}}-{{slug}}"
+    summary: "{{fields.event_date}} — {{title}}"
+    sortable_fields: ["event_date", "title"]
+    editor:
+      preview: false
     fields:
-      - { label: "Publish", name: "permalink", widget: "hidden", default: false }
+      # Keeps each event from generating its own page — the events all live on
+      # the one scrolling homepage. Not something the editor should change.
+      - { label: "Internal setting (leave alone)", name: "permalink", widget: "hidden", default: false }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date (for sorting)", name: "date", widget: "date", format: "YYYY-MM-DD" }
-      - { label: "Date (as displayed)", name: "display_date", widget: "string", hint: "e.g. 12 September 2026" }
+      # "datetime", not "date" — Decap 3 removed the standalone date widget,
+      # which is why this field previously rendered as "No control for widget".
+      - label: "Date"
+        name: "event_date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "DD MMMM YYYY"
+        time_format: false
+        picker_utc: true
+        hint: "The site shows this as e.g. 12 September 2026, and hides the event automatically once the date has passed."
       - { label: "Venue", name: "venue", widget: "string" }
-      - { label: "Ticket / Info Link", name: "ticket_url", widget: "string" }
-      - { label: "Event Image", name: "image", widget: "image", required: false }
-      - { label: "Description", name: "body", widget: "markdown" }
+      - { label: "Ticket / Info Link", name: "ticket_url", widget: "string", required: false, hint: "Paste the full web address for tickets or details. Leave blank if there isn't one yet." }
+      - { label: "Event Image", name: "image", widget: "image", required: false, hint: "Optional. Shown beside the event on the site." }
+      - { label: "Description", name: "body", widget: "markdown", required: false, hint: "Programme notes, repertoire, anything worth saying about the concert." }
 
   - name: "media"
     label: "Media"
@@ -55,13 +88,17 @@ collections:
         fields:
           - label: "Videos"
             name: "videos"
+            label_singular: "video"
             widget: "list"
+            summary: "{{fields.title}}"
             fields:
               - { label: "Title", name: "title", widget: "string" }
-              - { label: "YouTube Video ID", name: "youtube_id", widget: "string", hint: "The part after 'watch?v=' in the YouTube URL", required: false }
+              - { label: "YouTube Video ID", name: "youtube_id", widget: "string", hint: "Just the code after 'watch?v=' in the YouTube address — e.g. for youtube.com/watch?v=KMH-7NeWgVA enter KMH-7NeWgVA", required: false }
           - label: "Photos"
             name: "photos"
+            label_singular: "photo"
             widget: "list"
+            summary: "{{fields.alt}}"
             fields:
               - { label: "Photo", name: "src", widget: "image" }
-              - { label: "Description", name: "alt", widget: "string" }
+              - { label: "Description", name: "alt", widget: "string", hint: "A short description of what's in the photo — read aloud to visually impaired visitors." }

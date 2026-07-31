@@ -1,8 +1,7 @@
 ---
 permalink: false
 title: "Placeholder Concert Title"
-date: "2026-11-08"
-display_date: "8 November 2026"
+event_date: "2026-11-08"
 venue: "Venue name, City"
 ticket_url: "https://example.com"
 image: "/images/stock/gallery-1.jpg"

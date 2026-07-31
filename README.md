@@ -4,35 +4,29 @@ A simple website with a built-in editor so non-technical people can update text,
 
 **Stack:** [Eleventy](https://www.11ty.dev/) (static site generator) + [Decap CMS](https://decapcms.org/) (the `/admin` editor) + [Netlify](https://netlify.com) (free hosting + login for the editor).
 
+**Editing the site day to day is documented in [EDITING.md](EDITING.md)** — written for a non-technical editor, plus the Netlify setup steps.
+
 ## Local development
 
 ```
 npm install
-npm start
+npm start      # the site, on http://localhost:8080
+npm run cms    # the CMS backend, on http://localhost:8082 (second terminal)
 ```
 
-Opens the site at `http://localhost:8080`. The admin panel at `/admin` won't work locally (it needs Netlify Identity) — test it on the deployed site instead.
+With both running, the admin panel at **http://localhost:8080/admin/** works locally — click Login, no password needed. Edits write straight to the files in this folder, so check `git diff` before committing.
 
-## One-time setup: deploy to Netlify
+## Deployment
 
-1. Push this repo to GitHub (or GitLab/Bitbucket).
-2. Go to [app.netlify.com](https://app.netlify.com) → **Add new site → Import an existing project** → pick this repo.
-   - Build command: `npm run build`
-   - Publish directory: `_site`
-3. Once deployed, go to **Site configuration → Identity** and click **Enable Identity**.
-4. Under Identity → **Registration**, set to "Invite only" (so randoms can't sign up).
-5. Under Identity → **Services**, enable **Git Gateway**.
-6. Update `site_url` in `src/admin/config.yml` to your actual Netlify URL (e.g. `https://les-acolytes.netlify.app`), commit, and push.
+Already done: the repo is on GitHub, connected to Netlify (build `npm run build`, publish `_site`), and `site_url` in `src/admin/config.yml` points at the live URL.
 
-## Inviting your brother as the editor
+**Still outstanding** — enabling Identity + Git Gateway and inviting the editor. Those are dashboard steps; they're written out in [EDITING.md](EDITING.md#one-time-netlify-setup).
 
-1. In Netlify: **Site configuration → Identity → Invite users**, enter his email.
-2. He'll get an email invite, sets a password, and can then log in at `yoursite.netlify.app/admin`.
-3. From there he can edit:
-   - **Site Settings** — ensemble name, tagline, bio, member list, hero/about photos, contact email, Instagram link.
-   - **Events** — add/edit/remove concerts (title, date, venue, ticket link, photo).
-   - **Media** — YouTube video IDs (the part of the URL after `watch?v=`) and gallery photos.
-4. Saving in the CMS commits directly to the repo and Netlify auto-rebuilds the site (~30 seconds).
+## Why Netlify and not GitHub Pages
+
+The CMS uses Decap's `git-gateway` backend, which is Netlify-specific. It would work on GitHub Pages via the `github` backend, but then **every editor needs a GitHub account with write access to this repo**, plus a self-hosted OAuth proxy (a Cloudflare Worker or similar) to handle the login. Netlify Identity needs only an email invite and a password, which matters when the editors aren't developers.
+
+Netlify announced Identity's deprecation and then [reversed that in February 2026](https://answers.netlify.com/t/netlify-identity-is-staying-feb-2026-reversal-what-changed-whos-affected-and-how-to-proceed/162733). It's staying, but receives no further development — if it's ever pulled, the migration path is the `github` backend above.
 
 ## Content structure (for reference)
 
