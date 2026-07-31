@@ -3,45 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ settings.ensemble_name }} — {{ settings.tagline }}</title>
-  <meta name="description" content="{{ settings.tagline }}">
+  <title>{% if section.slug != "home" %}{{ section.title }} | {% endif %}{{ settings.ensemble_name }}</title>
+  <meta name="description" content="{{ section.summary or settings.tagline }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Playfair+Display:wght@600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
-  <!-- Netlify Identity: invite and password-recovery emails land on THIS page
-       with a #token in the URL, not on /admin/. Without the widget here those
-       links appear to do nothing. -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script>
-    /* Decides before first paint whether the signature intro plays, so the
-       page never flashes behind it. Once per browser session only. */
-    (function () {
-      try {
-        if (sessionStorage.getItem("la-intro-seen")) return;
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-        if (window.location.hash) return;
-        document.documentElement.className += " intro-active";
-      } catch (e) {}
-    })();
-  </script>
 </head>
 <body>
-  {{ content | safe }}
-  <script src="/js/intro.js" defer></script>
+  <header class="site-header">
+    <a class="brand" href="/">{{ settings.ensemble_name }}</a>
+    <nav class="site-nav" aria-label="Main navigation"><ul>
+      {% for item in sections %}{% if item.slug != "home" %}<li><a href="{{ item.url }}"{% if item.slug == section.slug %} aria-current="page"{% endif %}>{{ item.nav_label }}</a></li>{% endif %}{% endfor %}
+    </ul></nav>
+  </header>
+  <main>{{ content | safe }}</main>
+  <footer class="site-footer"><a class="brand" href="/">{{ settings.ensemble_name }}</a><p>&copy; {{ currentYear }} {{ settings.ensemble_name }}</p></footer>
   <script src="/js/reveal.js" defer></script>
   <script>
-    /* Once an invited editor sets their password here, send them straight to
-       the admin panel rather than leaving them on the homepage. */
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", function (user) {
-        if (!user) {
-          window.netlifyIdentity.on("login", function () {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
+    if (window.netlifyIdentity) window.netlifyIdentity.on("init", function (user) {
+      if (!user) window.netlifyIdentity.on("login", function () { document.location.href = "/admin/"; });
+    });
   </script>
 </body>
 </html>

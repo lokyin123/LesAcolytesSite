@@ -2,6 +2,16 @@
 
 A simple website with a built-in editor so non-technical people can update text, photos, events, and videos without touching code.
 
+## Current build direction (July 2026)
+
+The original single-page design is now a prototype only. The real build keeps Eleventy and uses a multi-page structure. The landing page at `/` has a split-image hero and clickable panels leading to `/about/`, `/musicians/`, `/whats-on/`, `/programmes/`, `/media/`, `/news/`, and `/contact/`.
+
+Navigation, routes, panel text, images, and colours are driven by `src/_data/sections.yaml`. One paginated `src/index.njk` template generates the home page and all seven section routes; `src/_includes/base.njk` supplies their shared navigation and footer. Content remains provisional during the structure and visual-design stages.
+
+The visual direction uses large, calm neutral-colour panels paired with ensemble photography. Photo and colour panels currently meet at **straight edges**. Two curved treatments were tested and rejected: an oversized capsule treatment and a smaller rounded-overlap treatment. Do not reintroduce curved panel boundaries unless the user explicitly asks to revisit them.
+
+The Musicians page is a long, alternating sequence rather than a card table. Every photo/panel pair spans the full browser width: a natural-aspect-ratio portrait occupies 30% and a coloured biography panel occupies 70%, reversing sides for each musician. The portrait's exact 1707:2560 ratio determines the desktop row height and the panel stretches to match. On mobile, both become full-width stacked blocks of matching height. Member `image`, `image_alt`, `tone`, and `bio` values live in `src/_data/settings.yaml`. All four real portraits are connected; final biographies are still outstanding.
+
 **Stack:** [Eleventy](https://www.11ty.dev/) (static site generator) + [Decap CMS](https://decapcms.org/) (the `/admin` editor) + [Netlify](https://netlify.com) (free hosting + login for the editor).
 
 **Editing the site day to day is documented in [EDITING.md](EDITING.md)** — written for a non-technical editor, plus the Netlify setup steps.

@@ -6,6 +6,29 @@ Reference links:
 - https://www.cmp.cam.ac.uk/events/event/item/les-acolytes-presents-french-baroque-cantatas/
 - https://www.instagram.com/lesacolytesmusic/
 
+## Current real build (2026-07-31)
+
+The original single scrolling site described later in this file is now a prototype only. The real build remains on Eleventy and uses these routes:
+
+- `/` — split photograph/colour hero, an introductory Explore block, and large clickable section panels
+- `/about/`
+- `/musicians/`
+- `/whats-on/`
+- `/programmes/`
+- `/media/`
+- `/news/`
+- `/contact/`
+
+`src/_data/sections.yaml` contains the routes, navigation labels, provisional summaries, panel colours, and photographs. Eleventy pagination in `src/index.njk` generates the homepage and all seven internal routes. `src/_includes/base.njk` provides the shared sticky navigation and footer.
+
+The current design uses Playfair Display and Source Serif 4 with calm clay, sage, sand, blue, and rose panels. Photo and colour panels meet at **straight edges**. Two curve experiments were rejected: an oversized capsule-like treatment and a smaller rounded overlap with the photographs continuing behind the colour panels. Keep edges straight unless the user explicitly asks to revisit curves.
+
+The internal pages are structural first versions. About, Musicians, What's On, Media, and Contact reuse existing data. Programmes and News still contain holding copy. The Decap CMS fields have not yet been expanded for the new sections.
+
+The Musicians page now scrolls through one substantial, full-browser-width profile per row. Portraits occupy 30% of the desktop row and biographies 70%, alternating left/right. The exact 1707x2560 portrait ratio determines each row's height and the colour panel stretches to match, with no cropping or distortion. Mobile stacks equally tall, full-width portrait and biography blocks. All four individual portraits in `src/images/IndividualsGit/` are connected; final biographies are explicitly marked as forthcoming. Member fields are stored in `settings.yaml`; the CMS configuration still needs a later update for the new `image`, `image_alt`, `tone`, and `bio` fields.
+
+The old signature intro is inactive: `src/js/intro.js` remains in the repository, but the current layout does not load it and the matching markup/CSS were removed.
+
 ## Stack
 
 **Eleventy** (static site generator) + **Decap CMS** (`/admin` panel) + **Netlify** (hosting + Identity/Git Gateway for login).

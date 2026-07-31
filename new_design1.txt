@@ -1,0 +1,20 @@
+Structure:
+Landing page
+- Scrollable landing page
+- top section that visitors land on, to contain a large photo and a coloured panel occupying around half the width of the screen, with title text 'Les Acolytes'
+About the Ensemble 
+Musicians (individual bios)
+What's on (calendar and upcoming performances)
+Programmes (proposed sample programmes for promoter use)
+Media (photos and links to youtube)
+News - (blog like, more frequently updated section with news and developments)
+Contact us (email, also links to Instagram, facebook and youtube)
+ 
+ 
+ 
+ Design:
+ Large coloured panels with fairly calm and neutral tones
+ 
+ 
+ 
+ 

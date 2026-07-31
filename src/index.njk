@@ -1,124 +1,73 @@
 ---
 layout: base.njk
+pagination:
+  data: sections
+  size: 1
+  alias: section
+permalink: "{{ section.url }}index.html"
 ---
-<div class="intro" id="intro" aria-hidden="true">
-  <p class="intro-sig"><span>{{ settings.ensemble_name }}</span></p>
-  <p class="intro-sub">{{ settings.tagline }}</p>
-</div>
-
-<nav class="site-nav">
-  <div class="wrap">
-    <a class="brand" href="#top">{{ settings.ensemble_name }}</a>
-    <ul>
-      <li><a class="nav-link" href="#about">About</a></li>
-      <li><a class="nav-link" href="#events">Events</a></li>
-      <li><a class="nav-link" href="#media">Media</a></li>
-      <li><a class="nav-link" href="#contact">Contact</a></li>
-    </ul>
+{% if section.slug == "home" %}
+<section class="split-hero">
+  <div class="split-hero__image"><img src="{{ section.image }}" alt="{{ settings.ensemble_name }} performing together"></div>
+  <div class="split-hero__panel tone-{{ section.tone }}">
+    <p class="eyebrow">{{ section.eyebrow }}</p><h1>{{ settings.ensemble_name }}</h1>
+    <p class="hero-summary">{{ section.summary }}</p>
+    <a class="text-link" href="/about/">Discover the ensemble <span aria-hidden="true">&rarr;</span></a>
   </div>
-</nav>
-
-<header id="top" class="hero" style="background-image: url('{{ settings.hero_image }}');">
-  <div class="wrap">
-    <h1>{{ settings.ensemble_name }}</h1>
-    <p>{{ settings.tagline }}</p>
-  </div>
-</header>
-
-<section id="about">
-  <div class="wrap about-grid" data-reveal>
-    <img src="{{ settings.about_image }}" alt="{{ settings.ensemble_name }} group photo">
-    <div class="about-text">
-      <p class="section-heading">{{ settings.about_heading }}</p>
-      <h2 class="section-title">Who we are</h2>
-      {{ settings.about_text | safe }}
-      <ul class="members">
-        {% for member in settings.members %}
-        <li>
-          {{ member.name }}
-          <span class="role">{{ member.role }}</span>
-        </li>
-        {% endfor %}
-      </ul>
+</section>
+<section class="landing-intro wrap" data-reveal>
+  <p class="eyebrow">Explore</p><h2>Music, people, and performances</h2>
+  <p>Follow the ensemble from the concert platform to the stories, programmes, and people behind the music.</p>
+</section>
+<div class="section-panels">
+  {% for item in sections %}{% if item.slug != "home" %}
+  <a class="section-panel{% if loop.index0 % 2 == 0 %} section-panel--reverse{% endif %}" href="{{ item.url }}" data-reveal>
+    <div class="section-panel__image"><img src="{{ item.image }}" alt="" loading="lazy"></div>
+    <div class="section-panel__copy tone-{{ item.tone }}">
+      <p class="eyebrow">{{ item.eyebrow }}</p><h2>{{ item.title }}</h2><p>{{ item.summary }}</p>
+      <span class="text-link">Explore {{ item.nav_label }} <span aria-hidden="true">&rarr;</span></span>
     </div>
-  </div>
-</section>
-
-<section id="events">
-  <div class="wrap">
-    <p class="section-heading">What's on</p>
-    <h2 class="section-title">Upcoming events</h2>
-    {% if collections.events.length %}
-    <ul class="event-list" data-reveal="stagger">
-      {% for event in collections.events %}
-      <li class="event">
-        {% if event.data.image %}
-        <img class="event-image" src="{{ event.data.image }}" alt="{{ event.data.title }}">
-        {% endif %}
-        <div class="event-body">
-          <span class="event-date">{{ event.data.event_date | eventDate }}</span>
-          <h3 class="event-title">{{ event.data.title }}</h3>
-          <p class="event-venue">{{ event.data.venue }}</p>
-          {% if event.templateContent %}
-          <div class="event-desc">{{ event.templateContent | safe }}</div>
-          {% endif %}
-          {% if event.data.ticket_url %}
-          <a class="event-link" href="{{ event.data.ticket_url }}" target="_blank" rel="noopener">Details</a>
-          {% endif %}
-        </div>
-      </li>
-      {% endfor %}
-    </ul>
-    {% else %}
-    <p class="events-empty" data-reveal>No dates in the diary just now — follow us on <a href="{{ settings.instagram_url }}" target="_blank" rel="noopener">Instagram</a> to hear about the next one first.</p>
-    {% endif %}
-  </div>
-</section>
-
-<section id="media">
-  <div class="wrap">
-    <p class="section-heading">Watch & listen</p>
-    <h2 class="section-title">Media</h2>
-    <div class="video-grid" data-reveal="stagger">
-      {% for video in media.videos %}
-      <div>
-        <div class="video-frame">
-          {% if video.youtube_id %}
-          <iframe src="https://www.youtube.com/embed/{{ video.youtube_id }}" title="{{ video.title }}" allowfullscreen></iframe>
+  </a>
+  {% endif %}{% endfor %}
+</div>
+{% else %}
+<header class="page-hero tone-{{ section.tone }}">
+  <div class="page-hero__copy"><p class="eyebrow">{{ section.eyebrow }}</p><h1>{{ section.title }}</h1><p>{{ section.summary }}</p></div>
+  <img src="{{ section.image }}" alt="" class="page-hero__image">
+</header>
+<section class="page-content{% if section.slug == 'musicians' %} page-content--musicians{% else %} wrap{% endif %}">
+  {% if section.slug == "about" %}
+    <h2>About Les Acolytes</h2><div class="prose">{{ settings.about_text | safe }}</div>
+  {% elif section.slug == "musicians" %}
+    <div class="musician-list">
+      {% for member in settings.members %}
+      <article class="musician{% if loop.index0 % 2 == 1 %} musician--reverse{% endif %}">
+        <div class="musician__portrait">
+          {% if member.image %}
+          <img src="{{ member.image }}" alt="{{ member.image_alt or member.name }}">
           {% else %}
-          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#888;font-size:0.9rem;text-align:center;padding:1rem;">
-            Video coming soon
+          <div class="portrait-placeholder" aria-label="Portrait of {{ member.name }} to be added">
+            <span>Portrait coming soon</span>
           </div>
           {% endif %}
         </div>
-        <p class="event-venue">{{ video.title }}</p>
-      </div>
+        <div class="musician__bio tone-{{ member.tone or 'sand' }}">
+          <p class="eyebrow">{{ member.role }}</p>
+          <h2>{{ member.name }}</h2>
+          <div class="prose">{{ member.bio | safe }}</div>
+        </div>
+      </article>
       {% endfor %}
     </div>
-    <div class="gallery" data-reveal="stagger">
-      {% for photo in media.photos %}
-      <img src="{{ photo.src }}" alt="{{ photo.alt }}">
-      {% endfor %}
-    </div>
-  </div>
+  {% elif section.slug == "whats-on" %}
+    <h2>Upcoming performances</h2>
+    {% if collections.events.length %}<div class="event-list">{% for event in collections.events %}<article class="event-card"><p class="eyebrow">{{ event.data.event_date | eventDate }}</p><h2>{{ event.data.title }}</h2><p>{{ event.data.venue }}</p>{% if event.data.ticket_url %}<a class="text-link" href="{{ event.data.ticket_url }}">Event details <span aria-hidden="true">&rarr;</span></a>{% endif %}</article>{% endfor %}</div>{% else %}<p>New dates will be announced soon.</p>{% endif %}
+  {% elif section.slug == "media" %}
+    <div class="video-grid">{% for video in media.videos %}<div class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/{{ video.youtube_id }}" title="{{ video.title }}" allowfullscreen></iframe></div><h2>{{ video.title }}</h2></div>{% endfor %}</div>
+  {% elif section.slug == "contact" %}
+    <h2>Bookings and enquiries</h2><p>{{ settings.booking_note }}</p><p><a class="text-link" href="mailto:{{ settings.contact_email }}">{{ settings.contact_email }}</a></p><p><a class="text-link" href="{{ settings.instagram_url }}">Instagram <span aria-hidden="true">&rarr;</span></a></p>
+  {% else %}
+    <h2>Content coming next</h2><p>This page is now part of the site structure. Its full content and editing tools will be added in the next build stage.</p>
+  {% endif %}
 </section>
-
-<section id="contact">
-  <div class="wrap contact-grid" data-reveal>
-    <div>
-      <p class="section-heading">Get in touch</p>
-      <h2 class="section-title">Contact & bookings</h2>
-      <p class="contact-note">{{ settings.booking_note }}</p>
-    </div>
-    <ul class="contact-links">
-      <li><a href="mailto:{{ settings.contact_email }}">{{ settings.contact_email }}</a></li>
-      <li><a href="{{ settings.instagram_url }}" target="_blank" rel="noopener">Instagram</a></li>
-    </ul>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    &copy; {{ currentYear }} {{ settings.ensemble_name }}
-  </div>
-</footer>
+{% endif %}

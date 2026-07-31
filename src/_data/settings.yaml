@@ -15,12 +15,32 @@ about_image: "/images/stock/about.jpg"
 members:
   - name: "Andrew Taheny"
     role: "Violin"
+    image: "/images/IndividualsGit/Andrew-Amelia-Read-Photography-35.jpg"
+    image_alt: "Andrew Taheny"
+    tone: "clay"
+    bio: |
+      Biography coming soon.
   - name: "Billy Hui"
     role: "Flute"
+    image: "/images/IndividualsGit/Billy-Amelia%20Read%20Photography-24.jpg"
+    image_alt: "Billy Hui"
+    tone: "sage"
+    bio: |
+      Biography coming soon.
   - name: "Timothy Lin"
     role: "Viola da Gamba"
+    image: "/images/IndividualsGit/Tim-Amelia%20Read%20Photography-8.jpg"
+    image_alt: "Timothy Lin"
+    tone: "sand"
+    bio: |
+      Biography coming soon.
   - name: "Edward Campbell-Rowntree"
     role: "Harpsichord"
+    image: "/images/IndividualsGit/Edd-Amelia%20Read%20Photography-5.jpg"
+    image_alt: "Edward Campbell-Rowntree"
+    tone: "blue"
+    bio: |
+      Biography coming soon.
 contact_email: "hello@lesacolytes.example"
 instagram_url: "https://www.instagram.com/lesacolytesmusic/"
 booking_note: "For bookings and enquiries, get in touch by email or Instagram — we'd love to hear from you."
