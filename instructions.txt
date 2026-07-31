@@ -1,0 +1,7 @@
+. I am not a technical user. I  will not read source code to verify your work. After any change, give me  a 3-step manual test I can run in the browser.
+2. The context can be found in the markdown files  in this folder. CONTEXT.md is useful
+3. Before touching  files, list every file you plan to modify. If the list is >5, stop and propose splitting the task.
+4. If  3 consecutive fix attempts fail, STOP. Propose a. revert, b. different  approach.
+5. Before writing code for any non-trivial change, explain in plain english what you understand the goal is and what your planned approach is. Wait for me to confirm.
+6. After  each feature, update the  md files. Update README for someone who will read it in 3 months having forgotten everything. 
+7. If unsure of anything, stop and ask, never guess.
