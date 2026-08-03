@@ -2,7 +2,7 @@
 title: "Welcome to Our News"
 news_date: "2026-05-09"
 excerpt: "An introduction to the future home of ensemble announcements, rehearsal stories, and notes from upcoming projects."
-image: "/images/GROUPSHOTS/Amelia-Read-Photography-74.jpg"
+image: "/images/GROUPSHOTS/Amelia-Read-Photography-74-programmes.jpg"
 image_alt: "Les Acolytes gathered with their instruments"
 ---
 Welcome to the new Les Acolytes News section. This is placeholder text and can be replaced through the website editor.
