@@ -10,6 +10,8 @@ Navigation, routes, panel text, images, and colours are driven by `src/_data/sec
 
 The visual direction uses large, calm neutral-colour panels paired with ensemble photography. Photo and colour panels currently meet at **straight edges**. Two curved treatments were tested and rejected: an oversized capsule treatment and a smaller rounded-overlap treatment. Do not reintroduce curved panel boundaries unless the user explicitly asks to revisit them.
 
+The current typography has four deliberately separate roles: Major Mono Display for the visual `les Acolytes` wordmark, Bricolage Grotesque for expressive headings, Manrope for navigation, metadata, labels, buttons, and short panel summaries, and Spectral for substantive body copy. The mixed system keeps coloured title panels fully sans serif while longer biographies, descriptions, and articles retain an editorial reading voice.
+
 The Musicians page is a long, alternating sequence rather than a card table. Every photo/panel pair spans the full browser width: a natural-aspect-ratio portrait occupies 30% and a coloured biography panel occupies 70%, reversing sides for each musician. The portrait's exact 1707:2560 ratio determines the desktop row height and the panel stretches to match. On mobile, both become full-width stacked blocks of matching height. Member `image`, `image_alt`, `tone`, and `bio` values live in `src/_data/settings.yaml`. All four real portraits are connected; final biographies are still outstanding.
 
 **Stack:** [Eleventy](https://www.11ty.dev/) (static site generator) + [Decap CMS](https://decapcms.org/) (the `/admin` editor) + [Netlify](https://netlify.com) (free hosting + login for the editor).
