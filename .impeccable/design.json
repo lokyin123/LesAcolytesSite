@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-03T00:00:00+01:00",
+  "title": "Design System: Les Acolytes",
+  "extensions": {
+    "colorMeta": {
+      "ink": { "role": "primary", "displayName": "Ink", "canonical": "#292824", "tonalRamp": ["#262521", "#3f3e38", "#595850", "#737169", "#8e8c83", "#aaa89f", "#c7c5bc", "#e5e3db"] },
+      "paper": { "role": "neutral", "displayName": "Warm Paper", "canonical": "#f5f2ea", "tonalRamp": ["#2c2b28", "#484641", "#65625b", "#837f76", "#a19d92", "#c0bcb0", "#dedbd0", "#f8f5ed"] },
+      "soft-white": { "role": "neutral", "displayName": "Soft White", "canonical": "#fffdf8", "tonalRamp": ["#2d2c2a", "#4a4945", "#686660", "#87847c", "#a6a39a", "#c6c3ba", "#e6e3da", "#fffdf8"] },
+      "muted-text": { "role": "neutral", "displayName": "Muted Text", "canonical": "#68675f", "tonalRamp": ["#24231f", "#3b3a34", "#535149", "#6c6a61", "#86837a", "#a19e94", "#bdbab0", "#dad7ce"] },
+      "clay": { "role": "secondary", "displayName": "Clay", "canonical": "#c9a892", "tonalRamp": ["#36251d", "#513a2e", "#6d5040", "#896752", "#a67f66", "#c1987d", "#dab6a0", "#f2d7c7"] },
+      "sage": { "role": "secondary", "displayName": "Sage", "canonical": "#aeb7a4", "tonalRamp": ["#252a22", "#3b4337", "#535c4e", "#6c7666", "#87917f", "#a3ad9b", "#c0cab8", "#dee8d6"] },
+      "sand": { "role": "secondary", "displayName": "Sand", "canonical": "#d8c9ae", "tonalRamp": ["#332d22", "#4d4434", "#685d47", "#85775c", "#a39273", "#c0af8d", "#dacbae", "#f2e7ce"] },
+      "blue": { "role": "secondary", "displayName": "Blue", "canonical": "#a9b7ba", "tonalRamp": ["#222a2c", "#374245", "#4e5b5e", "#667578", "#7f9093", "#9aabad", "#b6c7c9", "#d4e4e5"] },
+      "rose": { "role": "secondary", "displayName": "Rose", "canonical": "#c7aaa5", "tonalRamp": ["#332423", "#4d3936", "#684f4b", "#856661", "#a27e78", "#bf9791", "#dab4ae", "#f1d4cf"] }
+    },
+    "typographyMeta": {
+      "wordmark": { "displayName": "Wordmark", "purpose": "Les Acolytes brand text only." },
+      "display": { "displayName": "Display", "purpose": "Expressive page and section headings." },
+      "body": { "displayName": "Editorial Body", "purpose": "Substantive biographies, descriptions, and articles." },
+      "interface": { "displayName": "Interface", "purpose": "Navigation, labels, metadata, buttons, and concise summaries." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "state", "value": "250ms ease", "purpose": "Button and compact control state changes." },
+      { "name": "title-response", "value": "350ms ease", "purpose": "Restrained title movement and underline growth." },
+      { "name": "image-response", "value": "600ms ease", "purpose": "Subtle image scaling on linked panels and cards." },
+      { "name": "mobile-navigation", "value": "550ms cubic-bezier(.22, 1, .36, 1)", "purpose": "Calm full-screen menu entrance and exit." }
+    ],
+    "breakpoints": [
+      { "name": "stack", "value": "900px" },
+      { "name": "mobile", "value": "650px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Link Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "A restrained rectangular action used for event details and equivalent destinations.",
+      "html": "<a class=\"ds-button-primary\" href=\"#\">View details <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-button-primary{display:inline-flex;align-items:center;justify-content:center;gap:.45em;padding:.8rem 1.2rem;border:1px solid var(--ink,#292824);color:var(--paper,#f5f2ea);background:var(--ink,#292824);font-family:var(--interface,Manrope,Arial,sans-serif);font-weight:550;text-decoration:none;transition:color .25s ease,background .25s ease}.ds-button-primary svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.ds-button-primary:hover,.ds-button-primary:focus-visible{color:var(--ink,#292824);background:transparent}.ds-button-primary:focus-visible{outline:2px solid var(--ink,#292824);outline-offset:3px}"
+    },
+    {
+      "name": "Circular Carousel Control",
+      "kind": "button",
+      "refersTo": "circular-control",
+      "description": "A compact circular control for carousels and modal navigation.",
+      "html": "<button class=\"ds-circle-control\" type=\"button\" aria-label=\"Next\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></button>",
+      "css": ".ds-circle-control{display:grid;width:3rem;height:3rem;place-items:center;padding:0;border:1px solid var(--ink,#292824);border-radius:50%;color:var(--ink,#292824);background:transparent;cursor:pointer;transition:color .25s ease,background .25s ease}.ds-circle-control svg{width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.ds-circle-control:hover,.ds-circle-control:focus-visible{color:var(--paper,#f5f2ea);background:var(--ink,#292824)}.ds-circle-control:focus-visible{outline:2px solid var(--ink,#292824);outline-offset:3px}"
+    },
+    {
+      "name": "Desktop Navigation",
+      "kind": "nav",
+      "description": "Compact Manrope navigation with a restrained current-page underline.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Example\"><a href=\"#\">About</a><a href=\"#\" aria-current=\"page\">Musicians</a><a href=\"#\">Media</a></nav>",
+      "css": ".ds-nav{display:flex;gap:2rem;padding:0 1.5rem;background:var(--paper,#f5f2ea)}.ds-nav a{padding:1.2rem 0;color:var(--muted,#68675f);font-family:var(--interface,Manrope,Arial,sans-serif);font-size:.95rem;font-weight:650;text-decoration:none}.ds-nav a:hover,.ds-nav a:focus-visible,.ds-nav a[aria-current=page]{color:var(--ink,#292824)}.ds-nav a[aria-current=page]{box-shadow:inset 0 -2px var(--ink,#292824)}.ds-nav a:focus-visible{outline:2px solid var(--ink,#292824);outline-offset:3px}"
+    },
+    {
+      "name": "Editorial News Card",
+      "kind": "card",
+      "description": "An image-led editorial card with generous copy spacing and muted supporting text.",
+      "html": "<article class=\"ds-news-card\"><div class=\"ds-news-image\"></div><div class=\"ds-news-copy\"><small>24 July 2026</small><h2>Behind the Music</h2><p>A closer look at the work behind a programme.</p></div></article>",
+      "css": ".ds-news-card{max-width:28rem;color:var(--ink,#292824);background:var(--soft-white,#fffdf8)}.ds-news-image{aspect-ratio:3/2;background:var(--sage,#aeb7a4)}.ds-news-copy{padding:2rem}.ds-news-copy small{font-family:var(--interface,Manrope,Arial,sans-serif);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}.ds-news-copy h2{margin:.7rem 0 1rem;font-family:var(--display,'Bricolage Grotesque',Arial,sans-serif);font-size:2rem;font-weight:500;line-height:1.08}.ds-news-copy p{margin:0;color:var(--muted,#68675f);font-family:var(--body,Spectral,Georgia,serif);font-size:1.05rem;line-height:1.6}"
+    },
+    {
+      "name": "Position Indicator",
+      "kind": "custom",
+      "description": "Dot indicators lengthen into a pill to mark the active carousel position.",
+      "html": "<div class=\"ds-indicators\" aria-label=\"Slides\"><button aria-label=\"Slide 1\"></button><button aria-current=\"true\" aria-label=\"Slide 2\"></button><button aria-label=\"Slide 3\"></button></div>",
+      "css": ".ds-indicators{display:flex;align-items:center;justify-content:center;gap:.65rem}.ds-indicators button{width:.55rem;height:.55rem;padding:0;border:0;border-radius:999px;background:var(--ink,#292824);opacity:.35;cursor:pointer;transition:width .3s ease,opacity .3s ease}.ds-indicators button[aria-current=true]{width:2rem;opacity:1}.ds-indicators button:focus-visible{outline:2px solid var(--ink,#292824);outline-offset:4px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Open Modern Rehearsal Room",
+    "overview": "The site should feel like entering a calm working space shared by serious musicians: open, direct, cultured, and welcoming. Its modernity belongs to the digital experience—clarity, sleek execution, smooth navigation, and responsive interaction—not to any claim about the ensemble's approach to performing the music. The incumbent system is editorial and image-led, professional without borrowing the visual or verbal habits of corporate and technology marketing.",
+    "keyCharacteristics": [
+      "Contemporary digital clarity paired with the openness of a rehearsal room.",
+      "Large photography, generous breathing room, and legible editorial hierarchy.",
+      "Professional, friendly, and musically serious without becoming sales-led.",
+      "Restrained interaction that communicates state clearly.",
+      "No corporate marketing language, technology-marketing tropes, or historical pastiche."
+    ],
+    "rules": [
+      { "name": "The Evidence Rule", "body": "Treat the current palette as evidence of the incumbent identity, not an immutable instruction; palette replacement requires user confirmation.", "section": "colors" },
+      { "name": "The Four Roles Rule", "body": "Keep wordmark, expressive heading, substantive reading, and interface typography distinct; do not collapse every role into one face.", "section": "typography" },
+      { "name": "The Flat-at-Rest Rule", "body": "Default surfaces remain visually quiet; interaction and hierarchy should not depend on ornamental drop shadows.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do preserve clear separation between wordmark, heading, reading, and interface typography.",
+      "Do use real ensemble photography and allow imagery enough scale to carry the experience.",
+      "Do make interaction smooth, purposeful, and visibly responsive while maintaining a calm tempo.",
+      "Do retain keyboard focus, semantic controls, meaningful alternative text, and reduced-motion behaviour.",
+      "Do treat the current palette and panel geometry as starting evidence that may be deliberately revisited with user confirmation."
+    ],
+    "donts": [
+      "Don't make the site resemble a corporate or technology marketing funnel.",
+      "Don't use historical pastiche to communicate the repertoire.",
+      "Don't imply that contemporary website execution describes or modernises the ensemble's musical approach.",
+      "Don't fabricate biographies, performance claims, reviews, or programme details.",
+      "Don't change design or content before explaining the proposal and receiving explicit user confirmation."
+    ]
+  }
+}

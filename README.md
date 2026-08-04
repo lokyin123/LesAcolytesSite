@@ -8,6 +8,8 @@ The original single-page design is now a prototype only. The real build keeps El
 
 Navigation, routes, panel text, images, and colours are driven by `src/_data/sections.yaml`. One paginated `src/index.njk` template generates the home page and all seven section routes; `src/_includes/base.njk` supplies their shared navigation and footer. Content remains provisional during the structure and visual-design stages.
 
+Directly beneath the homepage hero is a visitor-controlled two-slide highlight card. It shows the next upcoming performance first and the four social destinations second. When there is no upcoming event, the first slide becomes an invitation to explore recent performances. The card reads the existing Events and Site Settings data automatically, so editors do not maintain separate homepage content.
+
 The visual direction uses large, calm neutral-colour panels paired with ensemble photography. Photo and colour panels currently meet at **straight edges**. Two curved treatments were tested and rejected: an oversized capsule treatment and a smaller rounded-overlap treatment. Do not reintroduce curved panel boundaries unless the user explicitly asks to revisit them.
 
 The current typography has four deliberately separate roles: Major Mono Display for the visual `les Acolytes` wordmark, Bricolage Grotesque for expressive headings, Manrope for navigation, metadata, labels, buttons, and short panel summaries, and Spectral for substantive body copy. The mixed system keeps coloured title panels fully sans serif while longer biographies, descriptions, and articles retain an editorial reading voice.

@@ -33,6 +33,10 @@ Your concert listings. Click **+ Event** to add one, or click an existing event 
 
 **Past concerts are retained automatically.** Once an event's date has passed, it moves from Upcoming Performances into the Past Performances carousel the next time the site builds. You do not need to edit or delete it. Use **Past performance** only when an event needs to appear there before its stored date has passed; use **Delete entry** only when it should be removed from the site entirely.
 
+The homepage highlight card uses the earliest upcoming event automatically. You do not need to enter it anywhere else. If there are no upcoming events, the card instead shows the most recent past performance alongside an invitation to explore Media.
+
+To preview that no-upcoming-events fallback locally without changing any event, open **http://localhost:8080/?preview=fallback**. This preview switch works only on localhost and does not affect the deployed site.
+
 ### News
 
 News articles appear newest-first on the News page, and every article gets its own page. Click **+ News article** to add one.
