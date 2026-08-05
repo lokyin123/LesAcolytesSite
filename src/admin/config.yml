@@ -45,6 +45,14 @@ collections:
             fields:
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Role / Instrument", name: "role", widget: "string" }
+              - label: "Portraits"
+                name: "images"
+                label_singular: "portrait"
+                widget: "list"
+                summary: "{{fields.alt}}"
+                fields:
+                  - { label: "Photo", name: "src", widget: "image" }
+                  - { label: "Image Description", name: "alt", widget: "string", hint: "Describe this portrait for visitors using screen readers." }
           - { label: "Contact Email", name: "contact_email", widget: "string" }
           - { label: "Instagram URL", name: "instagram_url", widget: "string" }
           - { label: "Facebook URL", name: "facebook_url", widget: "string" }

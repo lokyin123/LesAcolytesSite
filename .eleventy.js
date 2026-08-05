@@ -1,4 +1,5 @@
 import * as yaml from "js-yaml";
+import fs from "node:fs";
 
 // Event dates arrive as a plain "YYYY-MM-DD" string from the CMS, but YAML
 // front matter may already have parsed one into a Date. Normalise to a string
@@ -18,6 +19,10 @@ const eventDateFormat = new Intl.DateTimeFormat("en-GB", {
 
 export default function (eleventyConfig) {
   eleventyConfig.addDataExtension("yaml,yml", (contents) => yaml.load(contents));
+
+  eleventyConfig.addCollection("siteSections", () =>
+    yaml.load(fs.readFileSync("src/_data/sections.yaml", "utf8")).filter((section) => section.slug !== "news")
+  );
 
   // The visual tweaks panel is rendered only by Eleventy's local preview
   // server. A normal production build never receives its markup or code.

@@ -61,6 +61,7 @@ h1{font-size:clamp(2.7rem,6.3vw,5.4rem)!important} h2{font-size:clamp(1.8rem,3.6
 .page-hero--about,.page-hero--news,.page-hero--musicians{height:max(560px,33.333vw);min-height:0;overflow:hidden}.page-hero--about .page-hero__image,.page-hero--news .page-hero__image,.page-hero--musicians .page-hero__image{min-height:0;object-position:center}
 .page-hero__copy p:last-child{max-width:35rem;font-size:1.317rem}.page-hero__image{width:100%;height:100%;min-height:500px;object-fit:cover}
 .page-content{padding-block:clamp(5rem,10vw,9rem)}.page-content>h2{max-width:16ch}.prose{max-width:48rem;font-size:1.342rem}
+.contact-heading{max-width:none!important;white-space:nowrap;font-size:clamp(1.35rem,3.6vw,3.6rem)}.contact-social{margin-top:clamp(4rem,8vw,7rem);padding-top:clamp(3rem,6vw,5rem);border-top:1px solid var(--line)}.contact-social h2{margin-bottom:1rem}.contact-social>p{max-width:34rem;color:var(--muted)}.contact-social .social-links{margin-top:2.5rem}
 .contact-email{display:flex;align-items:center;flex-wrap:wrap;gap:.65rem 1rem}.copy-email-fallback,.copy-email{font-family:var(--interface);font-size:1.15rem;font-weight:550;line-height:1.5}.copy-email{display:inline-flex;align-items:center;gap:.5rem;padding:.15rem 0;border:0;border-bottom:1px solid currentColor;color:var(--ink);background:transparent;cursor:pointer;transition:opacity .2s ease}.copy-email:hover{opacity:.65}.copy-email:focus-visible{outline:2px solid var(--ink);outline-offset:.3rem}.copy-email__icon{width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.copy-email-status{min-width:4.5rem;font-family:var(--interface);font-size:.889rem;font-weight:550}
 .event-list{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
 .event-card{min-height:260px;padding:clamp(2rem,5vw,4rem);background:var(--white)}
@@ -82,8 +83,13 @@ h1{font-size:clamp(2.7rem,6.3vw,5.4rem)!important} h2{font-size:clamp(1.8rem,3.6
 .musician{display:grid;width:100%;grid-template-columns:30% 70%;align-items:stretch}
 .musician--reverse{grid-template-columns:70% 30%}
 .musician--reverse .musician__portrait{order:2}
-.musician__portrait{position:relative;z-index:1;aspect-ratio:1707/2560}
-.musician__portrait img{width:100%;height:100%;object-fit:contain}
+.musician__portrait{position:relative;z-index:1;aspect-ratio:1707/2560;overflow:hidden;background:var(--paper)}
+.musician__portrait-track{display:flex;width:100%;height:100%;overflow-x:auto;scroll-behavior:smooth;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+.musician__portrait-track::-webkit-scrollbar{display:none}.musician__portrait-track:focus-visible{outline:3px solid var(--ink);outline-offset:-3px}
+.musician__portrait-slide{display:flex;flex:0 0 100%;height:100%;scroll-snap-align:center}.musician__portrait img{width:100%;height:100%;object-fit:contain}
+.musician__portrait-controls{position:absolute;right:clamp(.65rem,2vw,1.25rem);bottom:clamp(.65rem,2vw,1.25rem);display:flex;gap:.4rem}.musician__portrait-controls button{display:grid;width:2.55rem;height:2.55rem;place-items:center;padding:0;border:1px solid var(--ink);border-radius:50%;color:var(--ink);background:rgba(255,252,245,.86);font:inherit;line-height:0;cursor:pointer;transition:color .25s ease,background .25s ease,opacity .25s ease}.musician__portrait-controls button:hover,.musician__portrait-controls button:focus-visible{color:var(--paper);background:var(--ink)}.musician__portrait-controls button:disabled{opacity:.35;cursor:default}.musician__portrait-controls button:disabled:hover{color:var(--ink);background:rgba(255,252,245,.86)}
+.musician__portrait-indicators{position:absolute;bottom:1.55rem;left:clamp(.65rem,2vw,1.25rem);display:flex;align-items:center;gap:.45rem}.musician__portrait-indicators button{width:.45rem;height:.45rem;padding:0;border:0;border-radius:999px;background:var(--paper);opacity:.65;cursor:pointer;transition:width .3s ease,opacity .3s ease}.musician__portrait-indicators button[aria-current="true"]{width:1.55rem;opacity:1}.musician__portrait-indicators button:focus-visible{outline:2px solid var(--paper);outline-offset:4px}
+.musician__portrait img{height:100%;object-fit:contain}
 .portrait-placeholder{display:grid;min-height:440px;place-items:center;padding:2rem;background:rgba(41,40,36,.07);border:1px solid var(--line);color:var(--muted);text-align:center}
 .portrait-placeholder span{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase}
 .musician__bio{display:flex;min-width:0;flex-direction:column;justify-content:center;margin-left:-1px;padding:clamp(3rem,7vw,7rem)}
@@ -122,6 +128,7 @@ h1{font-size:clamp(2.7rem,6.3vw,5.4rem)!important} h2{font-size:clamp(1.8rem,3.6
 .news-card__image img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}.news-card:hover .news-card__image img{transform:scale(1.025)}
 .news-card__copy{padding:clamp(1.75rem,4vw,3rem)}.news-card__copy h2{font-size:clamp(1.7rem,3vw,2.7rem)}
 .news-card__copy h2 a{text-decoration:none}.news-card__copy>p:not(.eyebrow){color:var(--muted)}
+.news-pagination{display:flex;justify-content:center;gap:.6rem;margin-top:clamp(3rem,6vw,5rem)}.news-pagination a{display:grid;min-width:2.8rem;height:2.8rem;place-items:center;padding:.4rem .7rem;border:1px solid var(--ink);border-radius:50%;color:var(--ink);font-family:var(--interface);font-weight:550;text-decoration:none;transition:color .25s ease,background .25s ease}.news-pagination a:hover,.news-pagination a:focus-visible,.news-pagination a[aria-current="page"]{color:var(--paper);background:var(--ink)}
 .article-layout{display:grid;grid-template-areas:"visual heading" "visual body";grid-template-columns:minmax(0,44%) minmax(0,56%);grid-template-rows:auto 1fr;align-items:start;background:var(--paper)}
 .article-layout--no-image{display:block}.article-visual{position:sticky;top:76px;grid-area:visual;height:calc(100vh - 76px);overflow:hidden;background:var(--paper)}
 .article-image{width:100%;height:100%;object-fit:cover;object-position:center}

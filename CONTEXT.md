@@ -10,7 +10,7 @@ Reference links:
 
 The News section is now a blog-style Markdown collection. `/news/` lists articles newest-first, each file in `src/content/news/` generates an individual page, and Decap has fields for creating and editing posts. Three clearly labelled placeholder articles demonstrate the layout.
 
-The Media video list currently contains the genuine Marin Marais recording (`KMH-7NeWgVA`), Jean-Féry Rebel's *Les Caractères de la Danse* (`E3unHrIWtPE`), and François Couperin's *La Paix du Parnasse: Sonade en Trio* (`1fkmiLUUnKk`). The unrelated Marin Marais E minor Passacaille was removed.
+The Media video list currently opens with Jean-Féry Rebel's *Les Caractères de la Danse* (`E3unHrIWtPE`), followed by the genuine Marin Marais recording (`KMH-7NeWgVA`) and François Couperin's *La Paix du Parnasse: Sonade en Trio* (`1fkmiLUUnKk`). The unrelated Marin Marais E minor Passacaille was removed.
 
 What's On now separates upcoming and past performances. Upcoming events use a vertical chronological layout with time, description, venue, and button-style details links; external URLs open in a new tab, while future internal URLs remain in the same tab. Past performances retain the quieter card grid. Events move to Past automatically after their date, or can be placed there early with the CMS `past_performance` switch. The placeholder concert was removed, the Cambridge cantatas event is explicitly classified as past, and two BREMF performances on 10 October 2026 are the current upcoming entries.
 
@@ -32,7 +32,7 @@ Gallery thumbnails are buttons with a subtle enlargement on hover and keyboard f
 
 Individual news articles use two columns on computers and tablets. The featured photograph fills a sticky, viewport-height frame on the left with conservative centre cropping, avoiding blank space beneath shorter images. The right column has a compact sand-coloured heading containing the date, title, and summary, followed by the article body on a beige panel. Mobile orders these as heading, complete natural-ratio image, then body text for easier scrolling. This sticky/cropped desktop treatment is a trial and should be easy to revert if another approach is preferred.
 
-The original single scrolling site described later in this file is now a prototype only. The real build remains on Eleventy and uses these routes:
+The News archive is prepared for numbered pages of six articles each. The first page is `/news/`; additional pages use stable URLs such as `/news/page/2/` when the collection grows beyond six posts. The original single scrolling site described later in this file is now a prototype only. The real build remains on Eleventy and uses these routes:
 
 - `/` — split photograph/colour hero, an introductory Explore block, and large clickable section panels
 - `/about/`
@@ -63,7 +63,7 @@ The footer repeats “Find us on” in Bricolage Grotesque beside the social ico
 
 The “Find us on” slide also says “Questions? Get in touch with us.” and includes a Contact us button. Contact retains the same typographic treatment as the other navigation links; the contextual card provides the emphasis instead.
 
-The public contact address is `hello@lesacolytes.uk`. It is displayed as contact information on the homepage Contact tile and as a copy-on-click control on the Contact page; a successful copy announces “Copied”, while failure restores selectable text. The CMS Site Settings field remains the single source for both locations.
+The public contact address is `hello@lesacolytes.uk`. It is displayed as contact information on the homepage Contact tile and as a copy-on-click control on the Contact page; a successful copy announces “Copied”, while failure restores selectable text. The Contact page places bookings and enquiries above the email and a four-destination Find us on section. The CMS Site Settings fields remain the single source for these locations.
 
 The homepage hero does not show the small “French Baroque ensemble” eyebrow. Its visual title is permanently split across two lines, and its introduction describes the musicians as a chamber ensemble performing on historical instruments with a shared passion for French Baroque music and its surrounding repertoire. Its “Discover the ensemble” link points to `#find-us`, scrolling to the two-slide highlight carousel directly below the hero rather than navigating to the About page. The About tile and navigation route remain unchanged.
 
@@ -77,7 +77,7 @@ Below 650px, the desktop navigation bar is replaced by a labelled Menu button. I
 
 The internal pages remain at different stages of completion. About, Musicians, What's On, Media, and Contact reuse existing data, while Programmes still contains holding copy. News is now a CMS-managed Markdown collection with an index and individual article pages; its three current articles are clearly labelled placeholders for testing the finished post structure. Decap fields cover events, news, media, musicians, and the site's social links, although some final text and imagery still need replacing through the CMS.
 
-The Musicians page now scrolls through one substantial, full-browser-width profile per row. Portraits occupy 30% of the desktop row and biographies 70%, alternating left/right. The exact 1707x2560 portrait ratio determines each row's height and the colour panel stretches to match, with no cropping or distortion. Mobile stacks equally tall, full-width portrait and biography blocks. All four individual portraits in `src/images/IndividualsGit/` are connected; final biographies are explicitly marked as forthcoming. Member fields are stored in `settings.yaml`; the CMS configuration still needs a later update for the new `image`, `image_alt`, `tone`, and `bio` fields.
+The Musicians page now scrolls through one substantial, full-browser-width profile per row. Portraits occupy 30% of the desktop row and biographies 70%, alternating left/right. Each musician has a CMS-managed `images` list with visitor-controlled previous/next controls, position indicators, keyboard access, and swipe/scroll support. The exact 1707x2560 portrait ratio determines each row's height and the colour panel stretches to match, with no cropping or distortion. Mobile stacks equally tall, full-width portrait and biography blocks. Two individual portraits are currently connected for each of the four musicians; final biographies are explicitly marked as forthcoming. Member portrait fields are stored in `settings.yaml` and exposed through the Decap CMS.
 
 The old signature intro is inactive: `src/js/intro.js` remains in the repository, but the current layout does not load it and the matching markup/CSS were removed.
 

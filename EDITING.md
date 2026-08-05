@@ -16,7 +16,7 @@ The editor has three sections down the left-hand side.
 
 Everything that appears once on the site: the ensemble name and tagline, the big photo at the top, the About text and its photo, the list of members, contact details, and the Instagram, Facebook, Continuo Connect, and YouTube links.
 
-The **Members** list has an **Add member** button, an **×** on each row to remove someone, and a handle (**=**) to drag people into a different order.
+The **Members** list has an **Add member** button, an **×** on each row to remove someone, and a handle (**=**) to drag people into a different order. Each member also has a **Portraits** list: add or remove photos, drag the **=** handle to reorder them, and provide a short **Image Description** for each portrait.
 
 ### Events
 
@@ -39,12 +39,14 @@ To preview that no-upcoming-events fallback locally without changing any event, 
 
 ### News
 
-News articles appear newest-first on the News page, and every article gets its own page. Click **+ News article** to add one.
+News articles appear newest-first on the News page, and every article gets its own page. Up to six articles appear on each archive page; once there are more, numbered links lead to stable pages such as `/news/page/2/`. Click **+ News article** to add one.
 
 - **Publication Date** controls the order on the News page.
 - **Summary** is the short introduction shown on the News page.
 - **Featured Image** and **Image Description** are optional, but the description should briefly say what the image shows for visually impaired visitors.
 - **Article** is the full story. You can add headings, links, and paragraphs with the editing toolbar.
+
+The Contact page shows bookings and enquiries first, then the copyable contact email and the Instagram, Facebook, Continuo Connect, and YouTube links from Site Settings.
 
 ### Media
 

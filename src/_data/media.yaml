@@ -1,10 +1,10 @@
 videos:
-  - composer: "Marin Marais"
-    piece: "Suite à 3 en Sol Mineur (VIII Plainte – IX Passacaille)"
-    youtube_id: "KMH-7NeWgVA"
   - composer: "Jean-Féry Rebel"
     piece: "Les Caractères de la Danse"
     youtube_id: "E3unHrIWtPE"
+  - composer: "Marin Marais"
+    piece: "Suite à 3 en Sol Mineur (VIII Plainte – IX Passacaille)"
+    youtube_id: "KMH-7NeWgVA"
   - composer: "François Couperin"
     piece: "La Paix du Parnasse: Sonade en Trio"
     youtube_id: "1fkmiLUUnKk"
