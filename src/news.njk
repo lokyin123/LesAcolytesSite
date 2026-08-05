@@ -7,16 +7,13 @@ pagination:
 permalink: "news/{% if pagination.pageNumber %}page/{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
 section:
   slug: news
-  title: News
-  nav_label: News
-  summary: "Read the latest news, project announcements, and developments from Les Acolytes."
 ---
-<header class="page-hero page-hero--news tone-sand">
-  <div class="page-hero__copy"><p class="eyebrow">From the ensemble</p><h1>News</h1><p>{{ section.summary }}</p></div>
-  <img src="/images/GROUPSHOTS/Amelia-Read-Photography-86-news.jpg" alt="" class="page-hero__image">
+<header class="page-hero page-hero--news tone-{{ pages.news.tone }}">
+  <div class="page-hero__copy"><p class="eyebrow">{{ pages.news.eyebrow }}</p><h1>{{ pages.news.title }}</h1><p>{{ pages.news.summary }}</p></div>
+  <img src="{{ pages.news.image }}" alt="" class="page-hero__image">
 </header>
 <section class="page-content wrap">
-  <div class="news-heading"><h2>Latest stories</h2><p>Updates, announcements, and notes from the ensemble.</p></div>
+  <div class="news-heading"><h2>{{ pages.news.listing_heading }}</h2><p>{{ pages.news.listing_intro }}</p></div>
   {% if posts.length %}
   <div class="news-grid">
     {% for post in posts %}

@@ -43,7 +43,7 @@ The News archive is prepared for numbered pages of six articles each. The first 
 - `/news/`
 - `/contact/`
 
-`src/_data/sections.yaml` contains the routes, navigation labels, provisional summaries, panel colours, and photographs. Eleventy pagination in `src/index.njk` generates the homepage and all seven internal routes. `src/_includes/base.njk` provides the shared sticky navigation and footer.
+`src/_data/sections.yaml` contains fixed routes only. Editable navigation labels, headings, summaries, colours, photographs, page copy, contact details, social links, and musician biographies live in `src/_data/pages/*.yaml`. Eleventy pagination in `src/index.njk` generates the homepage and all seven internal routes. `src/_includes/base.njk` provides the shared sticky navigation and footer.
 
 The current typography uses four clearly separated roles. Major Mono Display is reserved for the visual `les Acolytes` wordmark in the header, homepage hero, and footer; its accessible name remains the conventional “Les Acolytes”. Bricolage Grotesque supplies expressive headings. Manrope supplies navigation, eyebrows, metadata, buttons, event facts, composer labels, and short summaries on coloured title/navigation panels. Spectral supplies larger substantive body copy, including biographies, event descriptions, and articles. The wordmark has a subtle context-specific CSS stroke in the header and footer, but none in the large hero because the outline became visible there.
 
@@ -63,7 +63,7 @@ The footer repeats “Find us on” in Bricolage Grotesque beside the social ico
 
 The “Find us on” slide also says “Questions? Get in touch with us.” and includes a Contact us button. Contact retains the same typographic treatment as the other navigation links; the contextual card provides the emphasis instead.
 
-The public contact address is `hello@lesacolytes.uk`. It is displayed as contact information on the homepage Contact tile and as a copy-on-click control on the Contact page; a successful copy announces “Copied”, while failure restores selectable text. The Contact page places bookings and enquiries above the email and a four-destination Find us on section. The CMS Site Settings fields remain the single source for these locations.
+The public contact address is `hello@lesacolytes.uk`. It is displayed as contact information on the homepage Contact tile and as a copy-on-click control on the Contact page; a successful copy announces “Copied”, while failure restores selectable text. The Contact page places bookings and enquiries above the email and a four-destination Find us on section. The CMS Contact page entry is the single source for these locations.
 
 The homepage hero does not show the small “French Baroque ensemble” eyebrow. Its visual title is permanently split across two lines, and its introduction describes the musicians as a chamber ensemble performing on historical instruments with a shared passion for French Baroque music and its surrounding repertoire. Its “Discover the ensemble” link points to `#find-us`, scrolling to the two-slide highlight carousel directly below the hero rather than navigating to the About page. The About tile and navigation route remain unchanged.
 
@@ -77,7 +77,7 @@ Below 650px, the desktop navigation bar is replaced by a labelled Menu button. I
 
 The internal pages remain at different stages of completion. About, Musicians, What's On, Media, and Contact reuse existing data, while Programmes still contains holding copy. News is now a CMS-managed Markdown collection with an index and individual article pages; its three current articles are clearly labelled placeholders for testing the finished post structure. Decap fields cover events, news, media, musicians, and the site's social links, although some final text and imagery still need replacing through the CMS.
 
-The Musicians page now scrolls through one substantial, full-browser-width profile per row. Portraits occupy 30% of the desktop row and biographies 70%, alternating left/right. Each musician has a CMS-managed `images` list with visitor-controlled previous/next controls, position indicators, keyboard access, and swipe/scroll support. The exact 1707x2560 portrait ratio determines each row's height and the colour panel stretches to match, with no cropping or distortion. Mobile stacks equally tall, full-width portrait and biography blocks. Two individual portraits are currently connected for each of the four musicians; final biographies are explicitly marked as forthcoming. Member portrait fields are stored in `settings.yaml` and exposed through the Decap CMS.
+The Musicians page now scrolls through one substantial, full-browser-width profile per row. Portraits occupy 30% of the desktop row and biographies 70%, alternating left/right. Each musician has CMS-managed editable `bio` text and an `images` list with visitor-controlled previous/next controls, position indicators, keyboard access, and swipe/scroll support. The exact 1707x2560 portrait ratio determines each row's height and the colour panel stretches to match, with no cropping or distortion. Mobile stacks equally tall, full-width portrait and biography blocks. Musician fields are stored in `src/_data/pages/musicians.yaml` and exposed through the Decap CMS.
 
 The old signature intro is inactive: `src/js/intro.js` remains in the repository, but the current layout does not load it and the matching markup/CSS were removed.
 
@@ -95,8 +95,9 @@ Running `npm start` and opening `http://localhost:8080/?tweaks` activates a deve
 
 ## Structure
 
-- `src/_data/settings.yaml` — global content (ensemble name, tagline, bio, member list, hero/about images, contact email, Instagram URL) — edited via Decap's "Site Settings" file collection.
-- `src/content/events/*.md` — one markdown file per concert — edited via Decap's "Events" folder collection. Seeded with the real Cambridge cantatas event plus one placeholder event. Front matter is `title`, `event_date`, `venue`, `ticket_url`, `image`, body = description.
+- `src/_data/pages/*.yaml` — page-organised editorial content, including all headings, subtitles, body text, photos, contact/social links, and musician bios — edited via Decap's "Pages" file collection.
+- `src/_data/settings.yaml` — global ensemble name and tagline — edited via Decap's "Site Settings" file collection.
+- `src/content/events/*.md` — one markdown file per concert — edited via Decap's "Events" folder collection. Seeded with the real Cambridge cantatas event plus one placeholder event. Front matter is `title`, `event_date`, `venue`, `ticket_url`, `past_performance`, body = description.
 - `src/_data/media.yaml` — YouTube video IDs + gallery photo list — edited via Decap's "Media" file collection.
 - `src/images/uploads/` — where photos uploaded through the CMS land; `src/images/stock/` has free Pexels stock photos (chamber music/baroque instruments) standing in for real ensemble photos — swap for real photos via the CMS when available.
 - `src/js/reveal.js` — IntersectionObserver scroll-fade-in effect (staggered for lists/grids), respects `prefers-reduced-motion`.
@@ -128,7 +129,7 @@ The Decap panel existed from the start but had never been opened by anyone, whic
 - **Bug found and fixed:** the Date field used `widget: "date"`, which Decap 3 removed — it rendered "No control for widget 'date'", so an event's date was never editable. It's `widget: "datetime"` with `time_format: false`.
 - **Event schema changed.** `date` + `display_date` (same date entered twice, in two formats, guaranteed to drift) collapsed into a single `event_date`, formatted for display by the `eventDate` filter in `.eleventy.js`. Renamed off `date` because Eleventy treats that as reserved page metadata. `isoDate()` there normalises both the quoted string the old files used and the unquoted YAML date the CMS writes — both paths are exercised and work.
 - **Past events auto-hide** via the collection filter in `.eleventy.js`. Caveat: "today" is *build time*, so an event drops off at the next build, not at midnight. Every CMS save triggers a build, so it self-corrects in practice; exact behaviour would need a daily scheduled build hook on Netlify.
-- **Event image + description now render** (`src/index.njk`, `.event*` rules in `style.css`). They were CMS fields the site ignored entirely.
+- **Event descriptions render** (`src/index.njk`, `.event*` rules in `style.css`). The obsolete Event Image CMS field was removed because event photos are no longer displayed.
 - **Identity widget added to `base.njk`.** Invite and password-recovery emails land on the homepage with a `#token`, not on `/admin/` — without the widget there, invite links silently do nothing. The signature intro already skips when a hash is present, so the two don't collide.
 - Deliberately **not** done: editorial workflow (draft/review branches — too much concept for one editor), a styled preview pane (Decap's unstyled default is turned off via `editor: preview: false`), `logo_url` (Decap renders it full-size; the hero photo swamped the login screen — needs a proper small wordmark), and image optimisation on upload (phone photos will bloat the repo; `eleventy-img` is the eventual answer).
 - Dead `src/_redirects` passthrough removed from `.eleventy.js` — the file never existed.

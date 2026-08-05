@@ -32,11 +32,53 @@ collections:
         file: "src/_data/settings.yaml"
         fields:
           - { label: "Ensemble Name", name: "ensemble_name", widget: "string" }
-          - { label: "Tagline", name: "tagline", widget: "string", hint: "One short line — shown under the name on the opening screen and the main photo." }
-          - { label: "Hero Photo", name: "hero_image", widget: "image", hint: "The big photo at the top of the site. A wide (landscape) photo works best." }
-          - { label: "About Heading (small label)", name: "about_heading", widget: "string" }
-          - { label: "About Text", name: "about_text", widget: "text" }
-          - { label: "About Photo", name: "about_image", widget: "image" }
+          - { label: "Tagline", name: "tagline", widget: "string", hint: "Shared metadata fallback used when a page does not provide its own summary." }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "home"
+        label: "Home"
+        file: "src/_data/pages/home.yaml"
+        fields:
+          - { label: "Navigation label", name: "nav_label", widget: "string" }
+          - { label: "Page title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "summary", widget: "text" }
+          - { label: "Hero image", name: "image", widget: "image" }
+          - { label: "Discover link label", name: "discover_label", widget: "string" }
+          - { label: "Performance heading", name: "performance_heading", widget: "string" }
+          - { label: "Performance introduction", name: "performance_intro", widget: "string" }
+          - { label: "Performance button", name: "performance_button", widget: "string" }
+          - { label: "Fallback heading", name: "fallback_heading", widget: "string" }
+          - { label: "Fallback button", name: "fallback_button", widget: "string" }
+          - { label: "Fallback empty text", name: "fallback_empty_text", widget: "text" }
+          - { label: "Fallback empty button", name: "fallback_empty_button", widget: "string" }
+          - { label: "Media invitation heading", name: "media_invitation_heading", widget: "string" }
+          - { label: "Media invitation button", name: "media_invitation_button", widget: "string" }
+          - { label: "Social heading", name: "social_heading", widget: "string" }
+          - { label: "Social introduction", name: "social_intro", widget: "text" }
+          - { label: "Contact prompt", name: "social_contact_prompt", widget: "string" }
+          - { label: "Contact button", name: "social_contact_button", widget: "string" }
+      - name: "about"
+        label: "About"
+        file: "src/_data/pages/about.yaml"
+        fields:
+          - { label: "Navigation label", name: "nav_label", widget: "string" }
+          - { label: "Page title", name: "title", widget: "string" }
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Subtitle", name: "summary", widget: "text" }
+          - { label: "Hero image", name: "image", widget: "image" }
+          - { label: "Body heading", name: "content_heading", widget: "string" }
+          - { label: "Body text", name: "content_body", widget: "markdown" }
+      - name: "musicians"
+        label: "Musicians"
+        file: "src/_data/pages/musicians.yaml"
+        fields:
+          - { label: "Navigation label", name: "nav_label", widget: "string" }
+          - { label: "Page title", name: "title", widget: "string" }
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Subtitle", name: "summary", widget: "text" }
+          - { label: "Hero image", name: "image", widget: "image" }
           - label: "Members"
             name: "members"
             label_singular: "member"
@@ -45,6 +87,8 @@ collections:
             fields:
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Role / Instrument", name: "role", widget: "string" }
+              - { label: "Biography", name: "bio", widget: "markdown" }
+              - { label: "Biography panel colour", name: "tone", widget: "select", options: ["clay", "sage", "sand", "blue", "rose"] }
               - label: "Portraits"
                 name: "images"
                 label_singular: "portrait"
@@ -52,13 +96,81 @@ collections:
                 summary: "{{fields.alt}}"
                 fields:
                   - { label: "Photo", name: "src", widget: "image" }
-                  - { label: "Image Description", name: "alt", widget: "string", hint: "Describe this portrait for visitors using screen readers." }
-          - { label: "Contact Email", name: "contact_email", widget: "string" }
-          - { label: "Instagram URL", name: "instagram_url", widget: "string" }
-          - { label: "Facebook URL", name: "facebook_url", widget: "string" }
-          - { label: "Continuo Connect URL", name: "continuo_url", widget: "string" }
-          - { label: "YouTube URL", name: "youtube_url", widget: "string" }
-          - { label: "Booking Note", name: "booking_note", widget: "text" }
+                  - { label: "Image Description", name: "alt", widget: "string" }
+      - name: "whats-on"
+        label: "What's On"
+        file: "src/_data/pages/whats-on.yaml"
+        fields:
+          - { label: "Navigation label", name: "nav_label", widget: "string" }
+          - { label: "Page title", name: "title", widget: "string" }
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Subtitle", name: "summary", widget: "text" }
+          - { label: "Hero image", name: "image", widget: "image" }
+          - { label: "Upcoming performances heading", name: "upcoming_heading", widget: "string" }
+          - { label: "Past performances heading", name: "past_heading", widget: "string" }
+          - { label: "Event details button", name: "details_button", widget: "string" }
+          - { label: "Past media eyebrow", name: "past_media_eyebrow", widget: "string" }
+          - { label: "Past media heading", name: "past_media_heading", widget: "string" }
+          - { label: "Past media text", name: "past_media_text", widget: "text" }
+          - { label: "Past media button", name: "past_media_button", widget: "string" }
+          - { label: "No upcoming events text", name: "empty_text", widget: "text" }
+      - name: "programmes"
+        label: "Programmes"
+        file: "src/_data/pages/programmes.yaml"
+        fields:
+          - { label: "Navigation label", name: "nav_label", widget: "string" }
+          - { label: "Page title", name: "title", widget: "string" }
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Subtitle", name: "summary", widget: "text" }
+          - { label: "Hero image", name: "image", widget: "image" }
+          - { label: "Body heading", name: "content_heading", widget: "string" }
+          - { label: "Body text", name: "content_body", widget: "markdown" }
+      - name: "media"
+        label: "Media"
+        file: "src/_data/pages/media.yaml"
+        fields:
+          - { label: "Navigation label", name: "nav_label", widget: "string" }
+          - { label: "Page title", name: "title", widget: "string" }
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Subtitle", name: "summary", widget: "text" }
+          - { label: "Hero image", name: "image", widget: "image" }
+          - { label: "Recordings heading", name: "recordings_heading", widget: "string" }
+          - { label: "Gallery eyebrow", name: "gallery_eyebrow", widget: "string" }
+          - { label: "Gallery heading", name: "gallery_heading", widget: "string" }
+      - name: "news-page"
+        label: "News page"
+        file: "src/_data/pages/news.yaml"
+        fields:
+          - { label: "Navigation label", name: "nav_label", widget: "string" }
+          - { label: "Page title", name: "title", widget: "string" }
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Subtitle", name: "summary", widget: "text" }
+          - { label: "Hero image", name: "image", widget: "image" }
+          - { label: "Listing heading", name: "listing_heading", widget: "string" }
+          - { label: "Listing introduction", name: "listing_intro", widget: "text" }
+      - name: "contact"
+        label: "Contact"
+        file: "src/_data/pages/contact.yaml"
+        fields:
+          - { label: "Navigation label", name: "nav_label", widget: "string" }
+          - { label: "Page title", name: "title", widget: "string" }
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Subtitle", name: "summary", widget: "text" }
+          - { label: "Hero image", name: "image", widget: "image" }
+          - { label: "Bookings heading", name: "heading", widget: "string" }
+          - { label: "Bookings body", name: "body", widget: "text" }
+          - { label: "Contact email", name: "email", widget: "string" }
+          - { label: "Social heading", name: "social_heading", widget: "string" }
+          - { label: "Social introduction", name: "social_intro", widget: "text" }
+          - label: "Social links"
+            name: "social_links"
+            widget: "list"
+            summary: "{{fields.label}}"
+            fields:
+              - { label: "Key", name: "key", widget: "hidden" }
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Detail", name: "detail", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
 
   - name: "events"
     label: "Events"
@@ -90,7 +202,6 @@ collections:
       - { label: "Past performance", name: "past_performance", widget: "boolean", default: false, required: false, hint: "Turn this on to place the event under Past Performances even if its date has not passed." }
       - { label: "Venue", name: "venue", widget: "string" }
       - { label: "Ticket / Info Link", name: "ticket_url", widget: "string", required: false, hint: "Paste the full web address for tickets or details. Leave blank if there isn't one yet." }
-      - { label: "Event Image", name: "image", widget: "image", required: false, hint: "Optional. Shown beside the event on the site." }
       - { label: "Description", name: "body", widget: "markdown", required: false, hint: "Programme notes, repertoire, anything worth saying about the concert." }
 
   - name: "news"

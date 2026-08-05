@@ -1,0 +1,47 @@
+nav_label: "Musicians"
+title: "Musicians"
+eyebrow: "Meet the ensemble"
+summary: "Meet the individual performers who bring each Les Acolytes programme to life."
+image: "/images/GROUPSHOTS/Amelia-Read-Photography-10-whats-on.jpg"
+tone: "sand"
+members:
+  - name: "Andrew Taheny"
+    role: "Violin"
+    images:
+      - src: "/images/IndividualsGit/Andrew-Amelia-Read-Photography-35.jpg"
+        alt: "Andrew Taheny"
+      - src: "/images/IndividualsGit/Andrew2-Amelia%20Read%20Photography-64.jpg"
+        alt: "Andrew Taheny"
+    tone: "clay"
+    bio: |
+      Biography coming soon.
+  - name: "Billy Hui"
+    role: "Flute"
+    images:
+      - src: "/images/IndividualsGit/Billy-Amelia%20Read%20Photography-24.jpg"
+        alt: "Billy Hui"
+      - src: "/images/IndividualsGit/Billy-2-Amelia%20Read%20Photography-27.jpg"
+        alt: "Billy Hui"
+    tone: "blue"
+    bio: |
+      Biography coming soon.
+  - name: "Timothy Lin"
+    role: "Viola da Gamba"
+    images:
+      - src: "/images/IndividualsGit/Tim-Amelia%20Read%20Photography-8.jpg"
+        alt: "Timothy Lin"
+      - src: "/images/IndividualsGit/tim2-Amelia%20Read%20Photography-18.jpg"
+        alt: "Timothy Lin"
+    tone: "sand"
+    bio: |
+      Biography coming soon.
+  - name: "Edward Campbell-Rowntree"
+    role: "Harpsichord"
+    images:
+      - src: "/images/IndividualsGit/Edd-Amelia%20Read%20Photography-5.jpg"
+        alt: "Edward Campbell-Rowntree"
+      - src: "/images/IndividualsGit/Edd2-Amelia%20Read%20Photography-84.jpg"
+        alt: "Edward Campbell-Rowntree"
+    tone: "sage"
+    bio: |
+      Biography coming soon.

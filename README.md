@@ -6,9 +6,9 @@ A simple website with a built-in editor so non-technical people can update text,
 
 The original single-page design is now a prototype only. The real build keeps Eleventy and uses a multi-page structure. The landing page at `/` has a split-image hero and clickable panels leading to `/about/`, `/musicians/`, `/whats-on/`, `/programmes/`, `/media/`, `/news/`, and `/contact/`.
 
-Navigation, routes, panel text, images, and colours are driven by `src/_data/sections.yaml`. One paginated `src/index.njk` template generates the home page and all seven section routes; `src/_includes/base.njk` supplies their shared navigation and footer. Content remains provisional during the structure and visual-design stages.
+Fixed routes live in `src/_data/sections.yaml`; editable page copy, photos, colours, contact details, and musician biographies live in `src/_data/pages/*.yaml`. One paginated `src/index.njk` template generates the homepage and section routes; `src/_includes/base.njk` supplies their shared navigation and footer. Content remains provisional during the structure and visual-design stages.
 
-Directly beneath the homepage hero is a visitor-controlled two-slide highlight card. It shows the next upcoming performance first and the four social destinations second. When there is no upcoming event, the first slide becomes an invitation to explore recent performances. The card reads the existing Events and Site Settings data automatically, so editors do not maintain separate homepage content.
+Directly beneath the homepage hero is a visitor-controlled two-slide highlight card. It shows the next upcoming performance first and the four social destinations second. When there is no upcoming event, the first slide becomes an invitation to explore recent performances. The card reads the existing Events and Pages data automatically, so editors do not maintain separate homepage content.
 
 News is prepared for numbered archive pages: up to six articles appear on each page, with additional pages at stable `/news/page/2/`-style URLs when the collection grows. The Contact page puts bookings and enquiries first, followed by the copyable email address and all four CMS-managed social destinations.
 
@@ -54,7 +54,8 @@ Netlify announced Identity's deprecation and then [reversed that in February 202
 
 News articles live in `src/content/news/*.md`; each file generates its own article page.
 
-- `src/_data/settings.yaml` — global site content (about, contact, members)
+- `src/_data/pages/*.yaml` — editable content organised by page, including all page text, photos, contact/social links, and musician biographies/portraits
+- `src/_data/settings.yaml` — only the global ensemble name and tagline
 - `src/content/events/*.md` — one file per concert/event
 - `src/_data/media.yaml` — YouTube videos + photo gallery
 - `src/images/uploads/` — where photos uploaded via the CMS land

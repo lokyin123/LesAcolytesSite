@@ -71,7 +71,7 @@
       </div>
       <p class="la-tweaks__note">Musician biography panels</p>
       <div class="la-tweaks__grid">
-        {% for member in settings.members %}<label class="la-tweaks__field">{{ member.name }}<select data-la-setting="panels.musician{{ loop.index0 }}"><option value="clay">Clay</option><option value="sage">Sage</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="rose">Rose</option></select></label>{% endfor %}
+        {% for member in pages.musicians.members %}<label class="la-tweaks__field">{{ member.name }}<select data-la-setting="panels.musician{{ loop.index0 }}"><option value="clay">Clay</option><option value="sage">Sage</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="rose">Rose</option></select></label>{% endfor %}
       </div>
     </details>
 
@@ -157,7 +157,7 @@
   var sectionPaths = { "": "home", "about": "about", "musicians": "musicians", "whats-on": "whatsOn", "programmes": "programmes", "media": "media", "news": "news", "contact": "contact" };
   var defaults = {
     colors: { ink: "#252825", paper: "#fffcf5", white: "#fafafa", muted: "#666a64", clay: "#e68665", sage: "#8bb19a", sand: "#ded2ba", blue: "#b7c5d2", rose: "#ecde79" },
-    panels: { home: "blue", about: "sage", musicians: "sand", whatsOn: "clay", programmes: "blue", media: "sage", news: "sand", contact: "rose"{% for member in settings.members %}, musician{{ loop.index0 }}: "{{ member.tone or 'sand' }}"{% endfor %} },
+    panels: { home: "blue", about: "sage", musicians: "sand", whatsOn: "clay", programmes: "blue", media: "sage", news: "sand", contact: "rose"{% for member in pages.musicians.members %}, musician{{ loop.index0 }}: "{{ member.tone or 'sand' }}"{% endfor %} },
     fonts: { display: "Bricolage Grotesque", body: "Spectral", interface: "Manrope" },
     sizes: { headings: 0.9, body: 1.1, interface: 1.15, buttons: 1, eyebrows: 1.16 },
     shape: { buttonRadius: 19 },

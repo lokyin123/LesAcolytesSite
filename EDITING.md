@@ -10,13 +10,15 @@ You'll have received an email invitation first — click the link in it, choose 
 
 ## What you can change
 
-The editor has three sections down the left-hand side.
+The editor has four sections down the left-hand side: Site Settings, Pages, Events, and News, plus Media.
 
 ### Site Settings
 
-Everything that appears once on the site: the ensemble name and tagline, the big photo at the top, the About text and its photo, the list of members, contact details, and the Instagram, Facebook, Continuo Connect, and YouTube links.
+Only the small amount of site-wide information belongs here: the ensemble name and tagline. Page copy, page photographs, contact details, social links, and musician biographies are organised in **Pages** so each page can be edited in one place.
 
-The **Members** list has an **Add member** button, an **×** on each row to remove someone, and a handle (**=**) to drag people into a different order. Each member also has a **Portraits** list: add or remove photos, drag the **=** handle to reorder them, and provide a short **Image Description** for each portrait.
+### Pages
+
+Open a page entry to edit its navigation label, eyebrow, heading, subtitle/summary, colour, hero photo, and page-specific text. The **Musicians page** contains each member's name, instrument, editable biography, biography colour, and **Portraits** list. Add or remove portraits, drag the **=** handle to reorder them, and provide a short **Image Description** for each portrait. The Contact page contains its booking/enquiry copy, email address, and social links.
 
 ### Events
 
@@ -27,7 +29,6 @@ Your concert listings. Click **+ Event** to add one, or click an existing event 
 - **Time** — enter the performance time in 24-hour format, such as `15:00` or `20:30`.
 - **Past performance** — normally leave this off. Turn it on only when an event should appear under Past Performances before its stored date has passed.
 - **Ticket / Info Link** — optional. Paste the full web address. If you leave it blank, no "Details" button appears.
-- **Event Image** — optional. Shown beside the event.
 - **Description** — optional. Programme notes, repertoire, whatever's worth saying.
 - **Internal setting (leave alone)** — ignore this one, it just tells the site how to lay the page out.
 
@@ -46,7 +47,7 @@ News articles appear newest-first on the News page, and every article gets its o
 - **Featured Image** and **Image Description** are optional, but the description should briefly say what the image shows for visually impaired visitors.
 - **Article** is the full story. You can add headings, links, and paragraphs with the editing toolbar.
 
-The Contact page shows bookings and enquiries first, then the copyable contact email and the Instagram, Facebook, Continuo Connect, and YouTube links from Site Settings.
+The Contact page shows bookings and enquiries first, then the copyable contact email and the social links from its Pages entry.
 
 ### Media
 
