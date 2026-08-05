@@ -14,7 +14,7 @@ local_backend:
 media_folder: "src/images/uploads"
 public_folder: "/images/uploads"
 
-site_url: https://lesacolytesmusic.netlify.app
+site_url: https://les-acolytes.netlify.app
 # No logo_url: Decap renders it at full size, so the hero photo swamped the
 # login screen. Add one here only when there's a proper small logo/wordmark.
 

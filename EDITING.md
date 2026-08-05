@@ -4,7 +4,7 @@ This is for whoever keeps the site up to date. You don't need to know anything t
 
 ## Logging in
 
-Go to **https://lesacolytesmusic.netlify.app/admin/** and click **Login**.
+Go to **https://les-acolytes.netlify.app/admin/** and click **Login**.
 
 You'll have received an email invitation first — click the link in it, choose a password, and you'll be taken straight to the editor. If that link ever stops working, ask for a fresh invite.
 
