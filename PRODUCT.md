@@ -50,6 +50,7 @@ Routine updates are made through Decap CMS at `/admin/`. Content changes are sto
 - The implementation is a static Eleventy site deployed through Netlify, with Netlify Identity and Git Gateway intended to provide editor access.
 - Public claims, biographies, programme details, testimonials, credentials, and descriptions of performance practice must not be fabricated. Placeholder material should remain clearly identifiable until the ensemble supplies final copy.
 - Impeccable may analyse the interface and recommend changes, but it must not change the site's design or content until the user has reviewed the proposed approach and explicitly confirmed it.
+- Once the user explicitly approves a task, that approval covers all necessary in-scope file edits; do not request separate approval for each file unless a genuinely new design or content decision appears.
 - Whether Netlify Identity, Git Gateway, and the editor invitation have been completed remains unverified from the repository.
 
 ## Brand Commitments

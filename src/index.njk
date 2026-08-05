@@ -25,8 +25,8 @@ permalink: "{{ section.url }}index.html"
       {% if collections.events.length %}{% set nextEvent = collections.events[0] %}
       <div class="home-highlight__state" data-home-highlight-upcoming>
         <div class="home-highlight__intro">
-          <h2>Catch us live</h2>
-          <p>Our next performance</p>
+          <h2><a class="home-highlight__title-link" href="/whats-on/">Catch us live</a></h2>
+          <p>At our next performance</p>
         </div>
         <div class="home-highlight__details">
           {% if nextEvent.data.series %}<p class="event-series">{{ nextEvent.data.series }}</p>{% endif %}
@@ -112,7 +112,7 @@ permalink: "{{ section.url }}index.html"
   <a class="section-panel{% if loop.index0 % 2 == 0 %} section-panel--reverse{% endif %}" href="{{ item.url }}" data-reveal>
     <div class="section-panel__image"><img src="{{ item.image }}" alt="" loading="lazy"></div>
     <div class="section-panel__copy tone-{{ item.tone }}">
-      <p class="eyebrow">{{ item.eyebrow }}</p><h2>{{ item.title }}</h2><p>{{ item.summary }}</p>
+      <p class="eyebrow">{{ item.eyebrow }}</p><h2>{{ item.title }}</h2><p>{{ item.summary }}</p>{% if item.slug == "contact" %}<span class="section-panel__email">{{ settings.contact_email }}</span>{% endif %}
     </div>
   </a>
   {% endif %}{% endfor %}
@@ -218,7 +218,10 @@ permalink: "{{ section.url }}index.html"
     </div>
     {% else %}<p>News from the ensemble will appear here soon.</p>{% endif %}
   {% elif section.slug == "contact" %}
-    <h2>Bookings and enquiries</h2><p>{{ settings.booking_note }}</p><p><a class="text-link" href="mailto:{{ settings.contact_email }}">{{ settings.contact_email }}</a></p><p><a class="text-link" href="{{ settings.instagram_url }}">Instagram <svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"></path></svg></a></p>
+    <h2>Bookings and enquiries</h2>
+    <p>{{ settings.booking_note }}</p>
+    <p class="contact-email"><span class="copy-email-fallback" data-copy-email data-email="{{ settings.contact_email }}">{{ settings.contact_email }}</span><span class="copy-email-status" data-copy-email-status aria-live="polite"></span></p>
+    <p><a class="text-link" href="{{ settings.instagram_url }}">Instagram <svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"></path></svg></a></p>
   {% else %}
     <h2>Content coming next</h2><p>This page is now part of the site structure. Its full content and editing tools will be added in the next build stage.</p>
   {% endif %}
