@@ -1,0 +1,367 @@
+<!-- Local visual-tweaks workbench. Development output only; never emitted by production builds. -->
+<style id="la-tweaks-panel-styles">
+  [data-la-tweaks-panel][hidden],[data-la-tweaks-reopen][hidden]{display:none!important}
+  [data-la-tweaks-panel],[data-la-tweaks-panel] *,[data-la-tweaks-reopen]{box-sizing:border-box}
+  [data-la-tweaks-panel]{position:fixed;top:1rem;right:1rem;z-index:10000;width:min(23rem,calc(100vw - 2rem));max-height:calc(100dvh - 2rem);overflow:auto;border:1px solid #44433e;border-radius:14px;color:#f7f4ec;background:#252521;box-shadow:0 18px 50px rgba(0,0,0,.28);font-family:Manrope,Arial,sans-serif!important;font-size:14px!important;line-height:1.4!important;overscroll-behavior:contain;color-scheme:dark}
+  [data-la-tweaks-panel] button,[data-la-tweaks-panel] input,[data-la-tweaks-panel] select{font:inherit}
+  .la-tweaks__header{position:sticky;top:0;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.1rem;border-bottom:1px solid rgba(247,244,236,.16);background:#252521}
+  .la-tweaks__title{display:block;margin:0;color:#fffdf8;font-family:"Bricolage Grotesque",Arial,sans-serif!important;font-size:1.15rem!important;font-weight:600;line-height:1.15}
+  .la-tweaks__title+span{display:block;margin-top:.25rem;color:#bdb9af;font-size:.72rem!important;letter-spacing:.05em;text-transform:uppercase}
+  .la-tweaks__quiet-button{min-height:2.25rem;padding:.4rem .65rem;border:1px solid rgba(247,244,236,.28);border-radius:8px;color:#f7f4ec;background:transparent;cursor:pointer}
+  .la-tweaks__quiet-button:hover,.la-tweaks__quiet-button:focus-visible{color:#252521;background:#f7f4ec}
+  .la-tweaks__body{padding:.25rem 1.1rem 1.1rem}
+  .la-tweaks__section{border-bottom:1px solid rgba(247,244,236,.14)}
+  .la-tweaks__section:last-of-type{border-bottom:0}
+  .la-tweaks__section summary{padding:1rem 0;color:#fffdf8;font-weight:650;cursor:pointer;list-style-position:outside}
+  .la-tweaks__section[open] summary{padding-bottom:.7rem}
+  .la-tweaks__grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;padding-bottom:1rem}
+  .la-tweaks__field{display:flex;min-width:0;flex-direction:column;gap:.4rem;color:#d8d4ca;font-size:.78rem!important}
+  .la-tweaks__field--wide{grid-column:1/-1}
+  .la-tweaks__field-head{display:flex;align-items:baseline;justify-content:space-between;gap:.75rem}
+  .la-tweaks__field output{color:#aaa69d;font-variant-numeric:tabular-nums}
+  .la-tweaks__field input[type="color"]{width:100%;height:2.4rem;padding:.2rem;border:1px solid rgba(247,244,236,.24);border-radius:8px;background:#343430;cursor:pointer}
+  .la-tweaks__field input[type="range"]{width:100%;accent-color:#d8c9ae;cursor:pointer}
+  .la-tweaks__field input[type="text"],.la-tweaks__field select{width:100%;min-height:2.45rem;padding:.5rem .65rem;border:1px solid rgba(247,244,236,.24);border-radius:8px;color:#f7f4ec;background:#343430}
+  .la-tweaks__field input:focus-visible,.la-tweaks__field select:focus-visible,.la-tweaks__button:focus-visible,.la-tweaks__quiet-button:focus-visible,[data-la-tweaks-reopen]:focus-visible{outline:2px solid #d8c9ae;outline-offset:2px}
+  .la-tweaks__actions{display:flex;flex-wrap:wrap;gap:.55rem;padding-top:.25rem}
+  .la-tweaks__button{min-height:2.45rem;padding:.5rem .75rem;border:1px solid rgba(247,244,236,.28);border-radius:8px;color:#f7f4ec;background:#343430;cursor:pointer}
+  .la-tweaks__button--primary{border-color:#f7f4ec;color:#252521;background:#f7f4ec}
+  .la-tweaks__button:hover,.la-tweaks__button:focus-visible{border-color:#d8c9ae;color:#252521;background:#d8c9ae}
+  .la-tweaks__button:disabled{opacity:.38;cursor:not-allowed}.la-tweaks__button:disabled:hover{border-color:rgba(247,244,236,.28);color:#f7f4ec;background:#343430}
+  .la-tweaks__preset-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.55rem}
+  .la-tweaks__status{min-height:1.4em;margin:.75rem 0 0;color:#bdb9af;font-size:.76rem!important}
+  .la-tweaks__note{margin:.1rem 0 1rem;color:#aaa69d;font-size:.74rem!important;line-height:1.45!important}
+  [data-la-tweaks-reopen]{position:fixed;right:1rem;bottom:1rem;z-index:10000;min-height:2.75rem;padding:.65rem .9rem;border:1px solid #44433e;border-radius:10px;color:#fffdf8;background:#252521;box-shadow:0 8px 24px rgba(0,0,0,.24);font-family:Manrope,Arial,sans-serif!important;font-size:.82rem!important;font-weight:650;cursor:pointer}
+  @media(max-width:520px){[data-la-tweaks-panel]{top:.5rem;right:.5rem;width:calc(100vw - 1rem);max-height:calc(100dvh - 1rem)}.la-tweaks__grid{grid-template-columns:1fr}.la-tweaks__field--wide{grid-column:auto}}
+</style>
+
+<button type="button" data-la-tweaks-reopen hidden>Open tweaks</button>
+<aside data-la-tweaks-panel hidden aria-label="Local visual tweaks">
+  <header class="la-tweaks__header">
+    <div><strong class="la-tweaks__title">Visual tweaks</strong><span>Local preview only</span></div>
+    <button class="la-tweaks__quiet-button" type="button" data-la-tweaks-hide>Hide</button>
+  </header>
+  <form class="la-tweaks__body" data-la-tweaks-form>
+    <details class="la-tweaks__section" open>
+      <summary>Colour palette</summary>
+      <div class="la-tweaks__grid">
+        <label class="la-tweaks__field">Ink<input type="color" data-la-setting="colors.ink"></label>
+        <label class="la-tweaks__field">Paper<input type="color" data-la-setting="colors.paper"></label>
+        <label class="la-tweaks__field">Soft white<input type="color" data-la-setting="colors.white"></label>
+        <label class="la-tweaks__field">Muted text<input type="color" data-la-setting="colors.muted"></label>
+        <label class="la-tweaks__field">Clay<input type="color" data-la-setting="colors.clay"></label>
+        <label class="la-tweaks__field">Sage<input type="color" data-la-setting="colors.sage"></label>
+        <label class="la-tweaks__field">Sand<input type="color" data-la-setting="colors.sand"></label>
+        <label class="la-tweaks__field">Blue<input type="color" data-la-setting="colors.blue"></label>
+        <label class="la-tweaks__field">Rose<input type="color" data-la-setting="colors.rose"></label>
+      </div>
+    </details>
+
+    <details class="la-tweaks__section">
+      <summary>Panel colours</summary>
+      <div class="la-tweaks__grid">
+        <label class="la-tweaks__field">Home<select data-la-setting="panels.home"><option value="clay">Clay</option><option value="sage">Sage</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="rose">Rose</option></select></label>
+        <label class="la-tweaks__field">About<select data-la-setting="panels.about"><option value="clay">Clay</option><option value="sage">Sage</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="rose">Rose</option></select></label>
+        <label class="la-tweaks__field">Musicians<select data-la-setting="panels.musicians"><option value="clay">Clay</option><option value="sage">Sage</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="rose">Rose</option></select></label>
+        <label class="la-tweaks__field">What's on<select data-la-setting="panels.whatsOn"><option value="clay">Clay</option><option value="sage">Sage</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="rose">Rose</option></select></label>
+        <label class="la-tweaks__field">Programmes<select data-la-setting="panels.programmes"><option value="clay">Clay</option><option value="sage">Sage</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="rose">Rose</option></select></label>
+        <label class="la-tweaks__field">Media<select data-la-setting="panels.media"><option value="clay">Clay</option><option value="sage">Sage</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="rose">Rose</option></select></label>
+        <label class="la-tweaks__field">News<select data-la-setting="panels.news"><option value="clay">Clay</option><option value="sage">Sage</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="rose">Rose</option></select></label>
+        <label class="la-tweaks__field">Contact<select data-la-setting="panels.contact"><option value="clay">Clay</option><option value="sage">Sage</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="rose">Rose</option></select></label>
+      </div>
+      <p class="la-tweaks__note">Musician biography panels</p>
+      <div class="la-tweaks__grid">
+        {% for member in settings.members %}<label class="la-tweaks__field">{{ member.name }}<select data-la-setting="panels.musician{{ loop.index0 }}"><option value="clay">Clay</option><option value="sage">Sage</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="rose">Rose</option></select></label>{% endfor %}
+      </div>
+    </details>
+
+    <details class="la-tweaks__section">
+      <summary>Typography</summary>
+      <div class="la-tweaks__grid">
+        <label class="la-tweaks__field la-tweaks__field--wide">Heading typeface
+          <select data-la-setting="fonts.display"><option>Bricolage Grotesque</option><option>Manrope</option><option>Spectral</option><option>Major Mono Display</option></select>
+        </label>
+        <label class="la-tweaks__field la-tweaks__field--wide">Body typeface
+          <select data-la-setting="fonts.body"><option>Spectral</option><option>Manrope</option><option>Bricolage Grotesque</option><option>Major Mono Display</option></select>
+        </label>
+        <label class="la-tweaks__field la-tweaks__field--wide">Interface typeface
+          <select data-la-setting="fonts.interface"><option>Manrope</option><option>Bricolage Grotesque</option><option>Spectral</option><option>Major Mono Display</option></select>
+        </label>
+        <label class="la-tweaks__field la-tweaks__field--wide"><span class="la-tweaks__field-head"><span>Heading size</span><output data-la-output="sizes.headings"></output></span><input type="range" min="0.75" max="1.25" step="0.01" data-la-setting="sizes.headings"></label>
+        <label class="la-tweaks__field la-tweaks__field--wide"><span class="la-tweaks__field-head"><span>Body size</span><output data-la-output="sizes.body"></output></span><input type="range" min="0.85" max="1.25" step="0.01" data-la-setting="sizes.body"></label>
+        <label class="la-tweaks__field la-tweaks__field--wide"><span class="la-tweaks__field-head"><span>General Manrope / interface text</span><output data-la-output="sizes.interface"></output></span><input type="range" min="0.85" max="1.25" step="0.01" data-la-setting="sizes.interface"></label>
+        <label class="la-tweaks__field la-tweaks__field--wide"><span class="la-tweaks__field-head"><span>Button text</span><output data-la-output="sizes.buttons"></output></span><input type="range" min="0.85" max="1.3" step="0.01" data-la-setting="sizes.buttons"></label>
+        <label class="la-tweaks__field la-tweaks__field--wide"><span class="la-tweaks__field-head"><span>Eyebrow and series labels</span><output data-la-output="sizes.eyebrows"></output></span><input type="range" min="0.75" max="1.3" step="0.01" data-la-setting="sizes.eyebrows"></label>
+      </div>
+    </details>
+
+    <details class="la-tweaks__section">
+      <summary>Shape and spacing</summary>
+      <div class="la-tweaks__grid">
+        <label class="la-tweaks__field la-tweaks__field--wide"><span class="la-tweaks__field-head"><span>Button rounding</span><output data-la-output="shape.buttonRadius"></output></span><input type="range" min="0" max="24" step="1" data-la-setting="shape.buttonRadius"></label>
+        <label class="la-tweaks__field la-tweaks__field--wide"><span class="la-tweaks__field-head"><span>Section spacing</span><output data-la-output="layout.spacing"></output></span><input type="range" min="0.7" max="1.35" step="0.01" data-la-setting="layout.spacing"></label>
+        <label class="la-tweaks__field la-tweaks__field--wide"><span class="la-tweaks__field-head"><span>Content width</span><output data-la-output="layout.maxWidth"></output></span><input type="range" min="960" max="1440" step="10" data-la-setting="layout.maxWidth"></label>
+      </div>
+    </details>
+
+    <details class="la-tweaks__section">
+      <summary>Panel proportions</summary>
+      <div class="la-tweaks__grid">
+        <label class="la-tweaks__field la-tweaks__field--wide"><span class="la-tweaks__field-head"><span>Maximum hero image width</span><output data-la-output="layout.heroImage"></output></span><input type="range" min="50" max="60" step="1" data-la-setting="layout.heroImage"></label>
+        <label class="la-tweaks__field la-tweaks__field--wide"><span class="la-tweaks__field-head"><span>Section image width</span><output data-la-output="layout.panelImage"></output></span><input type="range" min="35" max="65" step="1" data-la-setting="layout.panelImage"></label>
+        <label class="la-tweaks__field la-tweaks__field--wide"><span class="la-tweaks__field-head"><span>Desktop panel height</span><output data-la-output="layout.panelHeight"></output></span><input type="range" min="440" max="760" step="10" data-la-setting="layout.panelHeight"></label>
+      </div>
+    </details>
+
+    <details class="la-tweaks__section">
+      <summary>Motion</summary>
+      <div class="la-tweaks__grid">
+        <label class="la-tweaks__field la-tweaks__field--wide"><span class="la-tweaks__field-head"><span>Animation speed</span><output data-la-output="motion.speed"></output></span><input type="range" min="0" max="2" step="0.05" data-la-setting="motion.speed"></label>
+      </div>
+    </details>
+
+    <details class="la-tweaks__section" open>
+      <summary>Presets and sharing</summary>
+      <div class="la-tweaks__grid">
+        <label class="la-tweaks__field la-tweaks__field--wide">Preset name<input type="text" maxlength="40" placeholder="For example: Cooler paper" data-la-preset-name></label>
+        <div class="la-tweaks__actions la-tweaks__field--wide"><button class="la-tweaks__button la-tweaks__button--primary" type="button" data-la-save-preset>Save preset</button><button class="la-tweaks__button" type="button" data-la-copy>Copy settings</button><button class="la-tweaks__button" type="button" data-la-reset>Reset</button></div>
+        <div class="la-tweaks__preset-row la-tweaks__field--wide"><label class="la-tweaks__field">Saved presets<select data-la-presets><option value="">No saved presets</option></select></label><div class="la-tweaks__actions"><button class="la-tweaks__button" type="button" data-la-load-preset disabled>Load</button><button class="la-tweaks__button" type="button" data-la-delete-preset disabled>Delete</button></div></div>
+      </div>
+    </details>
+    <p class="la-tweaks__note">These experiments stay in this browser. They do not edit the website files or alter the deployed design.</p>
+    <p class="la-tweaks__status" data-la-tweaks-status aria-live="polite"></p>
+  </form>
+</aside>
+
+<script id="la-tweaks-panel-script">
+(function () {
+  "use strict";
+
+  var localHosts = ["localhost", "127.0.0.1"];
+  var query = new URLSearchParams(window.location.search);
+  if (!localHosts.includes(window.location.hostname) || !query.has("tweaks")) return;
+
+  var panel = document.querySelector("[data-la-tweaks-panel]");
+  var reopen = document.querySelector("[data-la-tweaks-reopen]");
+  if (!panel || !reopen) return;
+
+  var CURRENT_KEY = "les-acolytes-visual-tweaks-v1";
+  var PRESETS_KEY = "les-acolytes-visual-tweak-presets-v1";
+  var fontStacks = {
+    "Bricolage Grotesque": "\"Bricolage Grotesque\",Arial,sans-serif",
+    "Major Mono Display": "\"Major Mono Display\",monospace",
+    "Manrope": "Manrope,Arial,sans-serif",
+    "Spectral": "Spectral,Georgia,serif"
+  };
+  var panelTones = ["clay", "sage", "sand", "blue", "rose"];
+  var sectionPaths = { "": "home", "about": "about", "musicians": "musicians", "whats-on": "whatsOn", "programmes": "programmes", "media": "media", "news": "news", "contact": "contact" };
+  var defaults = {
+    colors: { ink: "#252825", paper: "#fffcf5", white: "#fafafa", muted: "#666a64", clay: "#e68665", sage: "#8bb19a", sand: "#ded2ba", blue: "#b7c5d2", rose: "#ecde79" },
+    panels: { home: "blue", about: "sage", musicians: "sand", whatsOn: "clay", programmes: "blue", media: "sage", news: "sand", contact: "rose"{% for member in settings.members %}, musician{{ loop.index0 }}: "{{ member.tone or 'sand' }}"{% endfor %} },
+    fonts: { display: "Bricolage Grotesque", body: "Spectral", interface: "Manrope" },
+    sizes: { headings: 0.9, body: 1.1, interface: 1.15, buttons: 1, eyebrows: 1.16 },
+    shape: { buttonRadius: 19 },
+    layout: { spacing: 1, maxWidth: 1360, heroImage: 60, panelImage: 50, panelHeight: 560 },
+    motion: { speed: 1 }
+  };
+  var settings = clone(defaults);
+  var controls = Array.from(panel.querySelectorAll("[data-la-setting]"));
+  var status = panel.querySelector("[data-la-tweaks-status]");
+  var presetSelect = panel.querySelector("[data-la-presets]");
+  var presetName = panel.querySelector("[data-la-preset-name]");
+  var loadPresetButton = panel.querySelector("[data-la-load-preset]");
+  var deletePresetButton = panel.querySelector("[data-la-delete-preset]");
+  var overrideStyle = document.createElement("style");
+  overrideStyle.id = "la-tweaks-overrides";
+  document.head.appendChild(overrideStyle);
+
+  function clone(value) { return JSON.parse(JSON.stringify(value)); }
+  function readStorage(key, fallback) {
+    try { return JSON.parse(localStorage.getItem(key)) || fallback; }
+    catch (error) { return fallback; }
+  }
+  function getPath(object, path) { return path.split(".").reduce(function (value, key) { return value[key]; }, object); }
+  function setPath(object, path, value) {
+    var keys = path.split(".");
+    var finalKey = keys.pop();
+    var target = keys.reduce(function (value, key) { return value[key]; }, object);
+    target[finalKey] = value;
+  }
+  function mergeKnown(base, saved) {
+    Object.keys(base).forEach(function (group) {
+      if (!saved || typeof saved[group] !== "object") return;
+      Object.keys(base[group]).forEach(function (key) {
+        if (Object.prototype.hasOwnProperty.call(saved[group], key)) base[group][key] = saved[group][key];
+      });
+    });
+    return base;
+  }
+  function announce(message) { status.textContent = message; }
+  function percentage(value) { return Math.round(Number(value) * 100) + "%"; }
+  function outputText(path, value) {
+    if (path === "sizes.headings" || path === "sizes.body" || path === "sizes.interface" || path === "sizes.buttons" || path === "sizes.eyebrows" || path === "layout.spacing") return percentage(value);
+    if (path === "shape.buttonRadius") return value + "px";
+    if (path === "layout.maxWidth" || path === "layout.panelHeight") return value + "px";
+    if (path === "layout.heroImage" || path === "layout.panelImage") return value + "%";
+    if (path === "motion.speed") return Number(value) === 0 ? "Off" : Number(value).toFixed(2) + "×";
+    return String(value);
+  }
+  function syncControls() {
+    controls.forEach(function (control) {
+      var path = control.dataset.laSetting;
+      var value = getPath(settings, path);
+      control.value = value;
+      var output = panel.querySelector("[data-la-output=\"" + path + "\"]");
+      if (output) output.textContent = outputText(path, value);
+    });
+  }
+  function panelColour(role) {
+    return "var(--" + (panelTones.includes(role) ? role : "sand") + ")";
+  }
+  function applyPanelColours() {
+    var heroPanel = document.querySelector(".split-hero__panel");
+    if (heroPanel) heroPanel.style.backgroundColor = panelColour(settings.panels.home);
+
+    document.querySelectorAll(".section-panel").forEach(function (sectionPanel) {
+      var path;
+      try { path = new URL(sectionPanel.href, window.location.href).pathname.split("/").filter(Boolean)[0] || ""; }
+      catch (error) { return; }
+      var settingKey = sectionPaths[path];
+      var colourPanel = sectionPanel.querySelector(".section-panel__copy");
+      if (settingKey && colourPanel) colourPanel.style.backgroundColor = panelColour(settings.panels[settingKey]);
+    });
+
+    var currentPath = window.location.pathname.split("/").filter(Boolean)[0] || "";
+    var currentSection = sectionPaths[currentPath];
+    var pageHero = document.querySelector(".page-hero");
+    if (pageHero && currentSection) pageHero.style.backgroundColor = panelColour(settings.panels[currentSection]);
+    var articleHeader = document.querySelector(".article-header");
+    if (articleHeader && currentSection === "news") articleHeader.style.backgroundColor = panelColour(settings.panels.news);
+
+    document.querySelectorAll(".musician__bio").forEach(function (bio, index) {
+      var musicianKey = "musician" + index;
+      if (Object.prototype.hasOwnProperty.call(settings.panels, musicianKey)) bio.style.backgroundColor = panelColour(settings.panels[musicianKey]);
+    });
+  }
+  function applySettings() {
+    var headingScale = Number(settings.sizes.headings);
+    var interfaceScale = Number(settings.sizes.interface);
+    var interfaceRatio = interfaceScale / defaults.sizes.interface;
+    var buttonScale = Number(settings.sizes.buttons);
+    var eyebrowScale = Number(settings.sizes.eyebrows);
+    var spacing = Number(settings.layout.spacing);
+    var speed = Number(settings.motion.speed);
+    var duration = function (seconds) { return speed === 0 ? ".01ms" : (seconds * speed).toFixed(3) + "s"; };
+    var heroImage = Math.min(60, Math.max(50, Number(settings.layout.heroImage)));
+    var panelImage = Number(settings.layout.panelImage);
+    document.documentElement.dataset.tweaksActive = "";
+    overrideStyle.textContent = [
+      ":root[data-tweaks-active]{",
+      "--ink:" + settings.colors.ink + ";--paper:" + settings.colors.paper + ";--white:" + settings.colors.white + ";--muted:" + settings.colors.muted + ";",
+      "--clay:" + settings.colors.clay + ";--sage:" + settings.colors.sage + ";--sand:" + settings.colors.sand + ";--blue:" + settings.colors.blue + ";--rose:" + settings.colors.rose + ";--line:color-mix(in srgb,var(--ink) 18%,transparent);",
+      "--display:" + fontStacks[settings.fonts.display] + ";--body:" + fontStacks[settings.fonts.body] + ";--interface:" + fontStacks[settings.fonts.interface] + ";--max-width:" + Number(settings.layout.maxWidth) + "px}",
+      ":root[data-tweaks-active] body{font-size:" + (1.0625 * Number(settings.sizes.body)).toFixed(4) + "rem}",
+      ":root[data-tweaks-active] .prose,:root[data-tweaks-active] .article-body__prose{font-size:" + (1.22 * Number(settings.sizes.body)).toFixed(3) + "rem!important}",
+      ":root[data-tweaks-active] .musician__bio .prose,:root[data-tweaks-active] .event-feature__description{font-size:" + (1.12 * Number(settings.sizes.body)).toFixed(3) + "rem!important}",
+      ":root[data-tweaks-active] h1{font-size:clamp(" + (3 * headingScale).toFixed(3) + "rem," + (7 * headingScale).toFixed(3) + "vw," + (6 * headingScale).toFixed(3) + "rem)!important}",
+      ":root[data-tweaks-active] h2{font-size:clamp(" + (2 * headingScale).toFixed(3) + "rem," + (4 * headingScale).toFixed(3) + "vw," + (4 * headingScale).toFixed(3) + "rem)!important}",
+      ":root[data-tweaks-active] h3{font-size:clamp(" + (1.35 * headingScale).toFixed(3) + "rem," + (2.4 * headingScale).toFixed(3) + "vw," + (2.5 * headingScale).toFixed(3) + "rem)!important}",
+      ":root[data-tweaks-active] .site-nav a{font-size:" + (1.092 * interfaceRatio).toFixed(3) + "rem!important}",
+      ":root[data-tweaks-active] .text-link{font-size:" + (1.15 * interfaceRatio).toFixed(3) + "rem!important}",
+      ":root[data-tweaks-active] .hero-summary{font-size:clamp(" + (1.098 * interfaceRatio).toFixed(3) + "rem," + (1.673 * interfaceRatio).toFixed(3) + "vw," + (1.359 * interfaceRatio).toFixed(3) + "rem)!important}",
+      ":root[data-tweaks-active] .home-highlight__intro>p{font-size:clamp(" + (1.202 * interfaceRatio).toFixed(3) + "rem," + (1.882 * interfaceRatio).toFixed(3) + "vw," + (1.411 * interfaceRatio).toFixed(3) + "rem)!important}",
+      ":root[data-tweaks-active] .home-highlight__date{font-size:clamp(" + (1.307 * interfaceRatio).toFixed(3) + "rem," + (2.3 * interfaceRatio).toFixed(3) + "vw," + (1.83 * interfaceRatio).toFixed(3) + "rem)!important}",
+      ":root[data-tweaks-active] .home-highlight__venue{font-size:" + (1.171 * interfaceRatio).toFixed(3) + "rem!important}",
+      ":root[data-tweaks-active] .social-links small{font-size:" + (.815 * interfaceRatio).toFixed(3) + "rem!important}",
+      ":root[data-tweaks-active] .musician__role{font-size:clamp(" + (1.098 * interfaceRatio).toFixed(3) + "rem," + (1.568 * interfaceRatio).toFixed(3) + "vw," + (1.307 * interfaceRatio).toFixed(3) + "rem)!important}",
+      ":root[data-tweaks-active] .event-feature__when{font-size:clamp(" + (1.202 * interfaceRatio).toFixed(3) + "rem," + (2.091 * interfaceRatio).toFixed(3) + "vw," + (1.62 * interfaceRatio).toFixed(3) + "rem)!important}",
+      ":root[data-tweaks-active] .event-feature__venue{font-size:" + (1.202 * interfaceRatio).toFixed(3) + "rem!important}",
+      ":root[data-tweaks-active] .event-card__venue,:root[data-tweaks-active] .news-heading>p{font-size:" + (1.111 * interfaceRatio).toFixed(3) + "rem!important}",
+      ":root[data-tweaks-active] .video-caption__composer{font-size:clamp(" + (1.045 * interfaceRatio).toFixed(3) + "rem," + (1.568 * interfaceRatio).toFixed(3) + "vw," + (1.202 * interfaceRatio).toFixed(3) + "rem)!important}",
+      ":root[data-tweaks-active] .site-footer__end>p{font-size:" + (.889 * interfaceRatio).toFixed(3) + "rem!important}",
+      ":root[data-tweaks-active] .page-hero__copy p:last-child{font-size:" + (1.317 * interfaceRatio).toFixed(3) + "rem!important}",
+      ":root[data-tweaks-active] .section-panel__copy>p:not(.eyebrow),:root[data-tweaks-active] .article-header__excerpt{font-size:" + (1.213 * interfaceRatio).toFixed(3) + "rem!important}",
+      ":root[data-tweaks-active] .button-link{font-size:" + buttonScale.toFixed(3) + "rem!important}",
+      ":root[data-tweaks-active] .eyebrow,:root[data-tweaks-active] .event-series{font-size:" + (.82 * eyebrowScale).toFixed(3) + "rem!important}",
+      ":root[data-tweaks-active] .button-link{border-radius:" + Number(settings.shape.buttonRadius) + "px}",
+      ":root[data-tweaks-active] .site-header{background:color-mix(in srgb,var(--paper) 95%,transparent)}",
+      ":root[data-tweaks-active] .split-hero__panel{padding:clamp(" + (2.5 * spacing).toFixed(2) + "rem," + (6 * spacing).toFixed(2) + "vw," + (6 * spacing).toFixed(2) + "rem)}",
+      ":root[data-tweaks-active] .section-panel__copy{padding:clamp(" + (3 * spacing).toFixed(2) + "rem," + (7 * spacing).toFixed(2) + "vw," + (7 * spacing).toFixed(2) + "rem)}",
+      ":root[data-tweaks-active] .page-hero__copy{padding:clamp(" + (3 * spacing).toFixed(2) + "rem," + (8 * spacing).toFixed(2) + "vw," + (8 * spacing).toFixed(2) + "rem)}",
+      ":root[data-tweaks-active] .page-content:not(.page-content--musicians){padding-block:clamp(" + (5 * spacing).toFixed(2) + "rem," + (10 * spacing).toFixed(2) + "vw," + (9 * spacing).toFixed(2) + "rem)}",
+      ":root[data-tweaks-active] [data-reveal]{transition-duration:" + duration(.65) + "}",
+      ":root[data-tweaks-active] .section-panel__image img,:root[data-tweaks-active] .news-card__image img{transition-duration:" + duration(.6) + "}",
+      ":root[data-tweaks-active] .section-panel__copy h2,:root[data-tweaks-active] .social-icon{transition-duration:" + duration(.35) + "}",
+      ":root[data-tweaks-active] .button-link,:root[data-tweaks-active] .site-nav,:root[data-tweaks-active] .home-highlight__controls button{transition-duration:" + duration(.25) + "}",
+      "@media(max-width:650px){:root[data-tweaks-active] .site-nav a{font-size:clamp(" + (1.5 * interfaceScale).toFixed(3) + "rem," + (8 * interfaceScale).toFixed(3) + "vw," + (2.4 * interfaceScale).toFixed(3) + "rem)!important}:root[data-tweaks-active] .menu-toggle,:root[data-tweaks-active] .menu-close{font-size:" + (.795 * interfaceRatio).toFixed(3) + "rem!important}}",
+      "@media(min-width:901px){:root[data-tweaks-active] .split-hero{grid-template-columns:clamp(50%,calc(100% - 38.5rem)," + heroImage + "%) minmax(0,1fr)}",
+      ":root[data-tweaks-active] .section-panel{grid-template-columns:" + panelImage + "% " + (100 - panelImage) + "%;height:max(" + Number(settings.layout.panelHeight) + "px,33.333vw)}}"
+    ].join("");
+    applyPanelColours();
+  }
+  function persist() { localStorage.setItem(CURRENT_KEY, JSON.stringify(settings)); }
+  function refreshPresets(selectedName) {
+    var presets = readStorage(PRESETS_KEY, {});
+    var names = Object.keys(presets).sort(function (a, b) { return a.localeCompare(b); });
+    presetSelect.innerHTML = "";
+    if (!names.length) {
+      var empty = document.createElement("option");
+      empty.value = ""; empty.textContent = "No saved presets"; presetSelect.appendChild(empty);
+    } else {
+      names.forEach(function (name) {
+        var option = document.createElement("option");
+        option.value = name; option.textContent = name; presetSelect.appendChild(option);
+      });
+      presetSelect.value = selectedName && presets[selectedName] ? selectedName : names[0];
+    }
+    loadPresetButton.disabled = !names.length;
+    deletePresetButton.disabled = !names.length;
+  }
+
+  settings = mergeKnown(clone(defaults), readStorage(CURRENT_KEY, {}));
+  syncControls();
+  applySettings();
+  refreshPresets();
+  panel.hidden = false;
+
+  controls.forEach(function (control) {
+    control.addEventListener("input", function () {
+      var value = control.type === "range" ? Number(control.value) : control.value;
+      setPath(settings, control.dataset.laSetting, value);
+      syncControls(); applySettings(); persist(); announce("Temporary settings saved in this browser.");
+    });
+  });
+  panel.querySelector("[data-la-tweaks-hide]").addEventListener("click", function () { panel.hidden = true; reopen.hidden = false; reopen.focus(); });
+  reopen.addEventListener("click", function () { reopen.hidden = true; panel.hidden = false; panel.querySelector("[data-la-tweaks-hide]").focus(); });
+  panel.querySelector("[data-la-reset]").addEventListener("click", function () {
+    settings = clone(defaults); localStorage.removeItem(CURRENT_KEY); syncControls(); applySettings(); announce("Reset to the website's current design.");
+  });
+  panel.querySelector("[data-la-save-preset]").addEventListener("click", function () {
+    var name = presetName.value.trim();
+    if (!name) { announce("Enter a preset name before saving."); presetName.focus(); return; }
+    var presets = readStorage(PRESETS_KEY, {}); presets[name] = clone(settings); localStorage.setItem(PRESETS_KEY, JSON.stringify(presets)); refreshPresets(name); presetName.value = ""; announce("Preset saved: " + name + ".");
+  });
+  panel.querySelector("[data-la-load-preset]").addEventListener("click", function () {
+    var presets = readStorage(PRESETS_KEY, {}); var selected = presetSelect.value;
+    if (!selected || !presets[selected]) { announce("Choose a saved preset to load."); return; }
+    settings = mergeKnown(clone(defaults), presets[selected]); syncControls(); applySettings(); persist(); announce("Preset loaded: " + selected + ".");
+  });
+  panel.querySelector("[data-la-delete-preset]").addEventListener("click", function () {
+    var presets = readStorage(PRESETS_KEY, {}); var selected = presetSelect.value;
+    if (!selected || !presets[selected]) { announce("There is no saved preset to delete."); return; }
+    delete presets[selected]; localStorage.setItem(PRESETS_KEY, JSON.stringify(presets)); refreshPresets(); announce("Preset deleted: " + selected + ".");
+  });
+  panel.querySelector("[data-la-copy]").addEventListener("click", function () {
+    var text = JSON.stringify({ label: "Les Acolytes visual tweaks", version: 1, settings: settings }, null, 2);
+    navigator.clipboard.writeText(text).then(function () { announce("Settings copied. Paste them into our chat when you want to discuss or apply them."); }).catch(function () { announce("Copy was blocked by the browser. Try again after clicking inside the page."); });
+  });
+
+  document.querySelectorAll("a[href]").forEach(function (link) {
+    var url;
+    try { url = new URL(link.href, window.location.href); } catch (error) { return; }
+    if (url.origin !== window.location.origin || url.pathname.startsWith("/admin/") || link.hasAttribute("download")) return;
+    url.searchParams.set("tweaks", "");
+    link.href = url.pathname + url.search + url.hash;
+  });
+})();
+</script>

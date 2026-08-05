@@ -19,6 +19,13 @@ const eventDateFormat = new Intl.DateTimeFormat("en-GB", {
 export default function (eleventyConfig) {
   eleventyConfig.addDataExtension("yaml,yml", (contents) => yaml.load(contents));
 
+  // The visual tweaks panel is rendered only by Eleventy's local preview
+  // server. A normal production build never receives its markup or code.
+  eleventyConfig.addGlobalData(
+    "isDevelopment",
+    process.argv.some((argument) => argument === "--serve" || argument.startsWith("--serve="))
+  );
+
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/images");

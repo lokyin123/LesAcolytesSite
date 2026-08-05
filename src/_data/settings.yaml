@@ -24,7 +24,7 @@ members:
     role: "Flute"
     image: "/images/IndividualsGit/Billy-Amelia%20Read%20Photography-24.jpg"
     image_alt: "Billy Hui"
-    tone: "sage"
+    tone: "blue"
     bio: |
       Biography coming soon.
   - name: "Timothy Lin"
@@ -38,7 +38,7 @@ members:
     role: "Harpsichord"
     image: "/images/IndividualsGit/Edd-Amelia%20Read%20Photography-5.jpg"
     image_alt: "Edward Campbell-Rowntree"
-    tone: "blue"
+    tone: "sage"
     bio: |
       Biography coming soon.
 contact_email: "hello@lesacolytes.example"

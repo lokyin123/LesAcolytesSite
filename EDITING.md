@@ -89,3 +89,15 @@ npm run cms    # terminal 2 — the editor's backend, on localhost:8082
 Then open **http://localhost:8080/admin/** and click Login — no password needed locally.
 
 Edits made this way write **directly to the files in this folder**, so review them with `git diff` before committing. The port lives in `.env` (8082 rather than decap-server's default 8081, which Eleventy's dev server already occupies).
+
+## Trying visual ideas locally
+
+With the normal site preview running, open **http://localhost:8080/?tweaks**. A Visual tweaks panel appears over the site. Changes made there are temporary previews stored in that browser; they do not edit the website files or affect the live site.
+
+- **Reset** returns the preview to the current real design.
+- Give an experiment a name and choose **Save preset** to compare it again later in the same browser.
+- **Copy settings** copies a summary that can be pasted into a conversation before deciding whether any part should be implemented.
+- Choose **Hide** when the panel obstructs something, then **Open tweaks** to bring it back.
+- **Panel colours** assigns the five editable colour tones independently to every main section and each musician biography panel.
+
+The panel follows internal links while it is active, so the same experiment can be checked across the site's pages. It is excluded entirely from production builds.

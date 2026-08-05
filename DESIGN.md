@@ -2,15 +2,15 @@
 name: Les Acolytes
 description: A calm, editorial website that presents French and French-adjacent repertoire with warmth and contemporary digital clarity.
 colors:
-  ink: "#292824"
-  paper: "#f5f2ea"
-  soft-white: "#fffdf8"
-  muted-text: "#68675f"
-  clay: "#c9a892"
-  sage: "#aeb7a4"
-  sand: "#d8c9ae"
-  blue: "#a9b7ba"
-  rose: "#c7aaa5"
+  ink: "#252825"
+  paper: "#fffcf5"
+  soft-white: "#fafafa"
+  muted-text: "#666a64"
+  clay: "#e68665"
+  sage: "#8bb19a"
+  sand: "#ded2ba"
+  blue: "#b7c5d2"
+  rose: "#ecde79"
 typography:
   wordmark:
     fontFamily: "Major Mono Display, monospace"
@@ -18,16 +18,17 @@ typography:
     lineHeight: 1.08
   display:
     fontFamily: "Bricolage Grotesque, Arial, sans-serif"
-    fontSize: "clamp(3rem, 7vw, 6.8rem)"
+    fontSize: "clamp(2.7rem, 6.3vw, 5.4rem)"
     fontWeight: 500
     lineHeight: 1.08
   body:
     fontFamily: "Spectral, Georgia, serif"
-    fontSize: "1.0625rem"
+    fontSize: "1.1688rem"
     fontWeight: 400
     lineHeight: 1.6
   interface:
     fontFamily: "Manrope, Arial, sans-serif"
+    fontSizeScale: 1.15
     fontWeight: 550
     lineHeight: 1.6
 rounded:
@@ -43,12 +44,12 @@ components:
   button-primary:
     backgroundColor: "{colors.ink}"
     textColor: "{colors.paper}"
-    rounded: "0.4rem"
+    rounded: "19px"
     padding: "0.8rem 1.2rem"
   button-primary-hover:
     backgroundColor: "transparent"
     textColor: "{colors.ink}"
-    rounded: "0.4rem"
+    rounded: "19px"
     padding: "0.8rem 1.2rem"
   circular-control:
     backgroundColor: "transparent"
@@ -65,7 +66,7 @@ components:
 
 The site should feel like entering a calm working space shared by serious musicians: open, direct, cultured, and welcoming. Its modernity belongs to the digital experience—clarity, sleek execution, smooth navigation, and responsive interaction—not to any claim about the ensemble's approach to performing the music.
 
-The incumbent system is editorial and image-led. Large split compositions alternate real photography with quiet fields of colour, while strong typography and generous spacing let the material breathe. The experience is restrained rather than austere, and professional without borrowing the visual or verbal habits of corporate and technology marketing.
+The incumbent system is editorial and image-led. Large split compositions alternate real photography with a photo-led palette of clear clay, sage, sand, blue, and yellow-rose fields, while strong typography and generous spacing let the material breathe. The experience is restrained rather than austere, and professional without borrowing the visual or verbal habits of corporate and technology marketing.
 
 The current palette and straight-edged panel construction are implemented facts, not permanent brand commitments. Future exploration may replace them after user confirmation. Motion may become smoother and more continuous, but should remain calm, purposeful, performant, and respectful of reduced-motion preferences.
 
@@ -79,7 +80,7 @@ The current palette and straight-edged panel construction are implemented facts,
 
 ## Colors
 
-The incumbent palette combines dark charcoal and warm paper neutrals with low-chroma clay, sage, sand, blue, and rose panels. These values describe the current site and remain open to deliberate revision.
+The incumbent palette combines green-charcoal ink and a clean warm-white paper with clay, sage, sand, blue, and yellow-rose panels selected to respond to the ensemble photography. These values describe the current site and remain open to deliberate revision.
 
 ### Primary
 
@@ -109,17 +110,18 @@ The incumbent palette combines dark charcoal and warm paper neutrals with low-ch
 ### Hierarchy
 
 - **Wordmark** (400, context-dependent sizing, 1.08): Brand only, with a subtle contextual stroke in the header and footer.
-- **Display** (500, `clamp(3rem, 7vw, 6.8rem)`, 1.08): Primary page and hero titles.
-- **Headline** (500, `clamp(2rem, 4vw, 4rem)`, 1.08): Section headings and major content divisions.
-- **Body** (400, 1.0625rem base, 1.6): Long-form biographies, articles, and descriptive copy.
-- **Interface** (500–650, scale varies by role): Navigation, metadata, labels, buttons, event facts, and short panel summaries.
+- **Display** (500, `clamp(2.7rem, 6.3vw, 5.4rem)`, 1.08): Primary page and hero titles.
+- **Headline** (500, `clamp(1.8rem, 3.6vw, 3.6rem)`, 1.08): Section headings and major content divisions.
+- **Supporting heading** (500, `clamp(1.215rem, 2.16vw, 2.25rem)`, 1.08): Event titles and smaller content headings.
+- **Body** (400, 1.1688rem base, 1.6): Long-form biographies, articles, and descriptive copy.
+- **Interface** (500–650, 115% of the original role scale): Navigation, metadata, labels, event facts, and short panel summaries. Button text is independently set to 1rem; eyebrow and series labels use a 116% scale.
 - **Eyebrow** (interface face, small uppercase, wide tracking): Sparse contextual labels above headings.
 
 **The Four Roles Rule.** Keep wordmark, expressive heading, substantive reading, and interface typography distinct; do not collapse every role into one face.
 
 ## Layout
 
-The desktop system is built around full-width split compositions, alternating image and colour, with a content maximum of 1180px for conventional sections. Hero and landing panels commonly use equal columns; musician profiles use a 30/70 portrait-to-biography split and alternate direction. Generous responsive padding uses fluid clamps rather than a rigid spacing ladder.
+The desktop system is built around full-width split compositions, alternating image and colour, with a content maximum of 1360px for conventional sections. Hero and landing panels commonly use equal columns; musician profiles use a 30/70 portrait-to-biography split and alternate direction. Generous responsive padding uses fluid clamps rather than a rigid spacing ladder.
 
 At 900px, split panels stack and imagery receives a stable responsive height. At 650px, navigation becomes a full-screen overlay and grids collapse to one column where needed. Media carousels retain horizontal interaction and use scroll snapping. Article pages move from a sticky two-column composition to a natural single-column reading order.
 
@@ -141,7 +143,7 @@ This shape vocabulary is open to evolution. Curves or softened transitions may b
 
 ### Buttons
 
-- **Shape:** Rectangular with subtly softened `0.4rem` corners and a one-pixel Ink border.
+- **Shape:** Rectangular with clearly softened `19px` corners and a one-pixel Ink border.
 - **Primary:** Ink background, Warm Paper text, and compact `0.8rem 1.2rem` padding.
 - **Hover / Focus:** Inverts to a transparent background with Ink text over 250ms.
 - **Text links:** Underlined with restrained spacing and inline SVG arrows where directional meaning is needed.

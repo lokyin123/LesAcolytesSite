@@ -31,7 +31,7 @@ permalink: "{{ section.url }}index.html"
         <div class="home-highlight__details">
           {% if nextEvent.data.series %}<p class="event-series">{{ nextEvent.data.series }}</p>{% endif %}
           <h3>{{ nextEvent.data.title }}</h3>
-          <p class="home-highlight__date">{{ nextEvent.data.event_date | eventDate }}{% if nextEvent.data.event_time %}<span>{{ nextEvent.data.event_time }}</span>{% endif %}</p>
+          <p class="home-highlight__date"><span>{{ nextEvent.data.event_date | eventDate }}</span>{% if nextEvent.data.event_time %}<span>{{ nextEvent.data.event_time }}</span>{% endif %}</p>
           <p class="home-highlight__venue">{{ nextEvent.data.venue }}</p>
           <a class="button-link" href="{{ nextEvent.data.ticket_url or '/whats-on/' }}"{% if nextEvent.data.ticket_url and (nextEvent.data.ticket_url | isExternalUrl) %} target="_blank" rel="noopener noreferrer"{% endif %}>View details <svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"></path></svg></a>
         </div>
@@ -44,7 +44,7 @@ permalink: "{{ section.url }}index.html"
         <div class="home-highlight__details home-highlight__details--recent">
           {% if latestPastEvent.data.series %}<p class="event-series">{{ latestPastEvent.data.series }}</p>{% endif %}
           <h3>{{ latestPastEvent.data.title }}</h3>
-          <p class="home-highlight__date">{{ latestPastEvent.data.event_date | eventDate }}</p>
+          <p class="home-highlight__date"><span>{{ latestPastEvent.data.event_date | eventDate }}</span></p>
           <p class="home-highlight__venue">{{ latestPastEvent.data.venue }}</p>
           <a class="button-link" href="/whats-on/#past-heading">See all performances <svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"></path></svg></a>
         </div>
@@ -68,7 +68,7 @@ permalink: "{{ section.url }}index.html"
         <div class="home-highlight__details home-highlight__details--recent">
           {% if latestPastEvent.data.series %}<p class="event-series">{{ latestPastEvent.data.series }}</p>{% endif %}
           <h3>{{ latestPastEvent.data.title }}</h3>
-          <p class="home-highlight__date">{{ latestPastEvent.data.event_date | eventDate }}</p>
+          <p class="home-highlight__date"><span>{{ latestPastEvent.data.event_date | eventDate }}</span></p>
           <p class="home-highlight__venue">{{ latestPastEvent.data.venue }}</p>
           <a class="button-link" href="/whats-on/#past-heading">See all performances <svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"></path></svg></a>
         </div>
@@ -151,7 +151,7 @@ permalink: "{{ section.url }}index.html"
       <h2 id="upcoming-heading">Upcoming performances</h2>
       {% if collections.events.length %}<div class="event-timeline">{% for event in collections.events %}
         <article class="event-feature">
-          <div class="event-feature__date"><p class="eyebrow">{{ event.data.event_date | eventDate }}</p>{% if event.data.event_time %}<p>{{ event.data.event_time }}</p>{% endif %}</div>
+          <div class="event-feature__date"><p class="event-feature__when"><span>{{ event.data.event_date | eventDate }}</span>{% if event.data.event_time %}<span>{{ event.data.event_time }}</span>{% endif %}</p></div>
           <div class="event-feature__details">{% if event.data.series %}<p class="event-series">{{ event.data.series }}</p>{% endif %}<h3>{{ event.data.title }}</h3><p class="event-feature__venue">{{ event.data.venue }}</p>{% if event.templateContent %}<div class="event-feature__description">{{ event.templateContent | safe }}</div>{% endif %}{% if event.data.ticket_url %}<a class="button-link" href="{{ event.data.ticket_url }}"{% if event.data.ticket_url | isExternalUrl %} target="_blank" rel="noopener noreferrer"{% endif %}>Event details <svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"></path></svg></a>{% endif %}</div>
         </article>
       {% endfor %}</div>{% else %}<p>New dates will be announced soon.</p>{% endif %}

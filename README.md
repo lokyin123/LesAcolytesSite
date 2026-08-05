@@ -30,6 +30,12 @@ npm run cms    # the CMS backend, on http://localhost:8082 (second terminal)
 
 With both running, the admin panel at **http://localhost:8080/admin/** works locally — click Login, no password needed. Edits write straight to the files in this folder, so check `git diff` before committing.
 
+### Local visual tweaks
+
+While `npm start` is running, open **http://localhost:8080/?tweaks** to display the development-only visual tweaks panel. It can temporarily explore the colour palette, choose which palette tone is assigned to each main section and individual musician biography panel, loaded typefaces, typography scale, button rounding, spacing, content width, panel proportions, panel height, and animation speed. Current experiments and named presets are stored only in that browser's local storage; **Copy settings** produces a JSON summary for discussion. **Reset** restores the real design.
+
+The panel is injected only when Eleventy runs with `--serve`. A normal `npm run build` excludes its markup, styles, and script completely, so neither the panel nor saved experiments can appear on the deployed website. Applying an approved experiment to the actual design remains a separate manual change.
+
 ## Deployment
 
 Already done: the repo is on GitHub, connected to Netlify (build `npm run build`, publish `_site`), and `site_url` in `src/admin/config.yml` points at the live URL.

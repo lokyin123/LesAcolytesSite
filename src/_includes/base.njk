@@ -48,5 +48,6 @@
       if (!user) window.netlifyIdentity.on("login", function () { document.location.href = "/admin/"; });
     });
   </script>
+  {% if isDevelopment %}{% include "dev/tweaks-panel.njk" %}{% endif %}
 </body>
 </html>
