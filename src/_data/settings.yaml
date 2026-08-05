@@ -1,7 +1,7 @@
-ensemble_name: "Les Acolytes"
-tagline: "French Baroque cantatas & chamber music"
-hero_image: "/images/stock/hero.jpg"
-about_heading: "About the ensemble"
+ensemble_name: Les Acolytes
+tagline: Chamber Ensemble
+hero_image: /images/stock/hero.jpg
+about_heading: About the ensemble
 about_text: |
   Les Acolytes is a Cambridge-based ensemble bringing French Baroque music
   to life through historically-informed performance. [Placeholder bio —
@@ -11,51 +11,52 @@ about_text: |
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
   fringilla, arcu at cursus congue, sapien odio malesuada felis, in
   fermentum turpis nulla eget est.
-about_image: "/images/stock/about.jpg"
+about_image: /images/stock/about.jpg
 members:
-  - name: "Andrew Taheny"
-    role: "Violin"
+  - name: Andrew Taheny
+    role: Violin
     images:
-      - src: "/images/IndividualsGit/Andrew-Amelia-Read-Photography-35.jpg"
-        alt: "Andrew Taheny"
-      - src: "/images/IndividualsGit/Andrew2-Amelia%20Read%20Photography-64.jpg"
-        alt: "Andrew Taheny"
-    tone: "clay"
+      - src: /images/IndividualsGit/Andrew-Amelia-Read-Photography-35.jpg
+        alt: Andrew Taheny
+      - src: /images/IndividualsGit/Andrew2-Amelia%20Read%20Photography-64.jpg
+        alt: Andrew Taheny
+    tone: clay
     bio: |
       Biography coming soon.
-  - name: "Billy Hui"
-    role: "Flute"
+  - name: Billy Hui
+    role: Flute
     images:
-      - src: "/images/IndividualsGit/Billy-Amelia%20Read%20Photography-24.jpg"
-        alt: "Billy Hui"
-      - src: "/images/IndividualsGit/Billy-2-Amelia%20Read%20Photography-27.jpg"
-        alt: "Billy Hui"
-    tone: "blue"
+      - src: /images/IndividualsGit/Billy-Amelia%20Read%20Photography-24.jpg
+        alt: Billy Hui
+      - src: /images/IndividualsGit/Billy-2-Amelia%20Read%20Photography-27.jpg
+        alt: Billy Hui
+    tone: blue
     bio: |
       Biography coming soon.
-  - name: "Timothy Lin"
-    role: "Viola da Gamba"
+  - name: Timothy Lin
+    role: Viola da Gamba
     images:
-      - src: "/images/IndividualsGit/Tim-Amelia%20Read%20Photography-8.jpg"
-        alt: "Timothy Lin"
-      - src: "/images/IndividualsGit/tim2-Amelia%20Read%20Photography-18.jpg"
-        alt: "Timothy Lin"
-    tone: "sand"
+      - src: /images/IndividualsGit/Tim-Amelia%20Read%20Photography-8.jpg
+        alt: Timothy Lin
+      - src: /images/IndividualsGit/tim2-Amelia%20Read%20Photography-18.jpg
+        alt: Timothy Lin
+    tone: sand
     bio: |
       Biography coming soon.
-  - name: "Edward Campbell-Rowntree"
-    role: "Harpsichord"
+  - name: Edward Campbell-Rowntree
+    role: Harpsichord
     images:
-      - src: "/images/IndividualsGit/Edd-Amelia%20Read%20Photography-5.jpg"
-        alt: "Edward Campbell-Rowntree"
-      - src: "/images/IndividualsGit/Edd2-Amelia%20Read%20Photography-84.jpg"
-        alt: "Edward Campbell-Rowntree"
-    tone: "sage"
+      - src: /images/IndividualsGit/Edd-Amelia%20Read%20Photography-5.jpg
+        alt: Edward Campbell-Rowntree
+      - src: /images/IndividualsGit/Edd2-Amelia%20Read%20Photography-84.jpg
+        alt: Edward Campbell-Rowntree
+    tone: sage
     bio: |
       Biography coming soon.
-contact_email: "hello@lesacolytes.uk"
-instagram_url: "https://www.instagram.com/lesacolytes.uk/"
-facebook_url: "https://www.facebook.com/"
-continuo_url: "https://www.continuoconnect.com/artists"
-youtube_url: "https://www.youtube.com/watch?v=E3unHrIWtPE"
-booking_note: "For bookings and enquiries, get in touch by email and we'll get back to you as soon as possible."
+contact_email: hello@lesacolytes.uk
+instagram_url: https://www.instagram.com/lesacolytes.uk/
+facebook_url: https://www.facebook.com/
+continuo_url: https://www.continuoconnect.com/artists
+youtube_url: https://www.youtube.com/watch?v=E3unHrIWtPE
+booking_note: For bookings and enquiries, get in touch by email and we'll get
+  back to you as soon as possible.
