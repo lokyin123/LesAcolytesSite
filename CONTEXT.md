@@ -97,7 +97,7 @@ The internal pages remain at different stages of completion. About, Musicians, W
 
 The Musicians page now scrolls through one substantial, full-browser-width profile per row. Portraits occupy 30% of the desktop row and biographies 70%, alternating left/right. Each musician has CMS-managed editable `bio` text and an `images` list with visitor-controlled previous/next controls, position indicators, keyboard access, and swipe/scroll support. The exact 1707x2560 portrait ratio determines each row's height and the colour panel stretches to match, with no cropping or distortion. Mobile stacks equally tall, full-width portrait and biography blocks. Musician fields are stored in `src/_data/pages/musicians.yaml` and exposed through the Decap CMS.
 
-The old signature intro is inactive: `src/js/intro.js` remains in the repository, but the current layout does not load it and the matching markup/CSS were removed.
+The previous inactive signature intro implementation has been removed. The current first-visit experiment lives in `src/_includes/dev/intro.njk` and is included only on the local development homepage.
 
 ## Local visual tweaks panel (2026-08-05)
 
@@ -120,20 +120,21 @@ Running `npm start` and opening `http://localhost:8080/?tweaks` activates a deve
 - `src/images/uploads/` — where photos uploaded through the CMS land; `src/images/stock/` has free Pexels stock photos (chamber music/baroque instruments) standing in for real ensemble photos — swap for real photos via the CMS when available.
 - `src/js/reveal.js` — IntersectionObserver scroll-fade-in effect (staggered for lists/grids), respects `prefers-reduced-motion`.
 - Single scrolling page (`src/index.njk`): Hero → About → Events → Media → Contact. Concert-hall brown/mahogany palette (ivory `#f3ead9` bg, mahogany `#2b1d14` ink, brick-red `#7a2e1d` accent) with Playfair Display headings + Source Serif 4 body text. Hero itself is plain and static — single background image, `<h1>`/tagline over a dark gradient, **no entrance animation on the hero.**
-- `src/js/intro.js` + the `.intro` rules in `style.css` — the signature landing screen (see below).
+- `src/_includes/dev/intro.njk` — the localhost-only first-visit introduction prototype; it is included only for the development homepage.
 
-## Signature intro (added 2026-07-31)
+## Local first-visit intro prototype (added 2026-08-08)
 
-Modelled on ericclapton.com, which opens with his signature being written before the site appears. Ours writes **"Les Acolytes"** in the Italianno script face, mahogany ink on the ivory paper background, then the tagline fades in beneath and the whole screen fades to reveal the page.
+The development homepage can show a short first-visit introduction using the supplied dark SVG logo and a subtle **Welcome** message on the same paper-coloured canvas. This is a localhost-only prototype and is not approved for production.
 
 How it works:
-- The "pen" is a `clip-path` polygon with a slanted right edge sweeping left→right over 1.8s (`@keyframes intro-write`). It's a wipe, not a traced path — no hand-authored SVG to maintain, and it re-renders correctly if the ensemble name is changed in the CMS, since the text comes from `settings.ensemble_name`.
-- An inline script in `<head>` (`base.njk`) decides *before first paint* whether to add `.intro-active` to `<html>`, so the site never flashes behind the overlay. It opts out when: already shown this browser session (`sessionStorage` key `la-intro-seen`), `prefers-reduced-motion: reduce`, or the URL has a `#hash` (so deep links skip it).
-- CSS keeps `.intro { display: none }` by default, so with JS disabled the overlay never appears at all.
-- `intro.js` waits for the Italianno webfont before starting (otherwise the fallback gets written and swapped mid-animation), auto-dismisses at 3s, and skips immediately on click / keypress / wheel / touch.
-- Total run ~3.8s including the 0.8s fade. Timings live in `HOLD`/`FADE` in `intro.js` and must stay in sync with the CSS animation durations.
+- The SVG is inlined locally for the prototype and revealed with two smooth clipped draw-like sweeps while descending gently. The red artwork appears first, followed by the black artwork in a left-to-right sweep; the letters are treated as groups rather than individual strokes for a calmer result.
+- The overlay is included only when Eleventy is serving locally and the current route is Home. A normal production build emits none of its markup, styles, or script.
+- It shows once per browser session using `sessionStorage` key `les-acolytes-intro-seen-v1`, dismisses on click, keypress, scroll, or touch, and runs for about 1.8 seconds before fading away.
+- While developing locally, adding `?intro` to the homepage URL replays it without clearing session data; the override is not emitted in production.
+- To disable the local prototype without removing it, set `INTRO_ENABLED` to `false` near the top of `src/_includes/dev/intro.njk`.
+- Visitors who prefer reduced motion bypass it completely, and JavaScript failure leaves the normal homepage visible because the intro is hidden by default.
 
-Note: this is **not** a copy of Clapton's signature — it's our own name in a script font.
+The previous inactive `src/js/intro.js` implementation was removed.
 
 ## Hero animation history — don't re-propose without explicit request
 

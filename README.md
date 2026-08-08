@@ -46,6 +46,10 @@ While `npm start` is running, open **http://localhost:8080/?tweaks** to display 
 
 The panel is injected only when Eleventy runs with `--serve`. A normal `npm run build` excludes its markup, styles, and script completely, so neither the panel nor saved experiments can appear on the deployed website. Applying an approved experiment to the actual design remains a separate manual change.
 
+The localhost-only first-visit intro prototype can be replayed with `http://localhost:8080/?intro`; normal local visits show it once per browser session, while production builds exclude it.
+
+To turn the prototype off locally, change `INTRO_ENABLED` to `false` in `src/_includes/dev/intro.njk`.
+
 ## Deployment
 
 Already done: the repo is on GitHub, connected to Netlify (build `npm run build`, publish `_site`), and `site_url` in `src/admin/config.yml` points at the live URL.
