@@ -145,6 +145,7 @@ The Decap panel existed from the start but had never been opened by anyone, whic
 - **Past events auto-hide** via the collection filter in `.eleventy.js`. Caveat: "today" is *build time*, so an event drops off at the next build, not at midnight. Every CMS save triggers a build, so it self-corrects in practice; exact behaviour would need a daily scheduled build hook on Netlify.
 - **Event descriptions render** (`src/index.njk`, `.event*` rules in `style.css`). The obsolete Event Image CMS field was removed because event photos are no longer displayed.
 - **Identity widget added to `base.njk`.** Invite and password-recovery emails land on the homepage with a `#token`, not on `/admin/` — without the widget there, invite links silently do nothing. The signature intro already skips when a hash is present, so the two don't collide.
+- **Page CMS fields corrected.** The About collection now exposes only its own page fields, including the Markdown `content_body`. The Programmes collection exposes the three curated programme cards, their editable/deletable piece lists and optional intervals, the nine-item repertoire list, and the bespoke-programme contact fields.
 - Deliberately **not** done: editorial workflow (draft/review branches — too much concept for one editor), a styled preview pane (Decap's unstyled default is turned off via `editor: preview: false`), `logo_url` (Decap renders it full-size; the hero photo swamped the login screen — needs a proper small wordmark), and image optimisation on upload (phone photos will bloat the repo; `eleventy-img` is the eventual answer).
 - Dead `src/_redirects` passthrough removed from `.eleventy.js` — the file never existed.
 
@@ -152,7 +153,7 @@ The Decap panel existed from the start but had never been opened by anyone, whic
 
 Site building locally (`npm start` — run `npm install` first, `node_modules` is not committed). Repo now has a GitHub remote (`git@github.com:JamesHLS/LesAcolytes.git`) and `main` tracks `origin/main`, so next-step 1 is done. `site_url` in `src/admin/config.yml` points at `https://les-acolytes.netlify.app`, so steps 2 and 4 look done too. **Unverified from inside the repo:** whether Netlify Identity + Git Gateway are enabled and whether the brother has been invited (steps 3 and 5).
 
-Real content in place for: media (2 real Marin Marais performance videos embedded, one is an actual Les Acolytes recording — YouTube ID `KMH-7NeWgVA`), member lineup (Andrew Taheny - violin, Billy Hui - flute, Timothy Lin - viola da gamba, Edward Campbell-Rowntree - harpsichord, no founder framing). About bio and event programme description are back to generic placeholder text — web-researched specifics weren't accurate for this ensemble and were reverted; don't re-add researched specifics without user confirmation. Photos are still stock/placeholder (Pexels).
+Real content in place for: About bio, media (2 real Marin Marais performance videos embedded, one is an actual Les Acolytes recording — YouTube ID `KMH-7NeWgVA`), member lineup (Andrew Taheny - violin, Billy Hui - flute, Timothy Lin - viola da gamba, Edward Campbell-Rowntree - harpsichord, no founder framing). Programme cards remain clearly labelled placeholders for CMS editing. Photos are still stock/placeholder (Pexels).
 
 ## Next steps
 

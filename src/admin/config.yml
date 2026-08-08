@@ -70,37 +70,6 @@ collections:
           - { label: "Hero image", name: "image", widget: "image" }
           - { label: "Body heading", name: "content_heading", widget: "string" }
           - { label: "Body text", name: "content_body", widget: "markdown" }
-          - { label: "Curated programmes heading", name: "curated_heading", widget: "string" }
-          - label: "Curated programmes"
-            name: "curated_programmes"
-            widget: "list"
-            fields:
-              - { label: "Programme title", name: "title", widget: "string" }
-              - { label: "Programme description", name: "description", widget: "markdown" }
-              - label: "Pieces before interval"
-                name: "pieces_before_interval"
-                widget: "list"
-                fields:
-                  - { label: "Composer name", name: "composer", widget: "string" }
-                  - { label: "Piece name", name: "piece", widget: "string" }
-              - { label: "Include Interval", name: "show_interval", widget: "boolean", default: false }
-              - label: "Pieces after interval"
-                name: "pieces_after_interval"
-                widget: "list"
-                fields:
-                  - { label: "Composer name", name: "composer", widget: "string" }
-                  - { label: "Piece name", name: "piece", widget: "string" }
-              - { label: "Total duration", name: "total_duration", widget: "string" }
-          - { label: "Current repertoire heading", name: "repertoire_heading", widget: "string" }
-          - label: "Current repertoire"
-            name: "repertoire"
-            widget: "list"
-            fields:
-              - { label: "Composer name", name: "composer", widget: "string" }
-              - { label: "Piece name", name: "piece", widget: "string" }
-          - { label: "Bespoke programme heading", name: "bespoke_heading", widget: "string" }
-          - { label: "Bespoke programme text", name: "bespoke_body", widget: "markdown" }
-          - { label: "Bespoke programme contact link", name: "bespoke_button", widget: "string" }
       - name: "musicians"
         label: "Musicians"
         file: "src/_data/pages/musicians.yaml"
@@ -156,6 +125,37 @@ collections:
           - { label: "Hero image", name: "image", widget: "image" }
           - { label: "Body heading", name: "content_heading", widget: "string" }
           - { label: "Body text", name: "content_body", widget: "markdown" }
+          - { label: "Curated programmes heading", name: "curated_heading", widget: "string" }
+          - label: "Curated programmes"
+            name: "curated_programmes"
+            widget: "list"
+            fields:
+              - { label: "Programme title", name: "title", widget: "string" }
+              - { label: "Programme description", name: "description", widget: "markdown" }
+              - label: "Pieces before interval"
+                name: "pieces_before_interval"
+                widget: "list"
+                fields:
+                  - { label: "Composer name", name: "composer", widget: "string" }
+                  - { label: "Piece name", name: "piece", widget: "string" }
+              - { label: "Include Interval", name: "show_interval", widget: "boolean", default: false }
+              - label: "Pieces after interval"
+                name: "pieces_after_interval"
+                widget: "list"
+                fields:
+                  - { label: "Composer name", name: "composer", widget: "string" }
+                  - { label: "Piece name", name: "piece", widget: "string" }
+              - { label: "Total duration", name: "total_duration", widget: "string" }
+          - { label: "Current repertoire heading", name: "repertoire_heading", widget: "string" }
+          - label: "Current repertoire"
+            name: "repertoire"
+            widget: "list"
+            fields:
+              - { label: "Composer name", name: "composer", widget: "string" }
+              - { label: "Piece name", name: "piece", widget: "string" }
+          - { label: "Bespoke programme heading", name: "bespoke_heading", widget: "string" }
+          - { label: "Bespoke programme text", name: "bespoke_body", widget: "markdown" }
+          - { label: "Bespoke programme contact link", name: "bespoke_button", widget: "string" }
       - name: "media"
         label: "Media"
         file: "src/_data/pages/media.yaml"
