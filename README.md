@@ -20,6 +20,8 @@ The visual direction uses large, calm neutral-colour panels paired with ensemble
 
 On mobile, internal page headers stack the photograph above the tone-coloured copy panel. A short gradient blends the bottom of the photograph into the panel, which keeps a subtle paper-blended transparency effect without placing the image beneath it. This does not affect the homepage landing panels or the individual musician portrait and biography rows.
 
+There is currently a desktop and homepage experiment applying a narrower, lower-opacity blend with a soft edge blur at internal header seams, the homepage hero seam, and the homepage destination panels on desktop and mobile.
+
 The current typography has four deliberately separate roles: Major Mono Display for the visual `les Acolytes` wordmark, Bricolage Grotesque for expressive headings, Manrope for navigation, metadata, labels, buttons, and short panel summaries, and Spectral for substantive body copy. The mixed system keeps coloured title panels fully sans serif while longer biographies, descriptions, and articles retain an editorial reading voice.
 
 The Musicians page is a long, alternating sequence rather than a card table. Every photo/panel pair spans the full browser width: a natural-aspect-ratio portrait occupies 30% and a coloured biography panel occupies 70%, reversing sides for each musician. Each member now has a CMS-managed `images` list with visitor-controlled previous/next controls, position indicators, keyboard access, and swipe/scroll support; the portrait's exact 1707:2560 ratio determines the desktop row height and the panel stretches to match. On mobile, both become full-width stacked blocks of matching height. Final biographies are still outstanding.
