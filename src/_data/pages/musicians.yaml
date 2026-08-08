@@ -6,6 +6,7 @@ image: "/images/GROUPSHOTS/Amelia-Read-Photography-10-whats-on.jpg"
 tone: "sand"
 members:
   - name: "Andrew Taheny"
+    slug: "andrew-taheny"
     role: "Violin"
     images:
       - src: "/images/IndividualsGit/Andrew-Amelia-Read-Photography-35.jpg"
@@ -16,7 +17,8 @@ members:
     bio: |
       Biography coming soon.
   - name: "Billy Hui"
-    role: "Flute"
+    slug: "billy-hui"
+    role: "Traverso"
     images:
       - src: "/images/IndividualsGit/Billy-Amelia%20Read%20Photography-24.jpg"
         alt: "Billy Hui"
@@ -26,6 +28,7 @@ members:
     bio: |
       Biography coming soon.
   - name: "Timothy Lin"
+    slug: "timothy-lin"
     role: "Viola da Gamba"
     images:
       - src: "/images/IndividualsGit/Tim-Amelia%20Read%20Photography-8.jpg"
@@ -36,6 +39,7 @@ members:
     bio: |
       Biography coming soon.
   - name: "Edward Campbell-Rowntree"
+    slug: "edward-campbell-rowntree"
     role: "Harpsichord"
     images:
       - src: "/images/IndividualsGit/Edd-Amelia%20Read%20Photography-5.jpg"

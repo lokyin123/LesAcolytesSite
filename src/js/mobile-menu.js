@@ -41,6 +41,9 @@ if (menu && menuToggle && menuClose) {
 
   menuToggle.addEventListener("click", openMenu);
   menuClose.addEventListener("click", () => closeMenu());
+  menu.addEventListener("click", (event) => {
+    if (event.target === menu) closeMenu();
+  });
   menu.querySelectorAll("a").forEach((link) =>
     link.addEventListener("click", () => closeMenu({ restoreFocus: false }))
   );

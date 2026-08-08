@@ -128,11 +128,20 @@ permalink: "{{ section.url }}index.html"
 </header>
 <section class="page-content{% if section.slug == 'musicians' %} page-content--musicians{% else %} wrap{% endif %}{% if section.slug == 'about' %} page-content--about{% endif %}">
   {% if section.slug == "about" %}
-    <h2>{{ page.content_heading }}</h2><div class="prose">{{ page.content_body | renderMarkdown | safe }}</div>
+    <div class="about-body__copy"><h2>{{ page.content_heading }}</h2><div class="prose">{{ page.content_body | renderMarkdown | safe }}</div></div>
+    <aside class="about-musicians-panel tone-sand" aria-labelledby="about-musicians-heading">
+      <h2 id="about-musicians-heading">Our Musicians</h2>
+      <nav aria-label="Meet the musicians">
+        <a class="about-musicians-panel__link" href="/musicians/#musician-andrew-taheny"><span>Andrew Taheny</span><span>Violin</span><svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"></path></svg></a>
+        <a class="about-musicians-panel__link" href="/musicians/#musician-billy-hui"><span>Billy Hui</span><span>Traverso</span><svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"></path></svg></a>
+        <a class="about-musicians-panel__link" href="/musicians/#musician-edward-campbell-rowntree"><span>Edward Campbell-Rowntree</span><span>Harpsichord</span><svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"></path></svg></a>
+        <a class="about-musicians-panel__link" href="/musicians/#musician-timothy-lin"><span>Tim Lin</span><span>Viola da gamba</span><svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"></path></svg></a>
+      </nav>
+    </aside>
   {% elif section.slug == "musicians" %}
     <div class="musician-list">
       {% for member in page.members %}
-      <article class="musician{% if loop.index0 % 2 == 1 %} musician--reverse{% endif %}">
+      <article id="musician-{{ member.slug }}" class="musician{% if loop.index0 % 2 == 1 %} musician--reverse{% endif %}">
         <div class="musician__portrait">
           {% if member.images and member.images.length %}
           <div class="musician__portrait-track" data-musician-track tabindex="0" aria-label="Portraits of {{ member.name }}">
