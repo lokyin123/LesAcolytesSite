@@ -8,7 +8,11 @@ The original single-page design is now a prototype only. The real build keeps El
 
 Fixed routes live in `src/_data/sections.yaml`; editable page copy, photos, colours, contact details, and musician biographies live in `src/_data/pages/*.yaml`. One paginated `src/index.njk` template generates the homepage and section routes; `src/_includes/base.njk` supplies their shared navigation and footer. Content remains provisional during the structure and visual-design stages.
 
-Directly beneath the homepage hero is a visitor-controlled two-slide highlight card. It shows the next upcoming performance first and the four social destinations second. When there is no upcoming event, the first slide becomes an invitation to explore recent performances. The card reads the existing Events and Pages data automatically, so editors do not maintain separate homepage content.
+Directly beneath the homepage hero is a visitor-controlled three-slide highlight card. It shows the next upcoming performance first, an embedded Media recording as the visual centrepiece second, and the four social destinations third. When there is no upcoming event, the first slide becomes an invitation to explore recent performances. The card reads the existing Events and Pages data automatically, so editors do not maintain separate homepage content.
+
+The Programmes page now has three CMS-managed sample programme cards, each with a long description, unlimited composer/piece rows before and after an optional interval, and a total duration. Cards grow with longer programme content. A separate CMS-managed recent repertoire list sits below, followed by a bespoke-programme contact invitation with an animated contact link and email beneath the invitation text.
+
+Page transitions are now part of the main build. They use the View Transitions API as progressive enhancement when supported, keep the shared header stable while page content fades and rises gently into place, and respect `prefers-reduced-motion`; unsupported browsers retain normal navigation.
 
 News is prepared for numbered archive pages: up to six articles appear on each page, with additional pages at stable `/news/page/2/`-style URLs when the collection grows. The Contact page puts bookings and enquiries first, followed by the copyable email address and all four CMS-managed social destinations.
 
@@ -51,6 +55,8 @@ The CMS uses Decap's `git-gateway` backend, which is Netlify-specific. It would 
 Netlify announced Identity's deprecation and then [reversed that in February 2026](https://answers.netlify.com/t/netlify-identity-is-staying-feb-2026-reversal-what-changed-whos-affected-and-how-to-proceed/162733). It's staying, but receives no further development — if it's ever pulled, the migration path is the `github` backend above.
 
 ## Content structure (for reference)
+
+The supplied SVG logo files in `src/images/` are used for the header and footer wordmarks. The homepage hero uses lowercase `les acolytes` text in Radio Canada Big so the title remains one line across the responsive split layout.
 
 News articles live in `src/content/news/*.md`; each file generates its own article page.
 

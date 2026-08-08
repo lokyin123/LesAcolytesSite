@@ -34,7 +34,7 @@ Your concert listings. Click **+ Event** to add one, or click an existing event 
 
 **Past concerts are retained automatically.** Once an event's date has passed, it moves from Upcoming Performances into the Past Performances carousel the next time the site builds. You do not need to edit or delete it. Use **Past performance** only when an event needs to appear there before its stored date has passed; use **Delete entry** only when it should be removed from the site entirely.
 
-The homepage highlight card uses the earliest upcoming event automatically. You do not need to enter it anywhere else. If there are no upcoming events, the card instead shows the most recent past performance alongside an invitation to explore Media.
+The homepage highlight card uses the earliest upcoming event automatically. You do not need to enter it anywhere else. Its second slide always invites visitors to explore Media. If there are no upcoming events, the first slide instead shows the most recent past performance.
 
 To preview that no-upcoming-events fallback locally without changing any event, open **http://localhost:8080/?preview=fallback**. This preview switch works only on localhost and does not affect the deployed site.
 
@@ -57,6 +57,25 @@ The Contact page shows bookings and enquiries first, then the copyable contact e
 Both lists let you remove items with the **×** and reorder them by dragging the **=** handle.
 
 **A note on photo sizes:** photos straight off a phone are often very large. If you can, resize to around 2000 pixels wide before uploading — the site will load faster and stay tidy.
+
+### Programmes
+
+The Programmes page has three starting sample programme entries. Each one includes:
+
+- **Programme title**
+- **Programme description** — a long Markdown field for explaining the context behind the programme
+- **Pieces before interval** — add as many composer/piece rows as needed
+- **Include Interval** — turn this on when the programme has an interval
+- **Pieces after interval** — add as many more composer/piece rows as needed
+- **Total duration**
+
+The **Recent repertoire** list is separate. Each row has a composer and piece, and the same composer can be used on multiple rows. Add, remove, and reorder entries as the repertoire changes.
+
+The page also includes the “Something else in mind?” contact invitation. Its contact link and email sit below the invitation text, and the email address is taken automatically from the Contact page entry.
+
+### Page transitions
+
+Page transitions are enabled in the main build. Test them by loading any page locally, scrolling near the bottom, and navigating through the header links. The header should remain visually stable while the current viewport fades out directly and the next page fades in deliberately, over roughly 900ms, with a slight upward arrival and no scroll-to-top jump. Also test browser back/forward on desktop and mobile, and confirm reduced-motion settings disable the animation.
 
 ## Saving
 

@@ -1,5 +1,8 @@
 import * as yaml from "js-yaml";
+import MarkdownIt from "markdown-it";
 import fs from "node:fs";
+
+const markdown = new MarkdownIt({ html: false, linkify: true });
 
 // Event dates arrive as a plain "YYYY-MM-DD" string from the CMS, but YAML
 // front matter may already have parsed one into a Date. Normalise to a string
@@ -45,6 +48,10 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("isExternalUrl", (value) =>
     /^https?:\/\//i.test(String(value || ""))
+  );
+
+  eleventyConfig.addFilter("renderMarkdown", (value) =>
+    markdown.render(String(value || ""))
   );
 
   // Past events drop off the site on the next build. Any CMS save triggers a

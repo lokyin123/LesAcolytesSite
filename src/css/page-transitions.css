@@ -1,0 +1,46 @@
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-group(root) {
+  animation: none;
+}
+
+::view-transition-old(root) {
+  animation: la-page-exit 680ms cubic-bezier(.33, 1, .68, 1) both;
+}
+
+::view-transition-new(root) {
+  animation: la-page-enter 900ms cubic-bezier(.16, 1, .3, 1) 140ms both;
+}
+
+.site-header {
+  view-transition-name: la-site-header;
+}
+
+::view-transition-group(la-site-header),
+::view-transition-old(la-site-header),
+::view-transition-new(la-site-header) {
+  animation: none;
+}
+
+@keyframes la-page-exit {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes la-page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(root),
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}

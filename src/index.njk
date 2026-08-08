@@ -12,7 +12,7 @@ permalink: "{{ section.url }}index.html"
 <section class="split-hero">
   <div class="split-hero__image"><img src="{{ page.image }}" alt="{{ settings.ensemble_name }} performing together"></div>
   <div class="split-hero__panel tone-{{ page.tone }}">
-    <h1 class="ensemble-title" aria-label="{{ settings.ensemble_name }}"><span aria-hidden="true">les<br>Acolytes</span></h1>
+    <h1 class="ensemble-title" aria-label="{{ settings.ensemble_name }}"><span aria-hidden="true">les acolytes</span></h1>
     <p class="hero-summary">{{ page.summary }}</p>
     <a class="text-link" href="#find-us">{{ page.discover_label }} <svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 9 7 7 7-7"></path></svg></a>
   </div>
@@ -56,10 +56,6 @@ permalink: "{{ section.url }}index.html"
           <a class="button-link" href="/whats-on/#past-heading">{{ page.fallback_empty_button }} <svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"></path></svg></a>
         </div>
         {% endif %}
-        <aside class="home-highlight__media-invite">
-          <h3>{{ page.media_invitation_heading }}</h3>
-          <a class="button-link" href="/media/">{{ page.media_invitation_button }} <svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"></path></svg></a>
-        </aside>
       </div>
       {% else %}
       <div class="home-highlight__state home-highlight__state--fallback" data-home-highlight-fallback>
@@ -80,12 +76,20 @@ permalink: "{{ section.url }}index.html"
           <a class="button-link" href="/whats-on/#past-heading">{{ page.fallback_empty_button }} <svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"></path></svg></a>
         </div>
         {% endif %}
-        <aside class="home-highlight__media-invite">
-          <h3>{{ page.media_invitation_heading }}</h3>
-          <a class="button-link" href="/media/">{{ page.media_invitation_button }} <svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"></path></svg></a>
-        </aside>
       </div>
       {% endif %}
+    </article>
+    <article class="home-highlight__slide home-highlight__slide--media">
+      <div class="home-highlight__media-card">
+        {% set featuredVideo = media.videos[0] %}
+        <div class="home-highlight__media-frame"><iframe src="https://www.youtube.com/embed/{{ featuredVideo.youtube_id }}" title="{{ featuredVideo.composer }} — {{ featuredVideo.piece }}" allowfullscreen></iframe></div>
+        <div class="home-highlight__media-copy">
+          <p class="eyebrow">Watch and listen</p>
+          <h2>{{ page.media_invitation_heading }}</h2>
+          <p>{{ pages.media.summary }}</p>
+          <a class="button-link" href="/media/">{{ page.media_invitation_button }} <svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"></path></svg></a>
+        </div>
+      </div>
     </article>
     <article class="home-highlight__slide home-highlight__slide--social">
       <div class="home-highlight__intro">
@@ -103,7 +107,8 @@ permalink: "{{ section.url }}index.html"
   </div>
   <div class="home-highlight__indicators" aria-label="Choose a homepage highlight">
     <button type="button" data-home-highlight-indicator="0" aria-label="Show performance highlight" aria-current="true"></button>
-    <button type="button" data-home-highlight-indicator="1" aria-label="Show social links"></button>
+    <button type="button" data-home-highlight-indicator="1" aria-label="Show Media highlight"></button>
+    <button type="button" data-home-highlight-indicator="2" aria-label="Show social links"></button>
   </div>
 </section>
 <div class="section-panels">
@@ -121,9 +126,9 @@ permalink: "{{ section.url }}index.html"
   <div class="page-hero__copy"><p class="eyebrow">{{ page.eyebrow }}</p><h1>{{ page.title }}</h1><p>{{ page.summary }}</p></div>
   <img src="{{ page.image }}" alt="" class="page-hero__image">
 </header>
-<section class="page-content{% if section.slug == 'musicians' %} page-content--musicians{% else %} wrap{% endif %}">
+<section class="page-content{% if section.slug == 'musicians' %} page-content--musicians{% else %} wrap{% endif %}{% if section.slug == 'about' %} page-content--about{% endif %}">
   {% if section.slug == "about" %}
-    <h2>{{ page.content_heading }}</h2><div class="prose">{{ page.content_body | safe }}</div>
+    <h2>{{ page.content_heading }}</h2><div class="prose">{{ page.content_body | renderMarkdown | safe }}</div>
   {% elif section.slug == "musicians" %}
     <div class="musician-list">
       {% for member in page.members %}
@@ -171,6 +176,60 @@ permalink: "{{ section.url }}index.html"
       <div class="past-events__track" data-past-track tabindex="0">{% for slide in pastEventSlides %}<div class="past-events__slide past-events__slide--{% if slide.length == 1 %}2{% else %}{{ slide.length }}{% endif %}">{% for event in slide %}<article class="event-card"><p class="eyebrow">{{ event.data.event_date | eventDate }}</p>{% if event.data.series %}<p class="event-series">{{ event.data.series }}</p>{% endif %}<h3>{{ event.data.title }}</h3><p class="event-card__venue">{{ event.data.venue }}</p>{% if event.data.ticket_url %}<a class="text-link" href="{{ event.data.ticket_url }}"{% if event.data.ticket_url | isExternalUrl %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ page.details_button }} <svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"></path></svg></a>{% endif %}</article>{% endfor %}{% if slide.length == 1 %}<aside class="event-card event-card--media"><p class="eyebrow">{{ page.past_media_eyebrow }}</p><h3>{{ page.past_media_heading }}</h3><p>{{ page.past_media_text }}</p><a class="text-link" href="/media/">{{ page.past_media_button }} <svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"></path></svg></a></aside>{% endif %}</div>{% endfor %}</div>
       <div class="past-events__indicators" aria-label="Choose a past performances slide">{% for slide in pastEventSlides %}<button type="button" data-past-indicator="{{ loop.index0 }}" aria-label="Show past performances slide {{ loop.index }}"{% if loop.first %} aria-current="true"{% endif %}></button>{% endfor %}</div>
     </section>{% else %}<p>{{ page.empty_text }}</p>{% endif %}
+  {% elif section.slug == "programmes" %}
+    <section class="programme-showcase" data-programme-slider aria-labelledby="curated-programmes-heading">
+      <div class="programme-showcase__heading">
+        <h2 id="curated-programmes-heading">{{ page.curated_heading }}</h2>
+        <div class="programme-showcase__controls" aria-label="Curated programme controls">
+          <button type="button" data-programme-previous aria-label="Show previous programme"><svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 5-7 7 7 7"></path></svg></button>
+          <button type="button" data-programme-next aria-label="Show next programme"><svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"></path></svg></button>
+        </div>
+      </div>
+      <div class="programme-showcase__track" data-programme-track tabindex="0">
+        {% for programme in page.curated_programmes %}
+        <article class="programme-card">
+          <div class="programme-card__intro">
+            <p class="eyebrow">Curated programme</p>
+            <h3>{{ programme.title }}</h3>
+            <div class="programme-card__description">{{ programme.description | renderMarkdown | safe }}</div>
+          </div>
+          <div class="programme-card__music">
+            {% if programme.pieces_before_interval and programme.pieces_before_interval.length %}
+            <ul class="programme-card__pieces">
+              {% for piece in programme.pieces_before_interval %}<li><span>{{ piece.composer }}</span><em>{{ piece.piece }}</em></li>{% endfor %}
+            </ul>
+            {% endif %}
+            {% if programme.show_interval %}<p class="programme-card__interval">Interval</p>{% endif %}
+            {% if programme.pieces_after_interval and programme.pieces_after_interval.length %}
+            <ul class="programme-card__pieces">
+              {% for piece in programme.pieces_after_interval %}<li><span>{{ piece.composer }}</span><em>{{ piece.piece }}</em></li>{% endfor %}
+            </ul>
+            {% endif %}
+            <p class="programme-card__duration"><span>Total duration</span>{{ programme.total_duration }}</p>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+      <div class="programme-showcase__indicators" aria-label="Choose a curated programme">
+        {% for programme in page.curated_programmes %}<button type="button" data-programme-indicator="{{ loop.index0 }}" aria-label="Show programme {{ loop.index }}: {{ programme.title }}"{% if loop.first %} aria-current="true"{% endif %}></button>{% endfor %}
+      </div>
+    </section>
+    <section class="repertoire" aria-labelledby="repertoire-heading">
+      <div class="repertoire__heading">
+        <h2 id="repertoire-heading">{{ page.repertoire_heading }}</h2>
+      </div>
+      <ul class="repertoire__list">
+        {% for piece in page.repertoire %}<li><span>{{ piece.composer }}</span><em>{{ piece.piece }}</em></li>{% endfor %}
+      </ul>
+    </section>
+    <section class="bespoke-programme" aria-labelledby="bespoke-programme-heading">
+      <h2 id="bespoke-programme-heading">{{ page.bespoke_heading }}</h2>
+      <div class="prose">{{ page.bespoke_body | renderMarkdown | safe }}</div>
+      <div class="bespoke-programme__actions">
+        <a class="bespoke-programme__contact-link" href="/contact/"><span>{{ page.bespoke_button }}</span><svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"></path></svg></a>
+        <a class="text-link" href="mailto:{{ pages.contact.email }}">{{ pages.contact.email }}</a>
+      </div>
+    </section>
   {% elif section.slug == "media" %}
     <section class="video-slider" data-video-slider aria-labelledby="recordings-heading">
       <div class="video-slider__heading">

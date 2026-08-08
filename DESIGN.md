@@ -2,10 +2,10 @@
 name: Les Acolytes
 description: A calm, editorial website that presents French and French-adjacent repertoire with warmth and contemporary digital clarity.
 colors:
-  ink: "#252825"
+  ink: "#241F20"
   paper: "#fffcf5"
   soft-white: "#fafafa"
-  muted-text: "#666a64"
+  muted-text: "#6B6061"
   clay: "#e68665"
   sage: "#8bb19a"
   sand: "#ded2ba"

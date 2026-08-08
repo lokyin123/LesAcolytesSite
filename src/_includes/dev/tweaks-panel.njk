@@ -156,7 +156,7 @@
   var panelTones = ["clay", "sage", "sand", "blue", "rose"];
   var sectionPaths = { "": "home", "about": "about", "musicians": "musicians", "whats-on": "whatsOn", "programmes": "programmes", "media": "media", "news": "news", "contact": "contact" };
   var defaults = {
-    colors: { ink: "#252825", paper: "#fffcf5", white: "#fafafa", muted: "#666a64", clay: "#e68665", sage: "#8bb19a", sand: "#ded2ba", blue: "#b7c5d2", rose: "#ecde79" },
+    colors: { ink: "#241F20", paper: "#fffcf5", white: "#fafafa", muted: "#6B6061", clay: "#e68665", sage: "#8bb19a", sand: "#ded2ba", blue: "#b7c5d2", rose: "#ecde79" },
     panels: { home: "blue", about: "sage", musicians: "sand", whatsOn: "clay", programmes: "blue", media: "sage", news: "sand", contact: "rose"{% for member in pages.musicians.members %}, musician{{ loop.index0 }}: "{{ member.tone or 'sand' }}"{% endfor %} },
     fonts: { display: "Bricolage Grotesque", body: "Spectral", interface: "Manrope" },
     sizes: { headings: 0.9, body: 1.1, interface: 1.15, buttons: 1, eyebrows: 1.16 },
