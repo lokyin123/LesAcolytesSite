@@ -1,51 +1,80 @@
-nav_label: "Musicians"
-title: "Musicians"
-eyebrow: "Meet the ensemble"
-summary: "Meet the individual performers who bring each Les Acolytes programme to life."
-image: "/images/GROUPSHOTS/Amelia-Read-Photography-10-whats-on.jpg"
-tone: "sand"
+nav_label: Musicians
+title: Musicians
+eyebrow: Meet the ensemble
+summary: Meet the individual performers who bring each Les Acolytes programme to life.
+image: /images/GROUPSHOTS/Amelia-Read-Photography-10-whats-on.jpg
+tone: sand
 members:
-  - name: "Andrew Taheny"
-    slug: "andrew-taheny"
-    role: "Violin"
+  - name: Andrew Taheny
+    slug: andrew-taheny
+    role: Violin
     images:
-      - src: "/images/IndividualsGit/Andrew-Amelia-Read-Photography-35.jpg"
-        alt: "Andrew Taheny"
-      - src: "/images/IndividualsGit/Andrew2-Amelia%20Read%20Photography-64.jpg"
-        alt: "Andrew Taheny"
-    tone: "clay"
+      - src: /images/IndividualsGit/Andrew-Amelia-Read-Photography-35.jpg
+        alt: Andrew Taheny
+      - src: /images/IndividualsGit/Andrew2-Amelia%20Read%20Photography-64.jpg
+        alt: Andrew Taheny
+    tone: clay
+    bio: >-
+      **Andrew Taheny** is a violinist originally from Glasgow, who enjoys a
+      varied performance schedule using period and modern instruments. He has
+      performed with ensembles ranging from the Hanover Band, Irish Baroque
+      Orchestra, Manchester Baroque, Instruments of Time & Truth, London Early
+      Opera and La Serenissima to the Hallé, Philharmonia, Royal Philharmonic
+      Orchestra, Manchester Camerata, BBC Philharmonic and BBC Scottish Symphony
+      Orchestra. He also has a passion for chamber music, performing regularly
+      with Les Acolytes, the Millbank Quartet and Musica Antica Rotherhithe. He
+      has taken part in recordings of repertoire from the 17thto 21st
+      centuries. 
+
+
+      Andrew studied with Ruth Crouch at the University of Edinburgh (BMus) and with Julia Hanson and Pauline Nobes at the Royal Northern College of Music (MMus, PGDip). He has received further tuition from Bojan Čičić, Emmanuel Resche-Caserta, Catherine Martin, Lucy Russell, Rachel Podger, Judy Tarling and Roberto Ruisi. He was a 2023/24 Southbank Sinfonia Violin Fellow and took part in the 2024/25 Hallé Advanced Orchestral String Programme. He is currently taking part in fellowships with the Orchestra of the Age of Enlightenment, the English Concert and Manchester Baroque.
+
+
+      Andrewis passionate about music education and engagement. Besides his regular peripatetic teaching, he has taken part in outreach projects with the Hallé, Royal Liverpool Philharmonic, Manchester Baroque, Orchestra of the Age of Enlightenment, Southbank Sinfonia, Nevis Ensemble and the Benedetti Foundation. 
+
+
+      Andrew plays a Dearlove violin (1832) and a J.C. Kloz baroque violin (1756, with bowsby Eitan Hoffer), generously loaned to him by the Tompkins-Tate Trust and Cherubim Music Trust, respectively. He is also grateful to the Cross Trust, McGlashan Trust, Friends of Baroque Music in Yorkshire, Friends of St. Cecilia’s Hall and Edinburgh College of Art for supporting his studies.
+  - name: Billy Hui
+    slug: billy-hui
+    role: Traverso
+    images:
+      - src: /images/IndividualsGit/Billy-Amelia%20Read%20Photography-24.jpg
+        alt: Billy Hui
+      - src: /images/IndividualsGit/Billy-2-Amelia%20Read%20Photography-27.jpg
+        alt: Billy Hui
+    tone: blue
     bio: |
       Biography coming soon.
-  - name: "Billy Hui"
-    slug: "billy-hui"
-    role: "Traverso"
+  - name: Timothy Lin
+    slug: timothy-lin
+    role: Viola da Gamba
     images:
-      - src: "/images/IndividualsGit/Billy-Amelia%20Read%20Photography-24.jpg"
-        alt: "Billy Hui"
-      - src: "/images/IndividualsGit/Billy-2-Amelia%20Read%20Photography-27.jpg"
-        alt: "Billy Hui"
-    tone: "blue"
+      - src: /images/IndividualsGit/Tim-Amelia%20Read%20Photography-8.jpg
+        alt: Timothy Lin
+      - src: /images/IndividualsGit/tim2-Amelia%20Read%20Photography-18.jpg
+        alt: Timothy Lin
+    tone: sand
     bio: |
       Biography coming soon.
-  - name: "Timothy Lin"
-    slug: "timothy-lin"
-    role: "Viola da Gamba"
+  - name: Edward Campbell-Rowntree
+    slug: edward-campbell-rowntree
+    role: Harpsichord
     images:
-      - src: "/images/IndividualsGit/Tim-Amelia%20Read%20Photography-8.jpg"
-        alt: "Timothy Lin"
-      - src: "/images/IndividualsGit/tim2-Amelia%20Read%20Photography-18.jpg"
-        alt: "Timothy Lin"
-    tone: "sand"
-    bio: |
-      Biography coming soon.
-  - name: "Edward Campbell-Rowntree"
-    slug: "edward-campbell-rowntree"
-    role: "Harpsichord"
-    images:
-      - src: "/images/IndividualsGit/Edd-Amelia%20Read%20Photography-5.jpg"
-        alt: "Edward Campbell-Rowntree"
-      - src: "/images/IndividualsGit/Edd2-Amelia%20Read%20Photography-84.jpg"
-        alt: "Edward Campbell-Rowntree"
-    tone: "sage"
-    bio: |
-      Biography coming soon.
+      - src: /images/IndividualsGit/Edd-Amelia%20Read%20Photography-5.jpg
+        alt: Edward Campbell-Rowntree
+      - src: /images/IndividualsGit/Edd2-Amelia%20Read%20Photography-84.jpg
+        alt: Edward Campbell-Rowntree
+    tone: sage
+    bio: >-
+      **Edward Campbell-Rowntree** is a harpsichordist, pianist, and
+      musicologist originally from the North East of England, now based at
+      Girton College, Cambridge, where he is a PhD candidate in musicology,
+      researching French music of the seventeenth and eighteenth centuries,
+      funded by the Vice Chancellor’s & Rosalie Crawford Girton PhD Studentship.
+      He is a founding member of the chamber ensemble Les Acolytes. 
+
+
+      Before Cambridge, he studied music at King’s College, London (BMus), the University of Oxford (MSt), and the Royal Northern College of Music, Manchester (MMus, PGDip) where he specialised in piano performance and focused on song repertoire, becoming a member of the RNCM Songsters and winning first prize in the inaugural Williams-Howard Memorial Competition. Since then, he was made a Leeds Lieder Young Artist (2023), a member of the Cambridge University Lieder Scheme (2023-24), and took part in the Wigmore Hall International Song Competition(2024) alongside soprano Georgie Malcolm. 
+
+
+      Edward is an experienced and passionate educator, regularly supervising Cambridge undergraduates alongside teaching piano and music theory at the Saffron Centre for Young Musicians in Essex. Over the years, Edward has received generous financial support from the Help Musicians UK, Northumberland Estates, the Oglesby Charitable Trust, the Headley Trust,and the Eric Horner Award.
