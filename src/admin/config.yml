@@ -87,7 +87,8 @@ collections:
             fields:
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Role / Instrument", name: "role", widget: "string" }
-              - { label: "Biography", name: "bio", widget: "markdown" }
+              - { label: "Short blurb", name: "blurb", widget: "text" }
+              - { label: "Biography", name: "bio", widget: "richtext" }
               - { label: "Biography panel colour", name: "tone", widget: "select", options: ["clay", "sage", "sand", "blue", "rose"] }
               - label: "Portraits"
                 name: "images"

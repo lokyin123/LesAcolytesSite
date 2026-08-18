@@ -1,13 +1,18 @@
 nav_label: Musicians
 title: Musicians
-eyebrow: Meet the ensemble
-summary: Meet the individual performers who bring each Les Acolytes programme to life.
+eyebrow: Meet the Ensemble
+summary: Meet our players and learn more about their work across performance, education and research.
 image: /images/GROUPSHOTS/Amelia-Read-Photography-10-whats-on.jpg
 tone: sand
 members:
   - name: Andrew Taheny
     slug: andrew-taheny
     role: Violin
+    blurb: >-
+      Andrew Taheny is a violinist from Glasgow who enjoys a varied performance
+      schedule with orchestras and ensembles across the UK, performing on both
+      modern and period instruments. He is a graduate of the University of
+      Edinburgh and the Royal Northern College of Music.
     images:
       - src: /images/IndividualsGit/Andrew-Amelia-Read-Photography-35.jpg
         alt: Andrew Taheny
@@ -23,20 +28,25 @@ members:
       Orchestra, Manchester Camerata, BBC Philharmonic and BBC Scottish Symphony
       Orchestra. He also has a passion for chamber music, performing regularly
       with Les Acolytes, the Millbank Quartet and Musica Antica Rotherhithe. He
-      has taken part in recordings of repertoire from the 17thto 21st
+       has taken part in recordings of repertoire from the 17th to 21st
       centuries. 
 
 
       Andrew studied with Ruth Crouch at the University of Edinburgh (BMus) and with Julia Hanson and Pauline Nobes at the Royal Northern College of Music (MMus, PGDip). He has received further tuition from Bojan Čičić, Emmanuel Resche-Caserta, Catherine Martin, Lucy Russell, Rachel Podger, Judy Tarling and Roberto Ruisi. He was a 2023/24 Southbank Sinfonia Violin Fellow and took part in the 2024/25 Hallé Advanced Orchestral String Programme. He is currently taking part in fellowships with the Orchestra of the Age of Enlightenment, the English Concert and Manchester Baroque.
 
 
-      Andrewis passionate about music education and engagement. Besides his regular peripatetic teaching, he has taken part in outreach projects with the Hallé, Royal Liverpool Philharmonic, Manchester Baroque, Orchestra of the Age of Enlightenment, Southbank Sinfonia, Nevis Ensemble and the Benedetti Foundation. 
+       Andrew is passionate about music education and engagement. Besides his regular peripatetic teaching, he has taken part in outreach projects with the Hallé, Royal Liverpool Philharmonic, Manchester Baroque, Orchestra of the Age of Enlightenment, Southbank Sinfonia, Nevis Ensemble and the Benedetti Foundation. 
 
 
-      Andrew plays a Dearlove violin (1832) and a J.C. Kloz baroque violin (1756, with bowsby Eitan Hoffer), generously loaned to him by the Tompkins-Tate Trust and Cherubim Music Trust, respectively. He is also grateful to the Cross Trust, McGlashan Trust, Friends of Baroque Music in Yorkshire, Friends of St. Cecilia’s Hall and Edinburgh College of Art for supporting his studies.
+       Andrew plays a Dearlove violin (1832) and a J.C. Kloz baroque violin (1756, with bows by Eitan Hoffer), generously loaned to him by the Tompkins-Tate Trust and Cherubim Music Trust, respectively. He is also grateful to the Cross Trust, McGlashan Trust, Friends of Baroque Music in Yorkshire, Friends of St. Cecilia’s Hall and Edinburgh College of Art for supporting his studies.
   - name: Billy Hui
     slug: billy-hui
     role: Traverso
+    blurb: >-
+      Billy Hui is a Hong Kong-born flautist. At home on both modern and
+      historical flutes, he is developing a diverse career with a range of
+      orchestras and ensembles. He is a graduate of the RNCM and the Royal
+      College of Music, London.
     images:
       - src: /images/IndividualsGit/Billy-Amelia%20Read%20Photography-24.jpg
         alt: Billy Hui
@@ -44,10 +54,26 @@ members:
         alt: Billy Hui
     tone: blue
     bio: |
-      Biography coming soon.
+      **Billy Hui** is a flautist equally at home on both historical and modern flutes. His work on historical flutes includes performances with Bristol Ensemble, City Bach Collective, Réjouissance, and the Musicians’ Company Consort, as well as side-by-side projects with the Academy of Ancient Music. He is a founding member of the chamber ensemble Les Acolytes.
+
+      As a freelance orchestral musician, Billy is developing a varied career with ensembles across the UK. Adept on both the flute and the piccolo, he has performed with the Hallé, London Philharmonic Orchestra, Ulster Orchestra, Northern Ballet Sinfonia, English Symphony Orchestra, Chromatica Orchestra, Buxton International Festival Orchestra, and Zürcher Symphoniker. In 2025, he was selected to join the London Philharmonic Orchestra’s Foyle Future Firsts. His orchestral training includes Professional Experience Schemes with the BBC Philharmonic and the Hallé, as well as side-by-side projects with the Chamber Orchestra of Europe and the Philharmonia.
+
+      Billy is an active chamber musician and enjoys collaborating with colleagues in a wide range of settings, with performances at Wigmore Hall, Lake District Summer Music, RNCM Chamber Music Festival, and Södertälje Chamber Music Festival. His awards include the John Fewkes Chamber Music Prize and the June Emerson Launchpad Prize.
+
+      His outreach and education work includes performances with the Hallé and the LPO through its Funharmonics and Overture programmes, as well as upcoming collaborations with Chetham’s School of Music and the Stoller Hall. He maintains a private studio, where he teaches modern flute, piccolo, and baroque flute.
+
+      Originally from Hong Kong, Billy moved to Manchester aged 17 to pursue musical training at the Royal Northern College of Music, where he studied with Laura Jellicoe and Janet Richardson. He graduated with First Class Honours and subsequently pursued a Master’s degree at the Royal College of Music in London, studying with Sue Thomas, Rachel Brown, and Stewart McIlwham. Supported by a Countess of Munster Trust scholarship, he graduated with distinction in 2024. He has undertaken further studies and masterclasses with flautists such as Julien Beaudiment, Sébastian Jacot, and Andrea Oliva.
+
+      Billy currently plays on a traverso made by Martin Wenner of Singen, Germany, in 2025, after C. Palanca.
   - name: Timothy Lin
     slug: timothy-lin
     role: Viola da Gamba
+    blurb: >-
+      Timothy Lin is a viol player, baroque cellist and researcher from Taiwan.
+      He is a viol teacher at Magdalen College, Oxford, and enjoys a varied
+      performing career with early music ensembles throughout the UK. He holds
+      a PhD from the Royal Birmingham Conservatoire and a master’s degree in
+      performance from the Royal College of Music in London.
     images:
       - src: /images/IndividualsGit/Tim-Amelia%20Read%20Photography-8.jpg
         alt: Timothy Lin
@@ -55,10 +81,24 @@ members:
         alt: Timothy Lin
     tone: sand
     bio: |
-      Biography coming soon.
+      **Timothy Lin** is a viol player, baroque cellist and researcher from Taiwan. He performs with The Linarol Viol Consort, Musica d’Outora and Les Acolytes, and freelances with other ensembles, including the Chelys Consort, Fretwork, Musical & Amicable Society and Manchester Baroque. Tim has built a career as one of the UK’s foremost early musicians.
+
+      In 2019, Tim and his friends founded The Glæm Ensemble to introduce the beauty of early music and historical performance in Taiwan, and in 2021, he joined The Linarol Consort, a viol ensemble specialising in Renaissance consort music. In June 2022, Tim was the winner of the Corton-Hyde Early Music competition at the Royal Birmingham Conservatoire. He was selected for the BREMF Young Artist scheme in 2023/24 and 2026/27, and for the 2024 Philip and Dorothy Green Young Artists (PDGYA) scheme.
+
+      As a teacher, Tim regularly assists Linarol Consort's annual Renaissance Course and coaches the viol consort at Magdalen College, Oxford.
+
+      Tim was awarded a PhD by the Royal Birmingham Conservatoire and a master’s degree in performance from the Royal College of Music, London, where he developed a deep interest in historical performance and musicological research. Before moving to London, he read music at National Taiwan Normal University. He studied viol with Lucy Robison, Reiko Ichise and Claire Bracher, and baroque cello with Imogen Seth-Smith and Richard Tunnicliffe.
+
+      Tim performs on a 7-string bass viol after an 18th-century instrument by Guillaume Barbey, made by Jane Julier (Devon) in 2012.
   - name: Edward Campbell-Rowntree
     slug: edward-campbell-rowntree
     role: Harpsichord
+    blurb: >-
+      Edward Campbell-Rowntree is a harpsichordist, pianist and musicologist
+      from the North East of England. He is based at Girton College, Cambridge,
+      where he is researching French music of the seventeenth and eighteenth
+      centuries as a PhD candidate. He studied music at King’s College London,
+      the University of Oxford and the Royal Northern College of Music.
     images:
       - src: /images/IndividualsGit/Edd-Amelia%20Read%20Photography-5.jpg
         alt: Edward Campbell-Rowntree
@@ -74,7 +114,7 @@ members:
       He is a founding member of the chamber ensemble Les Acolytes. 
 
 
-      Before Cambridge, he studied music at King’s College, London (BMus), the University of Oxford (MSt), and the Royal Northern College of Music, Manchester (MMus, PGDip) where he specialised in piano performance and focused on song repertoire, becoming a member of the RNCM Songsters and winning first prize in the inaugural Williams-Howard Memorial Competition. Since then, he was made a Leeds Lieder Young Artist (2023), a member of the Cambridge University Lieder Scheme (2023-24), and took part in the Wigmore Hall International Song Competition(2024) alongside soprano Georgie Malcolm. 
+       Before Cambridge, he studied music at King’s College, London (BMus), the University of Oxford (MSt), and the Royal Northern College of Music, Manchester (MMus, PGDip) where he specialised in piano performance and focused on song repertoire, becoming a member of the RNCM Songsters and winning first prize in the inaugural Williams-Howard Memorial Competition. Since then, he has been a Leeds Lieder Young Artist (2023), a member of the Cambridge University Lieder Scheme (2023–24), and has taken part in the Wigmore Hall International Song Competition (2024) alongside soprano Georgie Malcolm.
 
 
-      Edward is an experienced and passionate educator, regularly supervising Cambridge undergraduates alongside teaching piano and music theory at the Saffron Centre for Young Musicians in Essex. Over the years, Edward has received generous financial support from the Help Musicians UK, Northumberland Estates, the Oglesby Charitable Trust, the Headley Trust,and the Eric Horner Award.
+       Edward is an experienced and passionate educator, regularly supervising Cambridge undergraduates alongside teaching piano and music theory at the Saffron Centre for Young Musicians in Essex. Over the years, Edward has received generous financial support from Help Musicians UK, Northumberland Estates, the Oglesby Charitable Trust, the Headley Trust, and the Eric Horner Award.

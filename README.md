@@ -26,7 +26,7 @@ There is currently a desktop and homepage experiment applying a narrower, lower-
 
 The current typography has four deliberately separate roles: Major Mono Display for the visual `les Acolytes` wordmark, Bricolage Grotesque for expressive headings, Manrope for navigation, metadata, labels, buttons, and short panel summaries, and Spectral for substantive body copy. The mixed system keeps coloured title panels fully sans serif while longer biographies, descriptions, and articles retain an editorial reading voice.
 
-The Musicians page is a long, alternating sequence rather than a card table. Every photo/panel pair spans the full browser width: a natural-aspect-ratio portrait occupies 30% and a coloured biography panel occupies 70%, reversing sides for each musician. Each member now has a CMS-managed `images` list with visitor-controlled previous/next controls, position indicators, keyboard access, and swipe/scroll support; the portrait's exact 1707:2560 ratio determines the desktop row height and the panel stretches to match. On mobile, both become full-width stacked blocks of matching height. Final biographies are still outstanding.
+The Musicians page is a long, alternating sequence rather than a card table. Every photo/panel pair spans the full browser width: a portrait occupies 30% and a coloured biography panel occupies 70%, reversing sides for each musician. Each member has a CMS-managed short blurb, full biography, and `images` list with visitor-controlled previous/next controls, position indicators, keyboard access, and swipe/scroll support. On desktop, all portrait/panel rows share a common height set just below the natural portrait height; portraits crop from the top where needed so colour panels never leave white bands. The initial panel shows the name, instrument, and short blurb, while **Read Bio** opens the full formatted biography in an accessible reading overlay on desktop and mobile. Biographies and blurbs can be refined through the CMS.
 
 **Stack:** [Eleventy](https://www.11ty.dev/) (static site generator) + [Decap CMS](https://decapcms.org/) (the `/admin` editor) + [Netlify](https://netlify.com) (free hosting + login for the editor).
 
@@ -70,7 +70,7 @@ The supplied SVG logo files in `src/images/` are used for the header and footer 
 
 News articles live in `src/content/news/*.md`; each file generates its own article page.
 
-- `src/_data/pages/*.yaml` — editable content organised by page, including all page text, photos, contact/social links, and musician biographies/portraits
+- `src/_data/pages/*.yaml` — editable content organised by page, including all page text, photos, contact/social links, and musician biographies/portraits. Musician biographies are edited with Decap's rich-text field and rendered as formatted content on the public page.
 - `src/_data/settings.yaml` — only the global ensemble name and tagline
 - `src/content/events/*.md` — one file per concert/event
 - `src/_data/media.yaml` — YouTube videos + photo gallery

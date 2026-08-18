@@ -164,8 +164,21 @@ permalink: "{{ section.url }}index.html"
         </div>
         <div class="musician__bio tone-{{ member.tone or 'sand' }}">
           <p class="musician__role">{{ member.role }}</p>
-          <h2>{{ member.name }}</h2>
-          <div class="prose">{{ member.bio | safe }}</div>
+          <h2 class="musician__name{% if member.slug == 'edward-campbell-rowntree' %} musician__name--edward{% endif %}">{% if member.slug == 'edward-campbell-rowntree' %}<span>Edward</span> <span>Campbell-Rowntree</span>{% else %}{{ member.name }}{% endif %}</h2>
+          {% if member.blurb %}<p class="musician__blurb">{{ member.blurb }}</p>{% endif %}
+          <button class="musician__bio-toggle" type="button" data-musician-bio-toggle aria-haspopup="dialog" aria-controls="musician-bio-dialog-{{ member.slug }}">
+            <span>Read Bio</span>
+            <svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg>
+          </button>
+          <dialog id="musician-bio-dialog-{{ member.slug }}" class="musician-bio-dialog" data-musician-bio-dialog aria-labelledby="musician-bio-dialog-title-{{ member.slug }}">
+            <div class="musician-bio-dialog__panel">
+              <header class="musician-bio-dialog__header">
+                <div><p class="musician__role">{{ member.role }}</p><h2 id="musician-bio-dialog-title-{{ member.slug }}" class="musician__name{% if member.slug == 'edward-campbell-rowntree' %} musician__name--edward{% endif %}">{% if member.slug == 'edward-campbell-rowntree' %}<span>Edward</span> <span>Campbell-Rowntree</span>{% else %}{{ member.name }}{% endif %}</h2></div>
+                <button class="musician-bio-dialog__close" type="button" data-musician-bio-close aria-label="Close biography for {{ member.name }}"><svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+              </header>
+              <div class="prose">{{ member.bio | renderMarkdown | safe }}</div>
+            </div>
+          </dialog>
         </div>
       </article>
       {% endfor %}

@@ -8,13 +8,21 @@ Reference links:
 
 ## Current real build (2026-07-31)
 
+## Responsive musician biographies (2026-08-18)
+
+Musician biography panels now use a fluid desktop text measure and typography while keeping the photo/panel rows uniform. On desktop, the shared row height is set just below the portraits' natural height and every portrait uses a top crop where needed, so the colour panels remain aligned without white bands. Edward Campbell-Rowntree's name keeps the requested break point by treating “Edward” and “Campbell-Rowntree” as separate unbroken spans. The initial colour panel shows the instrument, musician name, and a short CMS-managed blurb. The full formatted biography opens in an accessible reading overlay on both desktop and mobile, with a restrained scale/fade entrance and a slightly quicker retraction; the page behind it is locked while reading. Reduced-motion users receive an immediate state change.
+
+## Musician biography rich text (2026-08-17)
+
+The Decap CMS Biography field now uses its `richtext` widget rather than the deprecated Markdown widget. Biography values continue to be saved as Markdown, and the Musicians template runs them through the shared Markdown renderer so paragraph breaks, bold, italic, links, headings, and lists are reflected on the public page.
+
 ## Logo update (2026-08-07)
 
 The supplied SVG logo is used in the dark-text header and the light-text footer wordmark. Both displayed logo sizes were reduced slightly and their links shifted a little left within the header/footer bars, while navigation and footer social links remain in place. The homepage hero now intentionally uses lowercase `les acolytes` text in Radio Canada Big instead of the SVG, keeping the existing split layout and fitting on one line at desktop and mobile widths. The accessible name of each linked wordmark remains the CMS-managed ensemble name.
 
 ## Programmes page (2026-08-08)
 
-The Programmes page now contains three CMS-managed sample programme cards in a visitor-controlled carousel. Each programme has a long description, independent unlimited piece lists before and after an optional Interval checkbox, and a total duration. Composer and piece are stored separately on every row, so composers may appear on multiple entries without special handling. Programme cards grow with their content rather than reducing text size. The page also contains the supplied nine-item recent repertoire list and a “Something else in mind?” bespoke-programme invitation linking to Contact and `hello@lesacolytes.uk`; its animated contact link and email appear below the invitation text. Programme entries remain clearly labelled placeholders until real curated programme details are supplied.
+The Programmes page now contains three CMS-managed sample programme cards in a visitor-controlled carousel. Each programme has a long description, independent unlimited piece lists before and after an optional Interval checkbox, and a total duration. Composer and piece are stored separately on every row, so composers may appear on multiple entries without special handling. Programme cards grow with their content rather than reducing text size. The page also contains the supplied nine-item recent repertoire list and a “Something else in mind?” bespoke-programme invitation linking to Contact and `info@lesacolytes.uk`; its animated contact link and email appear below the invitation text. Programme entries remain clearly labelled placeholders until real curated programme details are supplied.
 
 ## Page transitions (2026-08-08)
 
@@ -22,7 +30,7 @@ The View Transitions API treatment is enabled in the main build as progressive e
 
 The News section is now a blog-style Markdown collection. `/news/` lists articles newest-first, each file in `src/content/news/` generates an individual page, and Decap has fields for creating and editing posts. Three clearly labelled placeholder articles demonstrate the layout.
 
-The Media video list currently opens with Jean-Féry Rebel's *Les Caractères de la Danse* (`E3unHrIWtPE`), followed by the genuine Marin Marais recording (`KMH-7NeWgVA`) and François Couperin's *La Paix du Parnasse: Sonade en Trio* (`1fkmiLUUnKk`). The unrelated Marin Marais E minor Passacaille was removed.
+The Media video list currently opens with Marin Marais's *Suite in G minor from Piéces en trio (X. Plainte)* (`5_8gYkJjykc`), followed by *Suite in G minor from Piéces en trio (XI. Passacaille)* (`oTyajt5LzWQ`) and Jean-Féry Rebel's *Les Caractères de la Danse* (`E3unHrIWtPE`). The homepage Media card uses the first Marin Marais recording.
 
 What's On now separates upcoming and past performances. Upcoming events use a vertical chronological layout with time, description, venue, and button-style details links; desktop rows have a slightly tighter vertical rhythm while mobile retains more breathing room. External URLs open in a new tab, while future internal URLs remain in the same tab. Past performances use a quieter archival card treatment with fine borders, paper surfaces, a clay-accented date lockup, and a sand media card. The duplicate divider before the past section was removed so the final upcoming-event rule provides the separation. Events move to Past automatically after their date, or can be placed there early with the CMS `past_performance` switch. The placeholder concert was removed, the Cambridge cantatas event is explicitly classified as past, and two BREMF performances on 10 October 2026 are the current upcoming entries.
 
@@ -83,7 +91,7 @@ The footer repeats “Find us on” in Bricolage Grotesque beside the social ico
 
 The “Find us on” slide also says “Questions? Get in touch with us.” and includes a Contact us button. Contact retains the same typographic treatment as the other navigation links; the contextual card provides the emphasis instead.
 
-The public contact address is `hello@lesacolytes.uk`. It is displayed as contact information on the homepage Contact tile and as a copy-on-click control on the Contact page; a successful copy announces “Copied”, while failure restores selectable text. The Contact page places bookings and enquiries above the email and a four-destination Find us on section. The CMS Contact page entry is the single source for these locations.
+The public contact address is `info@lesacolytes.uk`. It is displayed as contact information on the homepage Contact tile and as a copy-on-click control on the Contact page; a successful copy announces “Copied”, while failure restores selectable text. The Contact page places bookings and enquiries above the email and a four-destination Find us on section. The CMS Contact page entry is the single source for these locations.
 
 The homepage hero does not show the small “French Baroque ensemble” eyebrow. Its visual title is permanently split across two lines, and its introduction describes the musicians as a chamber ensemble performing on historical instruments with a shared passion for French Baroque music and its surrounding repertoire. Its “Discover the ensemble” link points to `#find-us`, scrolling to the two-slide highlight carousel directly below the hero rather than navigating to the About page. The About tile and navigation route remain unchanged.
 
@@ -97,7 +105,7 @@ Below 650px, the desktop navigation bar is replaced by a labelled Menu button. I
 
 The internal pages remain at different stages of completion. About, Musicians, What's On, Media, and Contact reuse existing data, while Programmes still contains holding copy. News is now a CMS-managed Markdown collection with an index and individual article pages; its three current articles are clearly labelled placeholders for testing the finished post structure. Decap fields cover events, news, media, musicians, and the site's social links, although some final text and imagery still need replacing through the CMS.
 
-The Musicians page now scrolls through one substantial, full-browser-width profile per row. Portraits occupy 30% of the desktop row and biographies 70%, alternating left/right. A narrow directional blur now softens the photo/biography seam on desktop, with a restrained vertical blend on mobile; portraits remain separate and are not overlaid. Each musician has CMS-managed editable `bio` text and an `images` list with visitor-controlled previous/next controls, position indicators, keyboard access, and swipe/scroll support. The exact 1707x2560 portrait ratio determines each row's height and the colour panel stretches to match, with no cropping or distortion. Mobile stacks equally tall, full-width portrait and biography blocks. Musician fields are stored in `src/_data/pages/musicians.yaml` and exposed through the Decap CMS.
+The Musicians page now scrolls through one substantial, full-browser-width profile per row. Portraits occupy 30% of the desktop row and biographies 70%, alternating left/right. A narrow directional blur now softens the photo/biography seam on desktop, with a restrained vertical blend on mobile; portraits remain separate and are not overlaid. Each musician has CMS-managed editable `bio` text and an `images` list with visitor-controlled previous/next controls, position indicators, keyboard access, and swipe/scroll support. Desktop rows share a common height just below the natural portrait height; portraits crop from the top where necessary and colour panels stretch to that same height. Mobile stacks the portrait above a compact name/instrument panel, and the full biography opens in the reading overlay. Musician fields are stored in `src/_data/pages/musicians.yaml` and exposed through the Decap CMS.
 
 The previous inactive signature intro implementation has been removed. The current first-visit experiment lives in `src/_includes/dev/intro.njk` and is included only on the local development homepage.
 
@@ -160,7 +168,7 @@ The Decap panel existed from the start but had never been opened by anyone, whic
 
 Site building locally (`npm start` — run `npm install` first, `node_modules` is not committed). Repo now has a GitHub remote (`git@github.com:JamesHLS/LesAcolytes.git`) and `main` tracks `origin/main`, so next-step 1 is done. `site_url` in `src/admin/config.yml` points at `https://les-acolytes.netlify.app`, so steps 2 and 4 look done too. **Unverified from inside the repo:** whether Netlify Identity + Git Gateway are enabled and whether the brother has been invited (steps 3 and 5).
 
-Real content in place for: About bio, media (2 real Marin Marais performance videos embedded, one is an actual Les Acolytes recording — YouTube ID `KMH-7NeWgVA`), member lineup (Andrew Taheny - violin, Billy Hui - flute, Timothy Lin - viola da gamba, Edward Campbell-Rowntree - harpsichord, no founder framing). Programme cards remain clearly labelled placeholders for CMS editing. Photos are still stock/placeholder (Pexels).
+Real content in place for: About bio, media (two Marin Marais performance videos and one Jean-Féry Rebel recording embedded), member lineup (Andrew Taheny - violin, Billy Hui - flute, Timothy Lin - viola da gamba, Edward Campbell-Rowntree - harpsichord, no founder framing). Programme cards remain clearly labelled placeholders for CMS editing. Photos are still stock/placeholder (Pexels).
 
 ## Next steps
 
