@@ -1,7 +1,7 @@
 document.querySelectorAll("[data-musician-bio-toggle]").forEach((toggle) => {
   const dialog = document.getElementById(toggle.getAttribute("aria-controls"));
-  const close = dialog?.querySelector("[data-musician-bio-close]");
-  if (!dialog || !close) return;
+  const closes = dialog?.querySelectorAll("[data-musician-bio-close]");
+  if (!dialog || !closes?.length) return;
 
   let previousFocus = null;
   let previousDocumentOverflow = "";
@@ -41,11 +41,13 @@ document.querySelectorAll("[data-musician-bio-toggle]").forEach((toggle) => {
     if (typeof dialog.showModal === "function") dialog.showModal();
     else dialog.setAttribute("open", "");
     window.requestAnimationFrame(() => dialog.classList.remove("is-opening"));
-    close.focus();
+    closes[0].focus();
   });
 
-  close.addEventListener("click", () => {
-    requestClose();
+  closes.forEach((close) => {
+    close.addEventListener("click", () => {
+      requestClose();
+    });
   });
 
   dialog.addEventListener("click", (event) => {

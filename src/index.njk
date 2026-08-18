@@ -177,6 +177,12 @@ permalink: "{{ section.url }}index.html"
                 <button class="musician-bio-dialog__close" type="button" data-musician-bio-close aria-label="Close biography for {{ member.name }}"><svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
               </header>
               <div class="prose">{{ member.bio | renderMarkdown | safe }}</div>
+              <div class="musician-bio-dialog__footer">
+                <button class="musician-bio-dialog__close-bottom" type="button" data-musician-bio-close>
+                  <span>Close Bio</span>
+                  <svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 15 6-6 6 6"></path></svg>
+                </button>
+              </div>
             </div>
           </dialog>
         </div>
