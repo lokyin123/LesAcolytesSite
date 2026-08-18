@@ -60,7 +60,7 @@
       if (!user) window.netlifyIdentity.on("login", function () { document.location.href = "/admin/"; });
     });
   </script>
-  {% if isDevelopment and section.slug == "home" %}{% include "dev/intro.njk" %}{% endif %}
+  {% if section.slug == "home" %}{% include "dev/intro.njk" %}{% endif %}
   {% if isDevelopment %}{% include "dev/tweaks-panel.njk" %}{% endif %}
 </body>
 </html>

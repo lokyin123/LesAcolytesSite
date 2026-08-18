@@ -130,18 +130,18 @@ Running `npm start` and opening `http://localhost:8080/?tweaks` activates a deve
 - `src/images/uploads/` — where photos uploaded through the CMS land; `src/images/stock/` has free Pexels stock photos (chamber music/baroque instruments) standing in for real ensemble photos — swap for real photos via the CMS when available.
 - `src/js/reveal.js` — IntersectionObserver scroll-fade-in effect (staggered for lists/grids), respects `prefers-reduced-motion`.
 - Single scrolling page (`src/index.njk`): Hero → About → Events → Media → Contact. Concert-hall brown/mahogany palette (ivory `#f3ead9` bg, mahogany `#2b1d14` ink, brick-red `#7a2e1d` accent) with Playfair Display headings + Source Serif 4 body text. Hero itself is plain and static — single background image, `<h1>`/tagline over a dark gradient, **no entrance animation on the hero.**
-- `src/_includes/dev/intro.njk` — the localhost-only first-visit introduction prototype; it is included only for the development homepage.
+- `src/_includes/dev/intro.njk` — the first-visit homepage introduction, included on the homepage in both local and production builds.
 
-## Local first-visit intro prototype (added 2026-08-08)
+## First-visit homepage introduction (made public 2026-08-18)
 
-The development homepage can show a short first-visit introduction using the supplied dark SVG logo and a subtle **Welcome** message on the same paper-coloured canvas. This is a localhost-only prototype and is not approved for production.
+The homepage shows a short first-visit introduction using the supplied dark SVG logo and a subtle **Welcome** message on the same paper-coloured canvas. It is included in both local and production builds.
 
 How it works:
 - The SVG is inlined locally for the prototype and revealed with two smooth clipped draw-like sweeps while descending gently. The red artwork appears first, followed by the black artwork in a left-to-right sweep; the letters are treated as groups rather than individual strokes for a calmer result.
-- The overlay is included only when Eleventy is serving locally and the current route is Home. A normal production build emits none of its markup, styles, or script.
+- The overlay is included on the Home route in both development and production builds. Other routes never receive its markup, styles, or script.
 - It shows once per browser session using `sessionStorage` key `les-acolytes-intro-seen-v1`, dismisses on click, keypress, scroll, or touch, and runs for about 1.8 seconds before fading away.
-- While developing locally, adding `?intro` to the homepage URL replays it without clearing session data; the override is not emitted in production.
-- To disable the local prototype without removing it, set `INTRO_ENABLED` to `false` near the top of `src/_includes/dev/intro.njk`.
+- Adding `?intro` to the homepage URL replays it without clearing session data.
+- To disable the introduction without removing it, set `INTRO_ENABLED` to `false` near the top of `src/_includes/dev/intro.njk`.
 - Visitors who prefer reduced motion bypass it completely, and JavaScript failure leaves the normal homepage visible because the intro is hidden by default.
 
 The previous inactive `src/js/intro.js` implementation was removed.
