@@ -14,7 +14,7 @@ The Programmes page now has three CMS-managed sample programme cards, each with 
 
 Page transitions are now part of the main build. They use the View Transitions API as progressive enhancement when supported, keep the shared header stable while page content fades and rises gently into place, and respect `prefers-reduced-motion`; unsupported browsers retain normal navigation.
 
-News is prepared for numbered archive pages: up to six articles appear on each page, with additional pages at stable `/news/page/2/`-style URLs when the collection grows. The Contact page puts bookings and enquiries first, followed by the copyable email address and all four CMS-managed social destinations.
+News is prepared for numbered archive pages: up to six articles appear on each page, with additional pages at stable `/news/page/2/`-style URLs when the collection grows. Articles can be pinned above the normal newest-first order through the CMS. The Contact page puts bookings and enquiries first, followed by the copyable email address and all four CMS-managed social destinations.
 
 The What's On page separates upcoming performances from a quieter past-performance archive. Upcoming desktop rows use a slightly tighter vertical rhythm while mobile retains more breathing room. Archive cards use fine borders, paper surfaces, a clay-accented date lockup, and a sand media invitation; the extra divider before the archive has been removed so the event timeline remains visually continuous.
 

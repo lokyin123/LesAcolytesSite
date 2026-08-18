@@ -93,13 +93,16 @@ export default function (eleventyConfig) {
     return slides;
   });
 
-  // News posts remain as portable Markdown files and are shown newest first.
+  // News posts remain as portable Markdown files. Pinned posts stay above the
+  // regular date-sorted archive so an important announcement can remain first.
   eleventyConfig.addCollection("news", (collectionApi) =>
     collectionApi
       .getFilteredByGlob("src/content/news/*.md")
-      .sort((a, b) =>
-        isoDate(b.data.news_date).localeCompare(isoDate(a.data.news_date))
-      )
+      .sort((a, b) => {
+        const pinnedDifference = Number(Boolean(b.data.pinned)) - Number(Boolean(a.data.pinned));
+        if (pinnedDifference) return pinnedDifference;
+        return isoDate(b.data.news_date).localeCompare(isoDate(a.data.news_date));
+      })
   );
 
   return {

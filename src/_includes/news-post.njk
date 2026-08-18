@@ -6,12 +6,13 @@ section:
 <article>
   <div class="article-layout{% if not image %} article-layout--no-image{% endif %}">
     <header class="article-header tone-sand">
+      {% if pinned %}<p class="pinned-marker article-pinned"><svg class="pinned-marker__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 3 6 6-4 1-4 4 1 4-2 2-2-5-5-2 2-2 5 1 4-4zM4 20l5-5"></path></svg><span>Pinned article</span></p>{% endif %}
       <p class="eyebrow">{{ news_date | eventDate }}</p>
       <h1>{{ title }}</h1>
       <p class="article-header__excerpt">{{ excerpt }}</p>
     </header>
     {% if image %}
-    <div class="article-visual">
+    <div class="article-visual{% if image_tone %} article-visual--{{ image_tone }}{% endif %}{% if image_fit %} article-visual--{{ image_fit }}{% endif %}">
       <img class="article-image" src="{{ image }}" alt="{{ image_alt or '' }}">
     </div>
     {% endif %}

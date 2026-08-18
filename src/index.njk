@@ -303,8 +303,9 @@ permalink: "{{ section.url }}index.html"
     <div class="news-grid">
       {% for post in collections.news %}
       <article class="news-card" data-reveal>
-        {% if post.data.image %}<a class="news-card__image" href="{{ post.url }}"><img src="{{ post.data.image }}" alt="{{ post.data.image_alt or '' }}" loading="lazy"></a>{% endif %}
+        {% if post.data.image %}<a class="news-card__image{% if post.data.image_tone %} news-card__image--{{ post.data.image_tone }}{% endif %}{% if post.data.image_fit %} news-card__image--{{ post.data.image_fit }}{% endif %}" href="{{ post.url }}"><img src="{{ post.data.image }}" alt="{{ post.data.image_alt or '' }}" loading="lazy"></a>{% endif %}
         <div class="news-card__copy">
+          {% if post.data.pinned %}<p class="pinned-marker"><svg class="pinned-marker__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 3 6 6-4 1-4 4 1 4-2 2-2-5-5-2 2-2 5 1 4-4zM4 20l5-5"></path></svg><span>Pinned</span></p>{% endif %}
           <p class="eyebrow">{{ post.data.news_date | eventDate }}</p>
           <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
           <p>{{ post.data.excerpt }}</p>

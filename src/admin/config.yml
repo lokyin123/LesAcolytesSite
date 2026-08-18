@@ -243,7 +243,7 @@ collections:
     create: true
     slug: "{{fields.news_date}}-{{slug}}"
     summary: "{{fields.news_date}} - {{title}}"
-    sortable_fields: ["news_date", "title"]
+    sortable_fields: ["pinned", "news_date", "title"]
     editor:
       preview: false
     fields:
@@ -255,9 +255,12 @@ collections:
         date_format: "DD MMMM YYYY"
         time_format: false
         picker_utc: true
+      - { label: "Pin to top", name: "pinned", widget: "boolean", default: false, required: false, hint: "Keep this article above newer stories on the News page." }
       - { label: "Summary", name: "excerpt", widget: "text", hint: "A short introduction shown on the News page and in search descriptions." }
       - { label: "Featured Image", name: "image", widget: "image", required: false }
       - { label: "Image Description", name: "image_alt", widget: "string", required: false, hint: "Describe the image for visitors using screen readers." }
+      - { label: "Image Background", name: "image_tone", widget: "select", required: false, options: [{ label: "Paper", value: "paper" }, { label: "Ink", value: "ink" }], hint: "Use Ink for a light or white logo that needs a dark background." }
+      - { label: "Image Fit", name: "image_fit", widget: "select", required: false, options: [{ label: "Crop to fill", value: "cover" }, { label: "Show whole image", value: "contain" }], hint: "Choose Show whole image for banners or logos that should not be cropped." }
       - { label: "Article", name: "body", widget: "markdown" }
 
   - name: "media"

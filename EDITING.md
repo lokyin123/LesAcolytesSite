@@ -40,11 +40,14 @@ To preview that no-upcoming-events fallback locally without changing any event, 
 
 ### News
 
-News articles appear newest-first on the News page, and every article gets its own page. Up to six articles appear on each archive page; once there are more, numbered links lead to stable pages such as `/news/page/2/`. Click **+ News article** to add one.
+News articles appear newest-first on the News page, and every article gets its own page. A pinned article appears above the normal date order. Up to six articles appear on each archive page; once there are more, numbered links lead to stable pages such as `/news/page/2/`. Click **+ News article** to add one.
 
 - **Publication Date** controls the order on the News page.
+- **Pin to top** keeps an important announcement above newer articles. Leave this off for ordinary news posts.
 - **Summary** is the short introduction shown on the News page.
 - **Featured Image** and **Image Description** are optional, but the description should briefly say what the image shows for visually impaired visitors.
+- **Image Background** is normally left as Paper. Choose Ink when the featured image is a light or white logo that needs a dark background.
+- **Image Fit** is normally Crop to fill. Choose Show whole image for banners or logos that should not be cropped.
 - **Article** is the full story. You can add headings, links, and paragraphs with the editing toolbar.
 
 The Contact page shows bookings and enquiries first, then the copyable contact email and the social links from its Pages entry.
