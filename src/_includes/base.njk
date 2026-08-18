@@ -41,7 +41,10 @@
         <a href="{{ pages.contact.social_links[3].url }}" target="_blank" rel="noopener noreferrer" aria-label="Les Acolytes on {{ pages.contact.social_links[3].label }}"><span class="social-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 7.2a2.8 2.8 0 0 0-2-2C17.2 4.7 12 4.7 12 4.7s-5.2 0-7 .5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2.5 12 29 29 0 0 0 3 16.8a2.8 2.8 0 0 0 2 2c1.8.5 7 .5 7 .5s5.2 0 7-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .5-4.8 29 29 0 0 0-.5-4.8z" class="social-icon__fill"></path><path d="m10 15.5 5-3.5-5-3.5z" class="social-icon__paper"></path></svg></span></a>
         </nav>
       </div>
-      <p>&copy; {{ currentYear }} {{ settings.ensemble_name }}</p>
+      <div class="site-footer__copyright">
+        <p>&copy; {{ currentYear }} {{ settings.ensemble_name }}</p>
+        <p class="site-footer__credits">Photo credits: <a href="https://www.ameliaread.com/" target="_blank" rel="noopener noreferrer">Amelia Read</a></p>
+      </div>
     </div>
   </footer>
   <script src="/js/reveal.js" defer></script>

@@ -5,6 +5,7 @@ pinned: true
 excerpt: "Les Acolytes were selected as Brighton Early Music Festival Emerging Artists in May 2026."
 image: "/images/BREMF26_FBbanner.jpg"
 image_alt: "Brighton Early Music Festival 2026 banner"
+image_tone: "paper"
 image_fit: "contain"
 ---
 We are delighted to share that Les Acolytes were selected as Brighton Early Music Festival Emerging Artists in May 2026.

@@ -47,31 +47,31 @@
       <div class="la-tweaks__grid">
         <label class="la-tweaks__field">Ink<input type="color" data-la-setting="colors.ink"></label>
         <label class="la-tweaks__field">Paper<input type="color" data-la-setting="colors.paper"></label>
-        <label class="la-tweaks__field">Soft white<input type="color" data-la-setting="colors.white"></label>
-        <label class="la-tweaks__field">Muted text<input type="color" data-la-setting="colors.muted"></label>
-        <label class="la-tweaks__field">Clay<input type="color" data-la-setting="colors.clay"></label>
-        <label class="la-tweaks__field">Sage<input type="color" data-la-setting="colors.sage"></label>
+        <label class="la-tweaks__field">Soft white<input type="color" data-la-setting="colors.softWhite"></label>
+        <label class="la-tweaks__field">Muted text<input type="color" data-la-setting="colors.mutedText"></label>
+        <label class="la-tweaks__field">Orange<input type="color" data-la-setting="colors.orange"></label>
+        <label class="la-tweaks__field">Green<input type="color" data-la-setting="colors.green"></label>
         <label class="la-tweaks__field">Sand<input type="color" data-la-setting="colors.sand"></label>
         <label class="la-tweaks__field">Blue<input type="color" data-la-setting="colors.blue"></label>
-        <label class="la-tweaks__field">Rose<input type="color" data-la-setting="colors.rose"></label>
+        <label class="la-tweaks__field">Yellow<input type="color" data-la-setting="colors.yellow"></label>
       </div>
     </details>
 
     <details class="la-tweaks__section">
       <summary>Panel colours</summary>
       <div class="la-tweaks__grid">
-        <label class="la-tweaks__field">Home<select data-la-setting="panels.home"><option value="clay">Clay</option><option value="sage">Sage</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="rose">Rose</option></select></label>
-        <label class="la-tweaks__field">About<select data-la-setting="panels.about"><option value="clay">Clay</option><option value="sage">Sage</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="rose">Rose</option></select></label>
-        <label class="la-tweaks__field">Musicians<select data-la-setting="panels.musicians"><option value="clay">Clay</option><option value="sage">Sage</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="rose">Rose</option></select></label>
-        <label class="la-tweaks__field">What's on<select data-la-setting="panels.whatsOn"><option value="clay">Clay</option><option value="sage">Sage</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="rose">Rose</option></select></label>
-        <label class="la-tweaks__field">Programmes<select data-la-setting="panels.programmes"><option value="clay">Clay</option><option value="sage">Sage</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="rose">Rose</option></select></label>
-        <label class="la-tweaks__field">Media<select data-la-setting="panels.media"><option value="clay">Clay</option><option value="sage">Sage</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="rose">Rose</option></select></label>
-        <label class="la-tweaks__field">News<select data-la-setting="panels.news"><option value="clay">Clay</option><option value="sage">Sage</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="rose">Rose</option></select></label>
-        <label class="la-tweaks__field">Contact<select data-la-setting="panels.contact"><option value="clay">Clay</option><option value="sage">Sage</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="rose">Rose</option></select></label>
+        <label class="la-tweaks__field">Home<select data-la-setting="panels.home"><option value="orange">Orange</option><option value="green">Green</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="yellow">Yellow</option></select></label>
+        <label class="la-tweaks__field">About<select data-la-setting="panels.about"><option value="orange">Orange</option><option value="green">Green</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="yellow">Yellow</option></select></label>
+        <label class="la-tweaks__field">Musicians<select data-la-setting="panels.musicians"><option value="orange">Orange</option><option value="green">Green</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="yellow">Yellow</option></select></label>
+        <label class="la-tweaks__field">What's on<select data-la-setting="panels.whatsOn"><option value="orange">Orange</option><option value="green">Green</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="yellow">Yellow</option></select></label>
+        <label class="la-tweaks__field">Programmes<select data-la-setting="panels.programmes"><option value="orange">Orange</option><option value="green">Green</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="yellow">Yellow</option></select></label>
+        <label class="la-tweaks__field">Media<select data-la-setting="panels.media"><option value="orange">Orange</option><option value="green">Green</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="yellow">Yellow</option></select></label>
+        <label class="la-tweaks__field">News<select data-la-setting="panels.news"><option value="orange">Orange</option><option value="green">Green</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="yellow">Yellow</option></select></label>
+        <label class="la-tweaks__field">Contact<select data-la-setting="panels.contact"><option value="orange">Orange</option><option value="green">Green</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="yellow">Yellow</option></select></label>
       </div>
       <p class="la-tweaks__note">Musician biography panels</p>
       <div class="la-tweaks__grid">
-        {% for member in pages.musicians.members %}<label class="la-tweaks__field">{{ member.name }}<select data-la-setting="panels.musician{{ loop.index0 }}"><option value="clay">Clay</option><option value="sage">Sage</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="rose">Rose</option></select></label>{% endfor %}
+        {% for member in pages.musicians.members %}<label class="la-tweaks__field">{{ member.name }}<select data-la-setting="panels.musician{{ loop.index0 }}"><option value="orange">Orange</option><option value="green">Green</option><option value="sand">Sand</option><option value="blue">Blue</option><option value="yellow">Yellow</option></select></label>{% endfor %}
       </div>
     </details>
 
@@ -153,11 +153,11 @@
     "Manrope": "Manrope,Arial,sans-serif",
     "Spectral": "Spectral,Georgia,serif"
   };
-  var panelTones = ["clay", "sage", "sand", "blue", "rose"];
+  var panelTones = ["orange", "green", "sand", "blue", "yellow"];
   var sectionPaths = { "": "home", "about": "about", "musicians": "musicians", "whats-on": "whatsOn", "programmes": "programmes", "media": "media", "news": "news", "contact": "contact" };
   var defaults = {
-    colors: { ink: "#241F20", paper: "#fffcf5", white: "#fafafa", muted: "#6B6061", clay: "#e68665", sage: "#8bb19a", sand: "#ded2ba", blue: "#b7c5d2", rose: "#ecde79" },
-    panels: { home: "blue", about: "sage", musicians: "sand", whatsOn: "clay", programmes: "blue", media: "sage", news: "sand", contact: "rose"{% for member in pages.musicians.members %}, musician{{ loop.index0 }}: "{{ member.tone or 'sand' }}"{% endfor %} },
+    colors: { ink: "#241F20", paper: "#fffcf5", softWhite: "#fafafa", mutedText: "#6B6061", orange: "#e68665", green: "#8bb19a", sand: "#ded2ba", blue: "#b7c5d2", yellow: "#ecde79" },
+    panels: { home: "blue", about: "green", musicians: "sand", whatsOn: "orange", programmes: "blue", media: "green", news: "sand", contact: "yellow"{% for member in pages.musicians.members %}, musician{{ loop.index0 }}: "{{ member.tone or 'sand' }}"{% endfor %} },
     fonts: { display: "Bricolage Grotesque", body: "Spectral", interface: "Manrope" },
     sizes: { headings: 0.9, body: 1.1, interface: 1.15, buttons: 1, eyebrows: 1.16 },
     shape: { buttonRadius: 19 },
@@ -187,7 +187,24 @@
     var target = keys.reduce(function (value, key) { return value[key]; }, object);
     target[finalKey] = value;
   }
+  function migrateLegacySettings(saved) {
+    if (!saved || typeof saved !== "object") return saved;
+    var migrated = clone(saved);
+    var legacyToneMap = { clay: "orange", sage: "green", rose: "yellow", "yellow-rose": "yellow" };
+    if (migrated.colors && typeof migrated.colors === "object") {
+      if (Object.prototype.hasOwnProperty.call(migrated.colors, "white") && !Object.prototype.hasOwnProperty.call(migrated.colors, "softWhite")) migrated.colors.softWhite = migrated.colors.white;
+      if (Object.prototype.hasOwnProperty.call(migrated.colors, "muted") && !Object.prototype.hasOwnProperty.call(migrated.colors, "mutedText")) migrated.colors.mutedText = migrated.colors.muted;
+      if (Object.prototype.hasOwnProperty.call(migrated.colors, "clay") && !Object.prototype.hasOwnProperty.call(migrated.colors, "orange")) migrated.colors.orange = migrated.colors.clay;
+      if (Object.prototype.hasOwnProperty.call(migrated.colors, "sage") && !Object.prototype.hasOwnProperty.call(migrated.colors, "green")) migrated.colors.green = migrated.colors.sage;
+      if (Object.prototype.hasOwnProperty.call(migrated.colors, "rose") && !Object.prototype.hasOwnProperty.call(migrated.colors, "yellow")) migrated.colors.yellow = migrated.colors.rose;
+    }
+    if (migrated.panels && typeof migrated.panels === "object") Object.keys(migrated.panels).forEach(function (key) {
+      if (legacyToneMap[migrated.panels[key]]) migrated.panels[key] = legacyToneMap[migrated.panels[key]];
+    });
+    return migrated;
+  }
   function mergeKnown(base, saved) {
+    saved = migrateLegacySettings(saved);
     Object.keys(base).forEach(function (group) {
       if (!saved || typeof saved[group] !== "object") return;
       Object.keys(base[group]).forEach(function (key) {
@@ -257,8 +274,8 @@
     document.documentElement.dataset.tweaksActive = "";
     overrideStyle.textContent = [
       ":root[data-tweaks-active]{",
-      "--ink:" + settings.colors.ink + ";--paper:" + settings.colors.paper + ";--white:" + settings.colors.white + ";--muted:" + settings.colors.muted + ";",
-      "--clay:" + settings.colors.clay + ";--sage:" + settings.colors.sage + ";--sand:" + settings.colors.sand + ";--blue:" + settings.colors.blue + ";--rose:" + settings.colors.rose + ";--line:color-mix(in srgb,var(--ink) 18%,transparent);",
+      "--ink:" + settings.colors.ink + ";--paper:" + settings.colors.paper + ";--soft-white:" + settings.colors.softWhite + ";--muted-text:" + settings.colors.mutedText + ";",
+      "--orange:" + settings.colors.orange + ";--green:" + settings.colors.green + ";--sand:" + settings.colors.sand + ";--blue:" + settings.colors.blue + ";--yellow:" + settings.colors.yellow + ";--line:color-mix(in srgb,var(--ink) 18%,transparent);",
       "--display:" + fontStacks[settings.fonts.display] + ";--body:" + fontStacks[settings.fonts.body] + ";--interface:" + fontStacks[settings.fonts.interface] + ";--max-width:" + Number(settings.layout.maxWidth) + "px}",
       ":root[data-tweaks-active] body{font-size:" + (1.0625 * Number(settings.sizes.body)).toFixed(4) + "rem}",
       ":root[data-tweaks-active] .prose,:root[data-tweaks-active] .article-body__prose{font-size:" + (1.22 * Number(settings.sizes.body)).toFixed(3) + "rem!important}",

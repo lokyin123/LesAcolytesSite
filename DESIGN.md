@@ -6,11 +6,11 @@ colors:
   paper: "#fffcf5"
   soft-white: "#fafafa"
   muted-text: "#6B6061"
-  clay: "#e68665"
-  sage: "#8bb19a"
+  orange: "#e68665"
+  green: "#8bb19a"
   sand: "#ded2ba"
   blue: "#b7c5d2"
-  rose: "#ecde79"
+  yellow: "#ecde79"
 typography:
   wordmark:
     fontFamily: "Major Mono Display, monospace"
@@ -66,7 +66,7 @@ components:
 
 The site should feel like entering a calm working space shared by serious musicians: open, direct, cultured, and welcoming. Its modernity belongs to the digital experience—clarity, sleek execution, smooth navigation, and responsive interaction—not to any claim about the ensemble's approach to performing the music.
 
-The incumbent system is editorial and image-led. Large split compositions alternate real photography with a photo-led palette of clear clay, sage, sand, blue, and yellow-rose fields, while strong typography and generous spacing let the material breathe. The experience is restrained rather than austere, and professional without borrowing the visual or verbal habits of corporate and technology marketing.
+The incumbent system is editorial and image-led. Large split compositions alternate real photography with a photo-led palette of clear orange, green, sand, blue, and yellow fields, while strong typography and generous spacing let the material breathe. The experience is restrained rather than austere, and professional without borrowing the visual or verbal habits of corporate and technology marketing.
 
 The current palette and straight-edged panel construction are implemented facts, not permanent brand commitments. Future exploration may replace them after user confirmation. Motion may become smoother and more continuous, but should remain calm, purposeful, performant, and respectful of reduced-motion preferences.
 
@@ -80,7 +80,7 @@ The current palette and straight-edged panel construction are implemented facts,
 
 ## Colors
 
-The incumbent palette combines green-charcoal ink and a clean warm-white paper with clay, sage, sand, blue, and yellow-rose panels selected to respond to the ensemble photography. These values describe the current site and remain open to deliberate revision.
+The incumbent palette combines green-charcoal ink and a clean warm-white paper with orange, green, sand, blue, and yellow panels selected to respond to the ensemble photography. These values describe the current site and remain open to deliberate revision.
 
 ### Primary
 
@@ -88,7 +88,7 @@ The incumbent palette combines green-charcoal ink and a clean warm-white paper w
 
 ### Secondary
 
-- **Clay, Sage, Sand, Blue, and Rose**: Alternating section and profile surfaces that provide quiet differentiation without vivid saturation.
+- **Orange, Green, Sand, Blue, and Yellow**: Alternating section and profile surfaces that provide quiet differentiation without vivid saturation.
 
 ### Neutral
 

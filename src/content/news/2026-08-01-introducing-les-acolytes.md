@@ -1,9 +1,12 @@
 ---
 title: "Introducing Les Acolytes"
 news_date: "2026-08-01"
+pinned: false
 excerpt: "Meet Les Acolytes, a chamber ensemble exploring French Baroque cantatas and related repertoire on historical instruments."
 image: "/images/GROUPSHOTS/Amelia-Read-Photography-74-programmes.jpg"
 image_alt: "Les Acolytes gathered with their instruments"
+image_tone: "paper"
+image_fit: "cover"
 ---
 Les Acolytes is a Cambridge-based chamber ensemble devoted to French Baroque cantatas and related repertoire. We bring together musicians who share a fascination with the colour, detail and conversation at the heart of this music.
 

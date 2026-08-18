@@ -45,6 +45,7 @@ collections:
           - { label: "Page title", name: "title", widget: "string" }
           - { label: "Subtitle", name: "summary", widget: "text" }
           - { label: "Hero image", name: "image", widget: "image" }
+          - { label: "Page colour", name: "tone", widget: "select", default: "blue", options: [{ label: "Orange", value: "orange" }, { label: "Green", value: "green" }, { label: "Sand", value: "sand" }, { label: "Blue", value: "blue" }, { label: "Yellow", value: "yellow" }] }
           - { label: "Discover link label", name: "discover_label", widget: "string" }
           - { label: "Performance heading", name: "performance_heading", widget: "string" }
           - { label: "Performance introduction", name: "performance_intro", widget: "string" }
@@ -68,6 +69,7 @@ collections:
           - { label: "Eyebrow", name: "eyebrow", widget: "string" }
           - { label: "Subtitle", name: "summary", widget: "text" }
           - { label: "Hero image", name: "image", widget: "image" }
+          - { label: "Page colour", name: "tone", widget: "select", default: "green", options: [{ label: "Orange", value: "orange" }, { label: "Green", value: "green" }, { label: "Sand", value: "sand" }, { label: "Blue", value: "blue" }, { label: "Yellow", value: "yellow" }] }
           - { label: "Body heading", name: "content_heading", widget: "string" }
           - { label: "Body text", name: "content_body", widget: "markdown" }
       - name: "musicians"
@@ -89,7 +91,7 @@ collections:
               - { label: "Role / Instrument", name: "role", widget: "string" }
               - { label: "Short blurb", name: "blurb", widget: "text" }
               - { label: "Biography", name: "bio", widget: "richtext" }
-              - { label: "Biography panel colour", name: "tone", widget: "select", options: ["clay", "sage", "sand", "blue", "rose"] }
+              - { label: "Biography panel colour", name: "tone", widget: "select", options: [{ label: "Orange", value: "orange" }, { label: "Green", value: "green" }, { label: "Sand", value: "sand" }, { label: "Blue", value: "blue" }, { label: "Yellow", value: "yellow" }] }
               - label: "Portraits"
                 name: "images"
                 label_singular: "portrait"
@@ -107,6 +109,7 @@ collections:
           - { label: "Eyebrow", name: "eyebrow", widget: "string" }
           - { label: "Subtitle", name: "summary", widget: "text" }
           - { label: "Hero image", name: "image", widget: "image" }
+          - { label: "Page colour", name: "tone", widget: "select", default: "orange", options: [{ label: "Orange", value: "orange" }, { label: "Green", value: "green" }, { label: "Sand", value: "sand" }, { label: "Blue", value: "blue" }, { label: "Yellow", value: "yellow" }] }
           - { label: "Upcoming performances heading", name: "upcoming_heading", widget: "string" }
           - { label: "Past performances heading", name: "past_heading", widget: "string" }
           - { label: "Event details button", name: "details_button", widget: "string" }
@@ -124,6 +127,7 @@ collections:
           - { label: "Eyebrow", name: "eyebrow", widget: "string" }
           - { label: "Subtitle", name: "summary", widget: "text" }
           - { label: "Hero image", name: "image", widget: "image" }
+          - { label: "Page colour", name: "tone", widget: "select", default: "blue", options: [{ label: "Orange", value: "orange" }, { label: "Green", value: "green" }, { label: "Sand", value: "sand" }, { label: "Blue", value: "blue" }, { label: "Yellow", value: "yellow" }] }
           - { label: "Body heading", name: "content_heading", widget: "string" }
           - { label: "Body text", name: "content_body", widget: "markdown" }
           - { label: "Curated programmes heading", name: "curated_heading", widget: "string" }
@@ -166,6 +170,7 @@ collections:
           - { label: "Eyebrow", name: "eyebrow", widget: "string" }
           - { label: "Subtitle", name: "summary", widget: "text" }
           - { label: "Hero image", name: "image", widget: "image" }
+          - { label: "Page colour", name: "tone", widget: "select", default: "green", options: [{ label: "Orange", value: "orange" }, { label: "Green", value: "green" }, { label: "Sand", value: "sand" }, { label: "Blue", value: "blue" }, { label: "Yellow", value: "yellow" }] }
           - { label: "Recordings heading", name: "recordings_heading", widget: "string" }
           - { label: "Gallery eyebrow", name: "gallery_eyebrow", widget: "string" }
           - { label: "Gallery heading", name: "gallery_heading", widget: "string" }
@@ -178,6 +183,7 @@ collections:
           - { label: "Eyebrow", name: "eyebrow", widget: "string" }
           - { label: "Subtitle", name: "summary", widget: "text" }
           - { label: "Hero image", name: "image", widget: "image" }
+          - { label: "Page colour", name: "tone", widget: "select", default: "sand", options: [{ label: "Orange", value: "orange" }, { label: "Green", value: "green" }, { label: "Sand", value: "sand" }, { label: "Blue", value: "blue" }, { label: "Yellow", value: "yellow" }] }
           - { label: "Listing heading", name: "listing_heading", widget: "string" }
           - { label: "Listing introduction", name: "listing_intro", widget: "text" }
       - name: "contact"
@@ -189,6 +195,7 @@ collections:
           - { label: "Eyebrow", name: "eyebrow", widget: "string" }
           - { label: "Subtitle", name: "summary", widget: "text" }
           - { label: "Hero image", name: "image", widget: "image" }
+          - { label: "Page colour", name: "tone", widget: "select", default: "yellow", options: [{ label: "Orange", value: "orange" }, { label: "Green", value: "green" }, { label: "Sand", value: "sand" }, { label: "Blue", value: "blue" }, { label: "Yellow", value: "yellow" }] }
           - { label: "Bookings heading", name: "heading", widget: "string" }
           - { label: "Bookings body", name: "body", widget: "text" }
           - { label: "Contact email", name: "email", widget: "string" }
@@ -259,8 +266,8 @@ collections:
       - { label: "Summary", name: "excerpt", widget: "text", hint: "A short introduction shown on the News page and in search descriptions." }
       - { label: "Featured Image", name: "image", widget: "image", required: false }
       - { label: "Image Description", name: "image_alt", widget: "string", required: false, hint: "Describe the image for visitors using screen readers." }
-      - { label: "Image Background", name: "image_tone", widget: "select", required: false, options: [{ label: "Paper", value: "paper" }, { label: "Ink", value: "ink" }], hint: "Use Ink for a light or white logo that needs a dark background." }
-      - { label: "Image Fit", name: "image_fit", widget: "select", required: false, options: [{ label: "Crop to fill", value: "cover" }, { label: "Show whole image", value: "contain" }], hint: "Choose Show whole image for banners or logos that should not be cropped." }
+      - { label: "Image Background", name: "image_tone", widget: "select", default: "paper", required: false, options: [{ label: "Paper", value: "paper" }, { label: "Ink", value: "ink" }], hint: "Use Ink for a light or white logo that needs a dark background." }
+      - { label: "Image Fit", name: "image_fit", widget: "select", default: "cover", required: false, options: [{ label: "Crop to fill", value: "cover" }, { label: "Show whole image", value: "contain" }], hint: "Choose Show whole image for banners or logos that should not be cropped." }
       - { label: "Article", name: "body", widget: "markdown" }
 
   - name: "media"
